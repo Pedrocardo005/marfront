@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("./assets/css/default-style/all.min.css");
+@import url("./assets/css/default-style/bootstrap.min.css");
+@import url("./assets/css/default-style/default.css");
+@import url("./assets/css/default-style/fontawesome.min.css");
+@import url("./assets/css/default-style/magnific-popup.css");
+@import url("./assets/css/default-style/nice-select.css");
+@import url("./assets/css/default-style/style.css");
