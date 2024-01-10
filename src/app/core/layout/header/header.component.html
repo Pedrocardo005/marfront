@@ -1,63 +1,82 @@
-<header class="header_area">
-    <div class="header_navbar">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/imgs/logo.png" alt="logo">
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="fasse" aria-label="Toggle navigation">
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                    <ul class="navbar-nav m-auto">
-                        <li>
-                            <a href="#">Home<span class="line"></span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categorias<span class="line"></span></a>
-                        </li>
-                        <li>
-                            <a href="#">About<span class="line"></span></a>
-                        </li>
-                      
-                        <li>
-                            <a href="#">Contact<span class="line"></span></a>
-                        </li>
-                      </ul>
-                </div>
-
-                <div class="navbar_btn">
-                    <ul class="sub-menu">
-                        <!-- Exibe botão para logar a quem não estiver autenticado, ou
-                        um pequeno menu pros logados. -->
-                        <div class="navbar_btn">
-                            <ul>
-                                <li>
-                                    <div class="dropdown">
-                                        <a routerLink="/login" class="sign-up" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="fasse">Usuário</a>
-        
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <ul>
-                                                <li><a>Mensagens</a></li>
-                                                <li><a>Anúncios</a></li>
-                                                <li><a>Configurações</a></li>
-                                                <li><a>Favoritos</a></li>
-                                                <li><a>Lista de observações</a></li>
-                                                <li><a>Usuários</a></li>
-                                                <li><a>Buscas</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </nav>
+<nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-default">
+  <div class="container">
+    <a class="navbar-brand" href="javascript:void(0)">Default Color</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar-default"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-default">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a href="javascript:void(0)">
+              <img src="assets/img/brand/blue.png" />
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button
+              type="button"
+              class="navbar-toggler"
+              data-toggle="collapse"
+              data-target="#navbar-default"
+              aria-controls="navbar-default"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
+      </div>
+      <ul class="navbar-nav ml-lg-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="javascript:void(0)">
+            <i class="ni ni-favourite-28"></i>
+            <span class="nav-link-inner--text">Discover</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="javascript:void(0)">
+            <i class="ni ni-notification-70"></i>
+            <span class="nav-link-inner--text">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link nav-link-icon"
+            href="javascript:void(0)"
+            id="navbar-default_dropdown_1"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="ni ni-settings-gear-65"></i>
+            <span class="nav-link-inner--text">Settings</span>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right"
+            aria-labelledby="navbar-default_dropdown_1"
+          >
+            <a class="dropdown-item" href="javascript:void(0)">Action</a>
+            <a class="dropdown-item" href="javascript:void(0)"
+              >Another action</a
+            >
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)"
+              >Something else here</a
+            >
+          </div>
+        </li>
+      </ul>
     </div>
-</header>
+  </div>
+</nav>
