@@ -6,21 +6,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/layout/header/header.component';
 import { LoginComponent } from './features/login/routes/login/login.component';
 import { HomeComponent } from './features/home/routes/home/home.component';
-import { RegisterComponent } from './features/register/routes/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LoginComponent,
-    HomeComponent,
-    RegisterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
