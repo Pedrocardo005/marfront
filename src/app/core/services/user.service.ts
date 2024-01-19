@@ -15,4 +15,10 @@ export class UserService {
       ...usuario,
     });
   }
+
+  login(usuario: User) {
+    return this.http.post<{ user: User }>(`${this.apiUrl}/login`, {
+      ...usuario,
+    });
+  }
 }

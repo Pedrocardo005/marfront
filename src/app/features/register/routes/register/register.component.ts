@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -28,8 +28,6 @@ export class RegisterComponent {
   focus2: boolean = false;
 
   registerForm: FormGroup<RegisterForm>;
-
-  destroyRef = inject(DestroyRef);
 
   success: boolean = false;
   error: boolean = false;
