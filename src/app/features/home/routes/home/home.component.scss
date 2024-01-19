@@ -1,0 +1,20 @@
+.choose-area {
+    background-color: #fff;
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 130px;
+
+    .choose-body > * {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .choose-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        display: table;
+    }
+}
