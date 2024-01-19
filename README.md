@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Tecnologias utilizadas
+
+[Angular 16](https://v16.angular.io/docs?redirected_from=16)
+[Boostrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+[Open Sans Font](https://fonts.google.com/specimen/Open+Sans)
+[Stripe Elements](https://github.com/stripe/elements-examples/#example-1)
