@@ -1,3 +1,11 @@
+a:hover {
+    text-decoration: underline;
+}
+
+.gray-bg {
+    background-color: #f4f5f7;
+}
+
 .choose-area {
     background-color: #fff;
     position: relative;
@@ -48,6 +56,55 @@
             .counter-icon {
                 padding-right: 10px;
             }
+        }
+    }
+}
+
+.services-area {
+    .single-services {
+        transition: all 0.3s ease-out 0s;
+        background-color: #fff;
+        padding: 30px 25px;
+        border-radius: 10px;
+
+        .services-icons i {
+            color: #315659;
+            transition: all 0.3s ease-out 0s;
+            font-size: 46px;
+        }
+
+        .services-content {
+            padding-left: 20px;
+
+            .title a {
+                font-size: 24px;
+                font-weight: 500;
+                color: #3C4559;
+                transition: all 0.3s ease-out 0s;
+            }
+
+            p {
+                transition: all 0.3s ease-out 0s;
+            }
+
+            .more {
+                font-size: 16px;
+                font-weight: 500;
+                color: #3C4559;
+                transition: all 0.3s ease-out 0s;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .single-services:hover {
+        background-color: #315659;
+
+        .services-icon i,
+        .services-content .title a,
+        .services-content p,
+        .services-content .more {
+            color: #fff;
         }
     }
 }
