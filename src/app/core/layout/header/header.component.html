@@ -39,7 +39,7 @@
         </div>
       </div>
       <ul class="navbar-nav ml-lg-auto">
-        <li class="nav-item dropdown">
+        <li *ngIf="isAuth" class="nav-item dropdown">
           <a
             class="nav-link nav-link-icon"
             href="javascript:void(0)"
