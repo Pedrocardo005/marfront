@@ -6,6 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 
 interface LoginForm {
@@ -17,7 +18,7 @@ interface LoginForm {
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports: [NgClass, ReactiveFormsModule, NgIf],
+  imports: [NgClass, ReactiveFormsModule, NgIf, RouterLink],
   standalone: true,
 })
 export class LoginComponent {
