@@ -1,3 +1,5 @@
+$default: #172b4d !default;
+
 .footer-widget {
     padding-top: 70px;
     padding-bottom: 120px;
@@ -69,7 +71,7 @@ ul {
 .footer-copyright {
     padding-bottom: 30px;
     padding-top: 15px;
-    background-color: #2978A0;
+    background-color: $default;
 }
 
 .payment {
