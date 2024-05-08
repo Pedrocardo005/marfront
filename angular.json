@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "marfront:build:production"
+              "buildTarget": "marfront:build:production"
             },
             "development": {
-              "browserTarget": "marfront:build:development"
+              "buildTarget": "marfront:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "marfront:build"
+            "buildTarget": "marfront:build"
           }
         },
         "test": {
