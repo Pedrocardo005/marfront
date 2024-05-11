@@ -23,14 +23,15 @@ interface RegisterForm {
   standalone: true,
 })
 export class RegisterComponent {
-  focus: boolean = false;
-  focus1: boolean = false;
-  focus2: boolean = false;
+  focus = false;
+  focus1 = false;
+  focus2 = false;
+  emailValid = true;
 
   registerForm: FormGroup<RegisterForm>;
 
-  success: boolean = false;
-  error: boolean = false;
+  success = false;
+  error = false;
 
   constructor(
     private readonly userService: UserService,
@@ -38,7 +39,7 @@ export class RegisterComponent {
   ) {
     this.registerForm = new FormGroup<RegisterForm>({
       email: new FormControl('', {
-        validators: [Validators.required],
+        validators: [Validators.required, Validators.email],
         nonNullable: true,
       }),
       password: new FormControl('', {
@@ -50,29 +51,36 @@ export class RegisterComponent {
   }
 
   submitForm() {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this;
-    let observable = this.userService.register(
-      this.registerForm.value as {
-        email: string;
-        username?: string;
-        password: string;
-      }
-    );
+    if (this.registerForm.valid) {
+      const observable = this.userService.register(
+        this.registerForm.value as {
+          email: string;
+          username?: string;
+          password: string;
+        }
+      );
+  
+      observable.pipe().subscribe({
+        next() {
+          self.success = true;
+          self.registerForm.reset();
+          setTimeout(() => {
+            self.route.navigate(['/login']);
+          }, 3000);
+        },
+        error() {
+          self.error = true;
+          setTimeout(() => {
+            self.error = false;
+          }, 3000);
+        },
+      });
+    }
+  }
 
-    observable.pipe().subscribe({
-      next() {
-        self.success = true;
-        self.registerForm.reset();
-        setTimeout(() => {
-          self.route.navigate(['/login']);
-        }, 3000);
-      },
-      error() {
-        self.error = true;
-        setTimeout(() => {
-          self.error = false;
-        }, 3000);
-      },
-    });
+  get email() {
+    return this.registerForm.get('email');
   }
 }
