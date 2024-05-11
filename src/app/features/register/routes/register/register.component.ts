@@ -51,8 +51,6 @@ export class RegisterComponent {
   }
 
   submitForm() {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const self = this;
     if (this.registerForm.valid) {
       const observable = this.userService.register(
         this.registerForm.value as {
@@ -63,17 +61,17 @@ export class RegisterComponent {
       );
   
       observable.pipe().subscribe({
-        next() {
-          self.success = true;
-          self.registerForm.reset();
+        next: () => {
+          this.success = true;
+          this.registerForm.reset();
           setTimeout(() => {
-            self.route.navigate(['/login']);
+            this.route.navigate(['/login']);
           }, 3000);
         },
-        error() {
-          self.error = true;
+        error: () => {
+          this.error = true;
           setTimeout(() => {
-            self.error = false;
+            this.error = false;
           }, 3000);
         },
       });
