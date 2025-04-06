@@ -15,11 +15,10 @@ interface LoginForm {
 }
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  imports: [NgClass, ReactiveFormsModule, NgIf, RouterLink],
-  standalone: true,
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
+    imports: [NgClass, ReactiveFormsModule, NgIf, RouterLink]
 })
 export class LoginComponent {
   focus: boolean = false;

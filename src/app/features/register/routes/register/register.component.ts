@@ -16,11 +16,10 @@ interface RegisterForm {
 }
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  imports: [ReactiveFormsModule, NgClass, NgIf],
-  standalone: true,
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css'],
+    imports: [ReactiveFormsModule, NgClass, NgIf]
 })
 export class RegisterComponent {
   focus = false;
