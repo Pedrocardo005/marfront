@@ -33,8 +33,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/scss/argon.scss"
+              "src/styles.css"
             ],
             "scripts": [],
             "browser": "src/main.ts"
