@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './features/login/routes/login/login.component';
+import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/routes/home/home.component';
+import { LoginComponent } from './features/login/routes/login/login.component';
 import { RegisterComponent } from './features/register/routes/register/register.component';
 
 const routes: Routes = [
@@ -19,8 +20,6 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes), provideHttpClient()],
+};
