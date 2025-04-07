@@ -1,11 +1,10 @@
-import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  imports: [NgIf],
+  imports: [],
 })
 export class HeaderComponent {
   isAuth = false;
