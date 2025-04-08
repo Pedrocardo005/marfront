@@ -1,9 +1,9 @@
 import { provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter, Routes } from '@angular/router';
-import { HomeComponent } from './features/home/routes/home/home.component';
-import { LoginComponent } from './features/login/routes/login/login.component';
-import { RegisterComponent } from './features/register/routes/register/register.component';
+import { LoginComponent } from './features/auth/pages/login/login.component';
+import { RegisterComponent } from './features/auth/pages/register/register.component';
+import { HomeComponent } from './features/home/pages/home/home.component';
 
 const routes: Routes = [
   {
