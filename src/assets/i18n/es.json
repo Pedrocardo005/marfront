@@ -1,1 +1,14 @@
-{}
+{
+    "CORE": {
+        "LAYOUT": {
+            "HEADER": {
+                "SEARCH": "Buscar",
+                "DISCONNECT": {
+                    "LOGIN": "Iniciar sesión",
+                    "REGISTER": "Crear una cuenta"
+                }
+            }
+        }
+    }
+}
+

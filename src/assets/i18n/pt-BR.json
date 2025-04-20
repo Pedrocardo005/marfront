@@ -2,7 +2,11 @@
     "CORE":{
         "LAYOUT": {
             "HEADER": {
-                "SEARCH": "Buscar"
+                "SEARCH": "Buscar",
+                "DISCONNECT": {
+                    "LOGIN": "Entrar",
+                    "REGISTER": "Criar uma conta"
+                }
             }
         }
     }

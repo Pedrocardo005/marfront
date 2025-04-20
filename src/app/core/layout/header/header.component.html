@@ -1,5 +1,35 @@
-<nav>
-  <div>
-    <a> MarCommerce </a>
+<div class="mx-auto max-w-5xl">
+  <div class="card">
+    <p-menubar>
+      <ng-template #start>
+        <img
+          src="https://www.expoprint.com.br/public/imagens/noticias/efilogo600(43).jpg"
+          alt="Logo"
+          width="100"
+          routerLink="/"
+        />
+      </ng-template>
+      <ng-template #end>
+        <div class="flex gap-5">
+          <input
+            type="text"
+            [placeholder]="'CORE.LAYOUT.HEADER.SEARCH' | transloco"
+            pInputText
+          />
+          <p-menu #menu [model]="items" [popup]="true">
+            <ng-template #item let-item>
+              <a pRipple class="flex items-center p-menu-item-link">
+                <span class="ml-2">{{ item.label | transloco }}</span>
+              </a>
+            </ng-template>
+          </p-menu>
+          <span
+            (click)="menu.toggle($event)"
+            class="pi pi-user"
+            style="font-size: 2.5rem"
+          ></span>
+        </div>
+      </ng-template>
+    </p-menubar>
   </div>
-</nav>
+</div>

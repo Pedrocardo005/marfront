@@ -1,8 +1,12 @@
 {
-    "CORE":{
+    "CORE": {
         "LAYOUT": {
             "HEADER": {
-                "SEARCH": "Search"
+                "SEARCH": "Search",
+                "DISCONNECT": {
+                    "LOGIN": "Login",
+                    "REGISTER": "Create an account"
+                }
             }
         }
     }
