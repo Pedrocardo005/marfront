@@ -7,6 +7,24 @@
                     "LOGIN": "Entrar",
                     "REGISTER": "Criar uma conta"
                 }
+            },
+            "FOOTER": {
+                "INFORMATION": {
+                    "TITLE": "Informação",
+                    "LINKS": {
+                        "ONE": "Dicas de Segurança",
+                        "TWO": "Política de Privacidade",
+                        "THREE": "Configuração de Privacidade",
+                        "FOUR": "Termos de Uso"
+                    }
+                },
+                "SUPPORT": {
+                    "TITLE": "Ajuda e Suporte",
+                    "LINKS": {
+                        "ONE": "Ajuda",
+                        "TWO": "Impressum"
+                    }
+                }
             }
         }
     }
