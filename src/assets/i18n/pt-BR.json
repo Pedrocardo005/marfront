@@ -24,6 +24,12 @@
                         "ONE": "Ajuda",
                         "TWO": "Impressum"
                     }
+                },
+                "COUNTRIES-ALT": {
+                    "BRAZIL": "Bandeira do Brasil",
+                    "UNITED-STATE": "Flag of the United States",
+                    "SPAIN": "Bandera de España",
+                    "GERMANY": "Flagge von Deutschland"
                 }
             }
         }

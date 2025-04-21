@@ -7,7 +7,32 @@
                     "LOGIN": "Login",
                     "REGISTER": "Create an account"
                 }
+            },
+            "FOOTER": {
+                "INFORMATION": {
+                    "TITLE": "Information",
+                    "LINKS": {
+                        "ONE": "Safety Tips",
+                        "TWO": "Privacy Policy",
+                        "THREE": "Privacy Settings",
+                        "FOUR": "Terms of Use"
+                    }
+                },
+                "SUPPORT": {
+                    "TITLE": "Help and Support",
+                    "LINKS": {
+                        "ONE": "Help",
+                        "TWO": "Impressum"
+                    }
+                },
+                "COUNTRIES-ALT": {
+                    "BRAZIL": "Bandeira do Brasil",
+                    "UNITED-STATE": "Flag of the United States",
+                    "SPAIN": "Bandera de España",
+                    "GERMANY": "Flagge von Deutschland"
+                }
             }
         }
+        
     }
 }
