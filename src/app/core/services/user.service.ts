@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl: string = environment.api;
+  private apiUrl: string = environment.apiUrl;
 
   constructor(private readonly http: HttpClient) {}
 

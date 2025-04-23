@@ -1,217 +1,55 @@
-<div class="gray-bg">
-  <section class="choose-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 choose-body">
-          <div class="choose-content">
-            <div class="choose-title display-2">Vantagens de Optar por Nós</div>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam.
-          </p>
-          <ul class="list-unstyled">
-            <li>
-              <i
-                class="fa fa-check-square fa-2x text-primary"
-                aria-hidden="true"
-              ></i>
-              Recurso poderoso.
-            </li>
-            <li>
-              <i
-                class="fa fa-check-square fa-2x text-danger"
-                aria-hidden="true"
-              ></i>
-              Muito necessário e importante
-            </li>
-            <li>
-              <i
-                class="fa fa-check-square fa-2x text-info"
-                aria-hidden="true"
-              ></i>
-              Características essenciais para detonar.
-            </li>
-          </ul>
-          <button type="button" class="btn btn-success">leia mais</button>
-        </div>
+<main class="bg-gray-200">
+  <section class="header-layout lg:max-w-5xl lg:mx-auto">
+    <div class="py-8 flex flex-col gap-5 lg:flex-row justify-between">
+      <div class="flex flex-col lg:flex-row lg:mx-0">
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="searchValue"
+          [placeholder]="
+            'FEATURES.HOME.PAGES.HOME.SEARCH-INPUT.PLACEHOLDER' | transloco
+          "
+        />
+        <p-select [options]="catList" placeholder="Todas as categorias">
+          <ng-template #selectedItem let-selectedOption>
+            @if (selectedOption) {
+            <div class="flex items-center gap-2">
+              <div>{{ selectedOption.nome | transloco }}</div>
+            </div>
+            }
+          </ng-template>
+          <ng-template let-category #item>
+            <div class="flex items-center gap-2">
+              <div>{{ category.nome | transloco }}</div>
+            </div>
+          </ng-template>
+        </p-select>
       </div>
-    </div>
-    <div class="choose-image">
-      <div class="image">
-        <img src="/assets/img/home/choose.png" alt="choose" />
+      <div class="flex justify-center">
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="searchAddress"
+          [placeholder]="
+            'FEATURES.HOME.PAGES.HOME.SEARCH-ADDRESS.PLACEHOLDER' | transloco
+          "
+        />
+        <p-select
+          [options]="distances"
+          optionLabel="name"
+          placeholder="raio"
+        ></p-select>
       </div>
-    </div>
-  </section>
-  <section class="counter-area bg-cover">
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-lg-9">
-          <div class="counter-wrapper d-flex flex-wrap justify-content-between">
-            <div class="single-counter">
-              <div class="counter-items d-flex">
-                <div class="counter-icon">
-                  <img
-                    src="/assets/img/home/icons/counter-1.svg"
-                    alt="counter"
-                  />
-                </div>
-                <div class="counter-count media-body">
-                  <span class="count"><span class="counter">5000</span>+</span>
-                </div>
-              </div>
-              <p>Anúncios publicados aqui</p>
-            </div>
-            <div class="single-counter">
-              <div class="counter-items d-flex">
-                <div class="counter-icon">
-                  <img
-                    src="/assets/img/home/icons/counter-2.svg"
-                    alt="counter"
-                  />
-                </div>
-                <div class="counter-count media-body">
-                  <span class="count"><span class="counter">300</span>+</span>
-                </div>
-              </div>
-              <p>Registrar usuário usando</p>
-            </div>
-            <div class="single-counter">
-              <div class="counter-items d-flex">
-                <div class="counter-icon">
-                  <img
-                    src="/assets/img/home/icons/counter-3.svg"
-                    alt="counter"
-                  />
-                </div>
-                <div class="counter-count media-body">
-                  <span class="count"><span class="counter">200</span>+</span>
-                </div>
-              </div>
-              <p>Usuário verificado usando</p>
-            </div>
-          </div>
-        </div>
+      <div class="flex justify-center">
+        <p-button
+          label="{{
+            'FEATURES.HOME.PAGES.HOME.SEARCH-BUTTON.LABEL' | transloco
+          }}"
+          icon="pi pi-search"
+          [disabled]="!searchValue && !searchAddress"
+        ></p-button>
       </div>
     </div>
   </section>
-  <section class="services-area pt-115">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <div class="section_title text-center pb-15">
-            <h3 class="title">
-              Classificados <br />
-              Aqui para você
-            </h3>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="single-services d-flex mt-5">
-            <div class="services-icon">
-              <i class="fa fa-phone fa-3x"></i>
-            </div>
-            <div class="services-content media-body">
-              <h4 class="title">
-                <a href="#">Venda seus itens com segurança</a>
-              </h4>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-              </p>
-              <a class="more" href="#"
-                >Leia mais <i class="fa fa-chevron-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-services d-flex mt-5">
-            <div class="services-icon">
-              <i class="fa fa-shopping-bag fa-3x"></i>
-            </div>
-            <div class="services-content media-body">
-              <h4 class="title"><a href="#">Compre diretamente</a></h4>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-              </p>
-              <a class="more" href="#"
-                >Leia mais <i class="fa fa-chevron-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-services d-flex mt-5">
-            <div class="services-icon">
-              <i class="fa fa-handshake-o fa-3x"></i>
-            </div>
-            <div class="services-content media-body">
-              <h4 class="title">
-                <a href="#">Plataforma amigável</a>
-              </h4>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-              </p>
-              <a class="more" href="#"
-                >Leia mais <i class="fa fa-chevron-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-services d-flex mt-5">
-            <div class="services-icon">
-              <i class="fa fa-credit-card fa-3x"></i>
-            </div>
-            <div class="services-content media-body">
-              <h4 class="title"><a href="#">Pagamento em pessoa</a></h4>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-              </p>
-              <a class="more" href="#"
-                >Leia mais <i class="fa fa-chevron-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-services d-flex mt-5">
-            <div class="services-icon">
-              <i class="fa fa-headphones fa-3x"></i>
-            </div>
-            <div class="services-content media-body">
-              <h4 class="title"><a href="#">Suporte 24/7</a></h4>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-              </p>
-              <a class="more" href="#"
-                >Leia mais <i class="fa fa-chevron-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-services d-flex mt-5">
-            <div class="services-icon">
-              <i class="fa fa-certificate fa-3x"></i>
-            </div>
-            <div class="services-content media-body">
-              <h4 class="title">
-                <a href="#">Usuários verificados</a>
-              </h4>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-              </p>
-              <a class="more" href="#"
-                >Leia mais <i class="fa fa-chevron-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+  <section class="main-layout"></section>
+</main>
