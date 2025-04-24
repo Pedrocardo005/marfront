@@ -1,0 +1,14 @@
+<div class="card bg-white">
+  <p-carousel [value]="categories" [numVisible]="3" [numScroll]="3">
+    <ng-template let-category #item>
+      <div class="border border-surface rounded-border m-2 p-4">
+        <div class="mb-4">
+          <div class="relative mx-auto">
+            <i [class]="category.icon"></i>
+          </div>
+        </div>
+        <div class="mb-4 font-medium">{{ category.nome | transloco }}</div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

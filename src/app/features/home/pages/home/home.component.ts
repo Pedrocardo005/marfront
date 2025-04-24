@@ -4,6 +4,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
+import { CategoryCarouselComponent } from '../../components/category-carousel/category-carousel.component';
 import { CatSubcat } from '../../models/CatSubcat.model';
 
 interface Cat {
@@ -25,11 +26,13 @@ interface Distance {
     TranslocoModule,
     SelectModule,
     ButtonModule,
+    CategoryCarouselComponent,
   ],
 })
 export class HomeComponent implements OnInit {
   searchValue?: string;
   searchAddress?: string;
+  isMobile?: boolean;
   catSubcatList?: CatSubcat[];
   catList?: Cat[];
   distances?: Distance[];
@@ -38,6 +41,7 @@ export class HomeComponent implements OnInit {
     this.catSubcatList = [
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.CAR-MOTORCYCLE.TITLE',
+        icon: 'pi pi-car',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.CAR-MOTORCYCLE.SUBCATEGORIES.FIRST',
@@ -52,6 +56,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.REAL-ESTATE-HOUSES.TITLE',
+        icon: 'pi pi-home',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.REAL-ESTATE-HOUSES.SUBCATEGORIES.FIRST',
@@ -66,6 +71,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.JOBS.TITLE',
+        icon: 'pi pi-briefcase',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.JOBS.SUBCATEGORIES.FIRST',
@@ -80,6 +86,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.ADMISSION-TICKETS.TITLE',
+        icon: 'pi pi-tag',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.ADMISSION-TICKETS.SUBCATEGORIES.FIRST',
@@ -94,6 +101,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.LEISURE-HOBBIES-FUN.TITLE',
+        icon: 'pi pi-palette',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.LEISURE-HOBBIES-FUN.SUBCATEGORIES.FIRST',
@@ -108,6 +116,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.MUSIC-FILM-BOOKS.TITLE',
+        icon: 'pi pi-headphones',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.MUSIC-FILM-BOOKS.SUBCATEGORIES.FIRST',
@@ -122,6 +131,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.HOME-GARDEN.TITLE',
+        icon: 'pi pi-warehouse',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.HOME-GARDEN.SUBCATEGORIES.FIRST',
@@ -136,6 +146,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.GIVE-AWAY-EXCHANGE.TITLE',
+        icon: 'pi pi-wallet',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.GIVE-AWAY-EXCHANGE.SUBCATEGORIES.FIRST',
@@ -150,6 +161,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.PETS.TITLE',
+        icon: 'fa-solid fa-paw',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.PETS.SUBCATEGORIES.FIRST',
@@ -164,6 +176,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.FAMILY-CHILD-BABY.TITLE',
+        icon: 'fa-solid fa-baby-carriage',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.FAMILY-CHILD-BABY.SUBCATEGORIES.FIRST',
@@ -178,6 +191,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.FASHION-BEAUTY.TITLE',
+        icon: 'fa-solid fa-shirt',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.FASHION-BEAUTY.SUBCATEGORIES.FIRST',
@@ -192,6 +206,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.LESSONS-COURSES.TITLE',
+        icon: 'fa-solid fa-graduation-cap',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.LESSONS-COURSES.SUBCATEGORIES.FIRST',
@@ -206,6 +221,7 @@ export class HomeComponent implements OnInit {
       },
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.MULTIMEDIA-ELECTRONICS.TITLE',
+        icon: 'fa-solid fa-tv',
         subcategorias: [
           {
             name: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.MULTIMEDIA-ELECTRONICS.SUBCATEGORIES.FIRST',
@@ -234,5 +250,16 @@ export class HomeComponent implements OnInit {
       { name: '+150km', value: 150 },
       { name: '+200km', value: 200 },
     ];
+
+    window.addEventListener('resize', this.handleResize.bind(this));
+  }
+
+  handleResize() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 1024) {
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+    }
   }
 }

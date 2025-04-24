@@ -153,6 +153,10 @@
                             }
                         }
                     
+                    },
+                    "LEFT-BAR": {
+                        "TITLE": "Categorias",
+                        "LINK": "Mostrar tudo"
                     }
                 }
             }
