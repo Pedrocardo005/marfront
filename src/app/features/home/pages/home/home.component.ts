@@ -6,6 +6,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
 import { CategoryCarouselComponent } from '../../components/category-carousel/category-carousel.component';
 import { CatSubcat } from '../../models/CatSubcat.model';
+import { ThreeFirstAnuncio } from '../../models/ThreeFirstAnuncio.model';
+import { ThreeFirstAnunciosService } from '../../services/threefirstanuncios.service';
 
 interface Cat {
   nome: string;
@@ -36,6 +38,9 @@ export class HomeComponent implements OnInit {
   catSubcatList?: CatSubcat[];
   catList?: Cat[];
   distances?: Distance[];
+  threeFirstAnuncios?: ThreeFirstAnuncio[];
+
+  constructor(private threeFirstAnuncioService: ThreeFirstAnunciosService) {}
 
   ngOnInit() {
     this.catSubcatList = [
@@ -252,6 +257,10 @@ export class HomeComponent implements OnInit {
     ];
 
     window.addEventListener('resize', this.handleResize.bind(this));
+
+    this.threeFirstAnuncioService
+      .getThreeFirstAnuncios()
+      .subscribe((response) => (this.threeFirstAnuncios = response));
   }
 
   handleResize() {

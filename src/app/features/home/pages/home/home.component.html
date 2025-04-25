@@ -1,4 +1,4 @@
-<main class="bg-gray-200">
+<main class="bg-gray-100">
   <section class="header-layout hidden lg:block lg:max-w-5xl lg:mx-auto">
     <div class="py-8 flex flex-col gap-5 lg:flex-row justify-between">
       <div class="flex flex-col lg:flex-row lg:mx-0">
@@ -51,7 +51,7 @@
       </div>
     </div>
   </section>
-  <section class="main-layout lg:mx-auto lg:max-w-5xl">
+  <section class="main-layout lg:mx-auto lg:max-w-5xl lg:flex lg:gap-5">
     @if (isMobile && catSubcatList) {
       <app-category-carousel [categories]="catSubcatList" />
     } @else {
@@ -81,5 +81,18 @@
         </div>
       </div>
     }
+    <div class="main-bar w-full h-full rounded-lg">
+      @if (threeFirstAnuncios) {
+        <div class="flex gap-5 bg-gray-200 p-4 rounded-lg">
+          @for (anuncio of threeFirstAnuncios; track $index) {
+            <div class="p-3.5 bg-white">
+              <img src="{{ anuncio.url_foto }}" alt="" width="210" height="155">
+              <a href="">{{ anuncio.titulo }}</a>
+              <p>{{ anuncio.cidade }}</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
   </section>
 </main>
