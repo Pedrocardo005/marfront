@@ -157,6 +157,11 @@
                     "LEFT-BAR": {
                         "TITLE": "Categorias",
                         "LINK": "Mostrar tudo"
+                    },
+                    "MAIN-BAR": {
+                        "IMAGE": {
+                            "ALT": "Descrição da imagem do anuncio de"
+                        }
                     }
                 }
             }

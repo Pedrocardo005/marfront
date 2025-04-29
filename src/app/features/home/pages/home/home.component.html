@@ -86,7 +86,7 @@
         <div class="flex gap-5 bg-gray-200 p-4 rounded-lg">
           @for (anuncio of threeFirstAnuncios; track $index) {
             <div class="p-3.5 bg-white">
-              <img src="{{ anuncio.url_foto }}" alt="" width="210" height="155">
+              <img src="{{ anuncio.url_foto }}" alt="{{ 'FEATURES.HOME.PAGES.HOME.MAIN-BAR.IMAGE.ALT'|transloco}} {{ anuncio.titulo }}" width="210" height="155">
               <a href="">{{ anuncio.titulo }}</a>
               <p>{{ anuncio.cidade }}</p>
             </div>
