@@ -1,43 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { TranslocoModule } from '@jsverse/transloco';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { SelectModule } from 'primeng/select';
+import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 import { CategoryCarouselComponent } from '../../components/category-carousel/category-carousel.component';
 import { CatSubcat } from '../../models/CatSubcat.model';
 import { ThreeFirstAnuncio } from '../../models/ThreeFirstAnuncio.model';
 import { ThreeFirstAnunciosService } from '../../services/threefirstanuncios.service';
 
-interface Cat {
-  nome: string;
-}
-
-interface Distance {
-  name: string;
-  value: number;
-}
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [
-    InputTextModule,
-    FormsModule,
-    TranslocoModule,
-    SelectModule,
-    ButtonModule,
-    CategoryCarouselComponent,
-  ],
+  imports: [TranslocoModule, CategoryCarouselComponent, SearchBarComponent],
 })
 export class HomeComponent implements OnInit {
-  searchValue?: string;
-  searchAddress?: string;
   isMobile?: boolean;
   catSubcatList?: CatSubcat[];
-  catList?: Cat[];
-  distances?: Distance[];
   threeFirstAnuncios?: ThreeFirstAnuncio[];
 
   constructor(private threeFirstAnuncioService: ThreeFirstAnunciosService) {}
@@ -239,21 +216,6 @@ export class HomeComponent implements OnInit {
           },
         ],
       },
-    ];
-
-    this.catList = this.catSubcatList.map((catSubcat) => ({
-      nome: catSubcat.nome,
-    }));
-
-    this.distances = [
-      { name: '+5km', value: 5 },
-      { name: '+10km', value: 10 },
-      { name: '+20km', value: 20 },
-      { name: '+30km', value: 30 },
-      { name: '+50km', value: 50 },
-      { name: '+100km', value: 100 },
-      { name: '+150km', value: 150 },
-      { name: '+200km', value: 200 },
     ];
 
     window.addEventListener('resize', this.handleResize.bind(this));

@@ -8,6 +8,7 @@ import { providePrimeNG } from 'primeng/config';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { RegisterComponent } from './features/auth/pages/register/register.component';
 import { HomeComponent } from './features/home/pages/home/home.component';
+import { SearchComponent } from './features/searchs/pages/search/search.component';
 import { TranslocoHttpLoader } from './transloco-loader';
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'listsearch',
+    component: SearchComponent,
   },
 ];
 

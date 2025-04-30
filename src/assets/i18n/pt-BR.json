@@ -165,6 +165,15 @@
                     }
                 }
             }
+        },
+        "SEARCHS": {
+            "PAGES": {
+                "SEARCH": {
+                    "LEFT-BAR": {
+                        "LINK": "Todas as categorias"
+                    }
+                }
+            }
         }
     }
 }

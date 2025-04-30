@@ -1,56 +1,5 @@
 <main class="bg-gray-100">
-  <section class="header-layout hidden lg:block lg:max-w-5xl lg:mx-auto">
-    <div class="py-8 flex flex-col gap-5 lg:flex-row justify-between">
-      <div class="flex flex-col lg:flex-row lg:mx-0">
-        <input
-          type="text"
-          pInputText
-          [(ngModel)]="searchValue"
-          [placeholder]="
-            'FEATURES.HOME.PAGES.HOME.SEARCH-INPUT.PLACEHOLDER' | transloco
-          "
-        />
-        <p-select [options]="catList" placeholder="Todas as categorias">
-          <ng-template #selectedItem let-selectedOption>
-            @if (selectedOption) {
-            <div class="flex items-center gap-2">
-              <div>{{ selectedOption.nome | transloco }}</div>
-            </div>
-            }
-          </ng-template>
-          <ng-template let-category #item>
-            <div class="flex items-center gap-2">
-              <div>{{ category.nome | transloco }}</div>
-            </div>
-          </ng-template>
-        </p-select>
-      </div>
-      <div class="flex justify-center">
-        <input
-          type="text"
-          pInputText
-          [(ngModel)]="searchAddress"
-          [placeholder]="
-            'FEATURES.HOME.PAGES.HOME.SEARCH-ADDRESS.PLACEHOLDER' | transloco
-          "
-        />
-        <p-select
-          [options]="distances"
-          optionLabel="name"
-          placeholder="raio"
-        ></p-select>
-      </div>
-      <div class="flex justify-center">
-        <p-button
-          label="{{
-            'FEATURES.HOME.PAGES.HOME.SEARCH-BUTTON.LABEL' | transloco
-          }}"
-          icon="pi pi-search"
-          [disabled]="!searchValue && !searchAddress"
-        ></p-button>
-      </div>
-    </div>
-  </section>
+  <app-search-bar></app-search-bar>
   <section class="main-layout lg:mx-auto lg:max-w-5xl lg:flex lg:gap-5">
     @if (isMobile && catSubcatList) {
       <app-category-carousel [categories]="catSubcatList" />
