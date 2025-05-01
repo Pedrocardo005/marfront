@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
 import { CatSubcat } from 'src/app/features/home/models/CatSubcat.model';
 import { HandleResize } from 'src/app/shared/abstracts/components/HandleResize';
+import { SearchService } from '../../../../core/services/search.service';
 import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 import { CategoryCarouselComponent } from '../../../home/components/category-carousel/category-carousel.component';
-import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search',

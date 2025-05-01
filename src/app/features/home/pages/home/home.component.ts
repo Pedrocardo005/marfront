@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CategoryCarouselComponent } from '@features/home/components/category-carousel/category-carousel.component';
+import { ThreeFirstAnunciosService } from '@features/home/services/threefirstanuncios.service';
 import { TranslocoModule } from '@jsverse/transloco';
-import { HandleResize } from 'src/app/shared/abstracts/components/HandleResize';
-import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
-import { CategoryCarouselComponent } from '../../components/category-carousel/category-carousel.component';
+import { HandleResize } from '@shared/abstracts/components/HandleResize';
+import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
 import { CatSubcat } from '../../models/CatSubcat.model';
 import { ThreeFirstAnuncio } from '../../models/ThreeFirstAnuncio.model';
-import { ThreeFirstAnunciosService } from '../../services/threefirstanuncios.service';
 
 @Component({
   selector: 'app-home',

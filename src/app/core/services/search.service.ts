@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { SearchAnuncio } from '../models/SearchAnuncio.model';
+import { SearchAnuncio } from '../../features/searchs/models/SearchAnuncio.model';
 
 @Injectable({
   providedIn: 'root',
