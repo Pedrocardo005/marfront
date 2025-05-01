@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
+import { HandleResize } from 'src/app/shared/abstracts/components/HandleResize';
 import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 import { CategoryCarouselComponent } from '../../components/category-carousel/category-carousel.component';
 import { CatSubcat } from '../../models/CatSubcat.model';
@@ -12,14 +13,15 @@ import { ThreeFirstAnunciosService } from '../../services/threefirstanuncios.ser
   styleUrls: ['./home.component.scss'],
   imports: [TranslocoModule, CategoryCarouselComponent, SearchBarComponent],
 })
-export class HomeComponent implements OnInit {
-  isMobile?: boolean;
+export class HomeComponent extends HandleResize {
   catSubcatList?: CatSubcat[];
   threeFirstAnuncios?: ThreeFirstAnuncio[];
 
-  constructor(private threeFirstAnuncioService: ThreeFirstAnunciosService) {}
+  constructor(private threeFirstAnuncioService: ThreeFirstAnunciosService) {
+    super();
+  }
 
-  ngOnInit() {
+  override ngOnInit() {
     this.catSubcatList = [
       {
         nome: 'FEATURES.HOME.PAGES.HOME.CATEGORIES.CAR-MOTORCYCLE.TITLE',
@@ -218,19 +220,10 @@ export class HomeComponent implements OnInit {
       },
     ];
 
-    window.addEventListener('resize', this.handleResize.bind(this));
+    super.ngOnInit();
 
     this.threeFirstAnuncioService
       .getThreeFirstAnuncios()
       .subscribe((response) => (this.threeFirstAnuncios = response));
-  }
-
-  handleResize() {
-    const screenWidth = window.innerWidth;
-    if (screenWidth < 1024) {
-      this.isMobile = true;
-    } else {
-      this.isMobile = false;
-    }
   }
 }
