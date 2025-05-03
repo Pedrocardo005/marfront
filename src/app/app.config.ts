@@ -3,7 +3,7 @@ import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter, Routes } from '@angular/router';
 import { provideTransloco } from '@jsverse/transloco';
-import Aura from '@primeng/themes/aura';
+import MyPreset from './mypreset';
 import { providePrimeNG } from 'primeng/config';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { RegisterComponent } from './features/auth/pages/register/register.component';
@@ -37,7 +37,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: Aura,
+        preset: MyPreset,
       },
     }),
     provideHttpClient(),
