@@ -172,6 +172,20 @@
                     "LEFT-BAR": {
                         "LINK": "Todas as categorias"
                     }
+                },
+                "FILTERS": {
+                    "PLACEHOLDERS": {
+                        "MIN": "De",
+                        "MAX": "Até"
+                    },
+                    "BUTTON": {
+                        "LABEL": "Filtrar"
+                    }
+                }
+            },
+            "COMPONENTS": {
+                "RIGHT-DRAWER": {
+                    "HEADER": "Filtrar itens"
                 }
             }
         }

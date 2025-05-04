@@ -1,0 +1,16 @@
+<div class="card">
+    <p-drawer [header]="'FEATURES.SEARCHS.COMPONENTS.RIGHT-DRAWER.HEADER'|transloco" [(visible)]="visible" position="right">
+        <div class="body-filter">
+            <div class="inputs-filter p-2.5 flex flex-col gap-2.5 text-gray-500 font-light">
+              <p-inputNumber [(ngModel)]="filterMinPreco" inputId="minfraction" mode="decimal" [minFractionDigits]="2" [placeholder]="'FEATURES.SEARCHS.PAGES.FILTERS.PLACEHOLDERS.MIN'|transloco" />
+              <p-inputNumber [(ngModel)]="filterMaxPreco" inputId="maxfraction" mode="decimal" [minFractionDigits]="2" [placeholder]="'FEATURES.SEARCHS.PAGES.FILTERS.PLACEHOLDERS.MAX'|transloco" />
+            </div>
+            <div class="flex justify-center">
+              <p-button [label]="'FEATURES.SEARCHS.PAGES.FILTERS.BUTTON.LABEL'|transloco" (onClick)="callFiltrarPreco()" />
+            </div>
+          </div>
+    </p-drawer>
+    <div class="buttons">
+        <p-button type="button" [label]="'FEATURES.SEARCHS.PAGES.FILTERS.BUTTON.LABEL'|transloco" (onClick)="visible = true" />
+    </div>
+</div>

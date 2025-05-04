@@ -1,25 +1,43 @@
 <main class="bg-gray-100">
   <app-search-bar></app-search-bar>
   @if (isMobile && catSubcatList) {
+  <app-right-drawer [filtrarPreco]="filtrarPreco"></app-right-drawer>
   <app-category-carousel [categories]="catSubcatList" />
   } @else {
-  <div class="mx-auto lg:max-w-5xl lg:flex lg:gap-5 text-blue-500">
-    <div
-      class="left-bar w-2xs bg-white rounded-lg p-5 lg:mx-auto lg:max-w-5xl lg:gap-5"
-    >
-      <a class="font-semibold hover:underline">{{
-        "FEATURES.SEARCHS.PAGES.SEARCH.LEFT-BAR.LINK" | transloco
-      }}</a>
+  <div class="mx-auto lg:max-w-5xl lg:flex lg:gap-5 text-blue-500 lg:flex-col">
+    <div class="left-bar w-2xs">
       <div
-        class="left-bar-body border border-x-0 border-b-0 border-gray-300 mt-1.5"
+        class="bg-white rounded-lg p-5 lg:mx-auto lg:max-w-5xl lg:gap-5"
       >
-        @for (item of catSubcatList; track $index) {
-        <div class="p-1">
-          <a href="#" class="font-normal text-[15px] hover:underline">{{
-            item.nome | transloco
-          }}</a>
+        <a class="font-semibold hover:underline">{{
+          "FEATURES.SEARCHS.PAGES.SEARCH.LEFT-BAR.LINK" | transloco
+        }}</a>
+        <div
+          class="left-bar-body border border-x-0 border-b-0 border-gray-300 mt-1.5"
+        >
+          @for (item of catSubcatList; track $index) {
+          <div class="p-1">
+            <a href="#" class="font-normal text-[15px] hover:underline">{{
+              item.nome | transloco
+            }}</a>
+          </div>
+          }
         </div>
-        }
+      </div>
+
+      <div class="left-bar-filter bg-white mt-6 rounded-lg">
+        <div class="title-filter p-3.5 bg-gray-50 text-black font-medium border-0 border-b border-gray-300">
+          Preço
+        </div>
+        <div class="body-filter">
+          <div class="inputs-filter p-2.5 flex flex-col gap-2.5 text-gray-500 font-light">
+            <p-inputNumber [(ngModel)]="filterPriceMinimum" inputId="minfraction" mode="decimal" [minFractionDigits]="2" [placeholder]="'FEATURES.SEARCHS.PAGES.FILTERS.PLACEHOLDERS.MIN'|transloco" />
+            <p-inputNumber [(ngModel)]="filterPriceMaximum" inputId="maxfraction" mode="decimal" [minFractionDigits]="2" [placeholder]="'FEATURES.SEARCHS.PAGES.FILTERS.PLACEHOLDERS.MAX'|transloco" />
+          </div>
+          <div class="flex justify-center">
+            <p-button [label]="'FEATURES.SEARCHS.PAGES.FILTERS.BUTTON.LABEL'|transloco" (onClick)="filtrarPreco(filterPriceMinimum, filterPriceMaximum)" />
+          </div>
+        </div>
       </div>
     </div>
   </div>

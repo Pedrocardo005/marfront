@@ -6,20 +6,29 @@ import { HandleResize } from 'src/app/shared/abstracts/components/HandleResize';
 import { SearchService } from '../../../../core/services/search.service';
 import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 import { CategoryCarouselComponent } from '../../../home/components/category-carousel/category-carousel.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { RightDrawerComponent } from '@features/searchs/components/right-drawer/right-drawer.component';
+import { SearchAnuncio } from '@features/searchs/models/SearchAnuncio.model';
 
 @Component({
   selector: 'app-search',
-  imports: [SearchBarComponent, TranslocoModule, CategoryCarouselComponent],
+  imports: [SearchBarComponent, TranslocoModule, CategoryCarouselComponent, InputNumberModule, FormsModule, ButtonModule, RightDrawerComponent],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
 })
 export class SearchComponent extends HandleResize {
   private readonly route = inject(ActivatedRoute);
 
-  query?: string;
-  category?: number;
-  city?: string;
   catSubcatList?: CatSubcat[];
+  filterPriceMinimum?: number;
+  filterPriceMaximum?: number;
+  searchedAnuncios?: SearchAnuncio[];
+  
+  query: string = '';
+  category: string = '';
+  city: string = '';
 
   searchService: SearchService = inject(SearchService);
 
@@ -223,5 +232,26 @@ export class SearchComponent extends HandleResize {
     ];
 
     super.ngOnInit();
+
+    this.route.queryParams.subscribe((params) => {
+      this.query = params['query'] ?? '';
+      this.category = params['category'] ?? '';
+      this.city = params['city'] ?? '';
+      this.searchService.searchAnuncios(this.query, this.category, this.city)
+        .subscribe((value) => {
+          this.searchedAnuncios = value;
+        });
+        
+    });
+
+  }
+
+  filtrarPreco(min?: number, max?: number) {
+    if (this.searchedAnuncios && min && min >= 0 && max && max >= 0) {
+      const cloneAnuncios = [...this.searchedAnuncios];
+
+      this.searchedAnuncios = cloneAnuncios.filter((anuncio) => anuncio.preco >= min && anuncio.preco <= max);
+    }
+    
   }
 }
