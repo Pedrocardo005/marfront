@@ -12,6 +12,6 @@ export class CatSubcatService {
   constructor(private http: HttpClient) {}
 
   getCatSubcat() {
-    return this.http.get<CatSubcat[]>(`${this.apiUrl}/api/cat-subcat/`);
+    return this.http.get<CatSubcat[]>(`${this.apiUrl}cat-subcat/`);
   }
 }

@@ -13,7 +13,7 @@ export class ThreeFirstAnunciosService {
 
   getThreeFirstAnuncios() {
     return this.http.get<ThreeFirstAnuncio[]>(
-      `${this.apiUrl}/api/anuncios/primeiros`
+      `${this.apiUrl}anuncios/primeiros`
     );
   }
 }
