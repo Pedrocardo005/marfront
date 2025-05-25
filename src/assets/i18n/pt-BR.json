@@ -171,6 +171,17 @@
                 "SEARCH": {
                     "LEFT-BAR": {
                         "LINK": "Todas as categorias"
+                    },
+                    "MAIN-BAR": {
+                        "HEADER-BAR": {
+                            "TITLE": "Visão geral das ofertas",
+                            "CREATE-AD": "Criar anúncio",
+                            "SELECT": {
+                                "BEST": "Melhor primeiro",
+                                "NEWEST": "Mais recente primeiro",
+                                "CHEAP": "Barato primeiro"
+                            }
+                        }
                     }
                 },
                 "FILTERS": {

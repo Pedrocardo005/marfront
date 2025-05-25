@@ -1,20 +1,35 @@
 import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { RightDrawerComponent } from '@features/searchs/components/right-drawer/right-drawer.component';
+import { SearchAnuncio } from '@features/searchs/models/SearchAnuncio.model';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ButtonModule } from 'primeng/button';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { SelectModule } from 'primeng/select';
 import { CatSubcat } from 'src/app/features/home/models/CatSubcat.model';
 import { HandleResize } from 'src/app/shared/abstracts/components/HandleResize';
 import { SearchService } from '../../../../core/services/search.service';
 import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 import { CategoryCarouselComponent } from '../../../home/components/category-carousel/category-carousel.component';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { FormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
-import { RightDrawerComponent } from '@features/searchs/components/right-drawer/right-drawer.component';
-import { SearchAnuncio } from '@features/searchs/models/SearchAnuncio.model';
+
+interface Options {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-search',
-  imports: [SearchBarComponent, TranslocoModule, CategoryCarouselComponent, InputNumberModule, FormsModule, ButtonModule, RightDrawerComponent],
+  imports: [
+    SearchBarComponent,
+    TranslocoModule,
+    CategoryCarouselComponent,
+    InputNumberModule,
+    FormsModule,
+    ButtonModule,
+    RightDrawerComponent,
+    SelectModule,
+  ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
 })
@@ -25,10 +40,12 @@ export class SearchComponent extends HandleResize {
   filterPriceMinimum?: number;
   filterPriceMaximum?: number;
   searchedAnuncios?: SearchAnuncio[];
-  
+  options?: Options[];
+
   query: string = '';
   category: string = '';
   city: string = '';
+  viewQueue: boolean = false;
 
   searchService: SearchService = inject(SearchService);
 
@@ -237,21 +254,40 @@ export class SearchComponent extends HandleResize {
       this.query = params['query'] ?? '';
       this.category = params['category'] ?? '';
       this.city = params['city'] ?? '';
-      this.searchService.searchAnuncios(this.query, this.category, this.city)
+      this.searchService
+        .searchAnuncios(this.query, this.category, this.city)
         .subscribe((value) => {
           this.searchedAnuncios = value;
         });
-        
     });
 
+    this.options = [
+      {
+        name: 'FEATURES.SEARCHS.PAGES.SEARCH.MAIN-BAR.HEADER-BAR.SELECT.BEST',
+        code: 'BF',
+      },
+      {
+        name: 'FEATURES.SEARCHS.PAGES.SEARCH.MAIN-BAR.HEADER-BAR.SELECT.NEWEST',
+        code: 'NF',
+      },
+      {
+        name: 'FEATURES.SEARCHS.PAGES.SEARCH.MAIN-BAR.HEADER-BAR.SELECT.CHEAP',
+        code: 'CF',
+      },
+    ];
   }
 
   filtrarPreco(min?: number, max?: number) {
     if (this.searchedAnuncios && min && min >= 0 && max && max >= 0) {
       const cloneAnuncios = [...this.searchedAnuncios];
 
-      this.searchedAnuncios = cloneAnuncios.filter((anuncio) => anuncio.preco >= min && anuncio.preco <= max);
+      this.searchedAnuncios = cloneAnuncios.filter(
+        (anuncio) => anuncio.preco >= min && anuncio.preco <= max
+      );
     }
-    
+  }
+
+  changeViewQueue(value: boolean) {
+    this.viewQueue = value;
   }
 }
