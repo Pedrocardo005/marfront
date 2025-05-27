@@ -4,4 +4,5 @@ export interface SearchAnuncio {
   preco: number;
   descricao: string;
   condicao: string;
+  url_foto: string;
 }

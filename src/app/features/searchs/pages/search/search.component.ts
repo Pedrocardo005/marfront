@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { RightDrawerComponent } from '@features/searchs/components/right-drawer/right-drawer.component';
+import { StackOffersComponent } from '@features/searchs/components/stack-offers/stack-offers.component';
 import { SearchAnuncio } from '@features/searchs/models/SearchAnuncio.model';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ButtonModule } from 'primeng/button';
@@ -29,6 +30,7 @@ interface Options {
     ButtonModule,
     RightDrawerComponent,
     SelectModule,
+    StackOffersComponent,
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',

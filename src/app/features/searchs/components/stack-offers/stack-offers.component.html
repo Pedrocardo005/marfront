@@ -1,0 +1,20 @@
+<div class="bg-white rounded-xl flex justify-between items-center">
+  <div class="img w-[160px] h-[160px] overflow-hidden">
+    <img
+      [src]="oferta?.url_foto"
+      class="w-full h-full object-cover rounded-l-lg"
+    />
+  </div>
+  <div>
+    <a href="#" class="text-blue-500 font-medium hover:underline">
+      {{ oferta?.titulo }}
+    </a>
+    <p>
+      {{ oferta?.descricao }}
+    </p>
+  </div>
+  <span class="text-green-500"> R$ {{ oferta?.preco }} </span>
+  <div>
+    <span class="bg-blue-600 text-white px-2.5 py-2"> TOP </span>
+  </div>
+</div>
