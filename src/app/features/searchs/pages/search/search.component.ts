@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { QueueOffersComponent } from '@features/searchs/components/queue-offers/queue-offers.component';
 import { RightDrawerComponent } from '@features/searchs/components/right-drawer/right-drawer.component';
 import { StackOffersComponent } from '@features/searchs/components/stack-offers/stack-offers.component';
 import { SearchAnuncio } from '@features/searchs/models/SearchAnuncio.model';
@@ -31,6 +32,7 @@ interface Options {
     RightDrawerComponent,
     SelectModule,
     StackOffersComponent,
+    QueueOffersComponent,
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',

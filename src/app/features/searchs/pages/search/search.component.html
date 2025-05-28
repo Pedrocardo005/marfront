@@ -104,7 +104,13 @@
           </div>
         </div>
       </div>
-      @if (viewQueue) {} @else {
+      @if (viewQueue) {
+      <div class="mt-5 grid grid-cols-3">
+        @for (anuncio of searchedAnuncios; track $index) {
+        <app-queue-offers [anuncio]="anuncio"></app-queue-offers>
+        }
+      </div>
+      } @else {
       <div class="body mt-5 flex flex-col gap-5">
         @for (item of searchedAnuncios; track $index) {
         <app-stack-offers [oferta]="item"></app-stack-offers>
