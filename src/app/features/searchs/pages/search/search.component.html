@@ -105,7 +105,7 @@
         </div>
       </div>
       @if (viewQueue) {
-      <div class="mt-5 grid grid-cols-3">
+      <div class="mt-5 grid grid-cols-3 gap-5">
         @for (anuncio of searchedAnuncios; track $index) {
         <app-queue-offers [anuncio]="anuncio"></app-queue-offers>
         }
