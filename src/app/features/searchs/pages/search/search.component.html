@@ -117,6 +117,10 @@
         }
       </div>
 
+      } @if (!searchedAnuncios || searchedAnuncios.length === 0) {
+      <p>
+        {{ "FEATURES.SEARCHS.PAGES.SEARCH.MAIN-BAR.NOT-FOUND" | transloco }}
+      </p>
       }
     </div>
   </div>

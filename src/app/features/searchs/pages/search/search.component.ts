@@ -258,11 +258,11 @@ export class SearchComponent extends HandleResize {
       this.query = params['query'] ?? '';
       this.category = params['category'] ?? '';
       this.city = params['city'] ?? '';
-      this.searchService
+      /* this.searchService
         .searchAnuncios(this.query, this.category, this.city)
         .subscribe((value) => {
           this.searchedAnuncios = value;
-        });
+        }); */
     });
 
     this.options = [
