@@ -258,11 +258,11 @@ export class SearchComponent extends HandleResize {
       this.query = params['query'] ?? '';
       this.category = params['category'] ?? '';
       this.city = params['city'] ?? '';
-      /* this.searchService
+      this.searchService
         .searchAnuncios(this.query, this.category, this.city)
         .subscribe((value) => {
           this.searchedAnuncios = value;
-        }); */
+        });
     });
 
     this.options = [
@@ -279,6 +279,8 @@ export class SearchComponent extends HandleResize {
         code: 'CF',
       },
     ];
+
+    this.viewQueue = JSON.parse(localStorage.getItem('viewQueue') || '');
   }
 
   filtrarPreco(min?: number, max?: number) {
@@ -293,5 +295,6 @@ export class SearchComponent extends HandleResize {
 
   changeViewQueue(value: boolean) {
     this.viewQueue = value;
+    localStorage.setItem('viewQueue', String(this.viewQueue));
   }
 }
