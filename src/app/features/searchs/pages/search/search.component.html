@@ -3,7 +3,9 @@
   @if (isMobile && catSubcatList) {
   <app-right-drawer [filtrarPreco]="filtrarPreco"></app-right-drawer>
   <app-category-carousel [categories]="catSubcatList" />
-  } @else {
+  @for (anuncio of searchedAnuncios; track $index) {
+  <app-mobile-offers [anuncio]="anuncio"></app-mobile-offers>
+  } } @else {
   <div class="mx-auto lg:max-w-5xl lg:flex lg:gap-5">
     <div class="left-bar w-2xs text-blue-500">
       <div class="bg-white rounded-lg p-5 lg:mx-auto lg:max-w-5xl lg:gap-5">

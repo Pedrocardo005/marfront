@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { MobileOffersComponent } from '@features/searchs/components/mobile-offers/mobile-offers.component';
 import { QueueOffersComponent } from '@features/searchs/components/queue-offers/queue-offers.component';
 import { RightDrawerComponent } from '@features/searchs/components/right-drawer/right-drawer.component';
 import { StackOffersComponent } from '@features/searchs/components/stack-offers/stack-offers.component';
@@ -33,6 +34,7 @@ interface Options {
     SelectModule,
     StackOffersComponent,
     QueueOffersComponent,
+    MobileOffersComponent,
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',

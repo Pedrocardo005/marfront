@@ -1,0 +1,15 @@
+<div class="bg-white flex py-2.5 relative">
+  <span class="bg-blue-600 text-white px-2.5 py-1 absolute left-0"> TOP </span>
+  <div class="img w-[160px] h-[160px] overflow-hidden">
+    <img [src]="anuncio.url_foto" class="w-full h-full object-cover" />
+  </div>
+  <div class="texts flex flex-col items-center bg-amber-200 grow">
+    <a href="#" class="text-blue-500 font-medium hover:underline">
+      {{ anuncio.titulo }}
+    </a>
+    <p>
+      {{ anuncio.descricao }}
+    </p>
+    <span class="text-green-500"> R$ {{ anuncio.preco }} </span>
+  </div>
+</div>
