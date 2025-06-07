@@ -13,8 +13,8 @@ import { SelectModule } from 'primeng/select';
 import { CatSubcat } from 'src/app/features/home/models/CatSubcat.model';
 import { HandleResize } from 'src/app/shared/abstracts/components/HandleResize';
 import { SearchService } from '../../../../core/services/search.service';
+import { CategoryCarouselComponent } from '../../../../shared/components/category-carousel/category-carousel.component';
 import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
-import { CategoryCarouselComponent } from '../../../home/components/category-carousel/category-carousel.component';
 
 interface Options {
   name: string;
