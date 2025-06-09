@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
 import { SelectChangeEvent, SelectModule } from 'primeng/select';
 import { TranslateService } from '../../services/translate.service';
@@ -15,7 +16,7 @@ interface Language {
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [TranslocoModule, SelectModule, FormsModule],
+  imports: [TranslocoModule, SelectModule, FormsModule, RouterLink],
 })
 export class FooterComponent implements OnInit {
   currentLanguage: Language | undefined;

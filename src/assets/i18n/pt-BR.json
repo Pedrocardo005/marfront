@@ -12,6 +12,7 @@
                 "INFORMATION": {
                     "TITLE": "Informação",
                     "LINKS": {
+                        "ZERO": "Ajuda e Suporte",
                         "ONE": "Dicas de Segurança",
                         "TWO": "Política de Privacidade",
                         "THREE": "Configuração de Privacidade",

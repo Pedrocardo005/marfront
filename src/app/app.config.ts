@@ -2,13 +2,14 @@ import { provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter, Routes } from '@angular/router';
+import { SupportComponent } from '@features/support/pages/support/support.component';
 import { provideTransloco } from '@jsverse/transloco';
-import MyPreset from './mypreset';
 import { providePrimeNG } from 'primeng/config';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { RegisterComponent } from './features/auth/pages/register/register.component';
 import { HomeComponent } from './features/home/pages/home/home.component';
 import { SearchComponent } from './features/searchs/pages/search/search.component';
+import MyPreset from './mypreset';
 import { TranslocoHttpLoader } from './transloco-loader';
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'listsearch',
     component: SearchComponent,
+  },
+  {
+    path: 'support',
+    component: SupportComponent,
   },
 ];
 
