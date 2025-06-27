@@ -201,6 +201,17 @@
                     "HEADER": "Filtrar itens"
                 }
             }
+        },
+        "SUPPORT": {
+            "MAIN-BAR": {
+                "TITLE": "Apoiar",
+                "TEXT": "Entre em contato conosco se tiver alguma dúvida ou problema"
+            },
+            "LEFT-BAR": {
+                "HEADER": {
+                    "TITLE": "Contate-nos"
+                }
+            }
         }
     }
 }
