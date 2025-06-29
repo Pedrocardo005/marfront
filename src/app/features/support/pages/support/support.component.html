@@ -8,6 +8,71 @@
       <p class="p-5">
         {{ "FEATURES.SUPPORT.MAIN-BAR.TEXT" | transloco }}
       </p>
+      <div class="form ml-5">
+        <div class="input-group">
+          <label>
+            <strong>
+              {{ "FEATURES.SUPPORT.MAIN-BAR.SELECT.PLACEHOLDER" | transloco }}
+            </strong>
+          </label>
+          <p-select
+            [options]="options"
+            [(ngModel)]="optionSelected"
+            optionLabel="text"
+          >
+            <ng-template #selectedItem let-selectedOption>
+              <div class="flex items-center gap-2">
+                <div>{{ selectedOption.text | transloco }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-option #item>
+              <div class="flex items-center gap-2">
+                <div>{{ option.text | transloco }}</div>
+              </div>
+            </ng-template>
+          </p-select>
+        </div>
+        <div class="input-group">
+          <label>
+            <strong>
+              {{ "FEATURES.SUPPORT.MAIN-BAR.EMAIL-INPUT.LABEL" | transloco }}
+            </strong>
+          </label>
+          <input
+            pInputText
+            type="email"
+            ngModel
+            email="true"
+            [placeholder]="
+              'FEATURES.SUPPORT.MAIN-BAR.EMAIL-INPUT.PLACEHOLDER' | transloco
+            "
+          />
+        </div>
+        <div class="input-group">
+          <label>
+            <strong>
+              {{ "FEATURES.SUPPORT.MAIN-BAR.TEXTAREA.LABEL" | transloco }}
+            </strong>
+          </label>
+          <textarea
+            rows="5"
+            cols="30"
+            pTextarea
+            [(ngModel)]="text"
+            [placeholder]="
+              'FEATURES.SUPPORT.MAIN-BAR.TEXTAREA.PLACEHOLDER' | transloco
+            "
+          ></textarea>
+        </div>
+        <div class="input-group">
+          <p-button
+            severity="success"
+            [label]="
+              'FEATURES.SUPPORT.MAIN-BAR.SUBMIT-BUTTON.LABEL' | transloco
+            "
+          ></p-button>
+        </div>
+      </div>
     </div>
     <div
       class="left-bar bg-gray-50 lg:w-1/3 border-0 border-l border-solid border-gray-300 rounded-md shadow"

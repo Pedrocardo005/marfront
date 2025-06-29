@@ -205,7 +205,27 @@
         "SUPPORT": {
             "MAIN-BAR": {
                 "TITLE": "Apoiar",
-                "TEXT": "Entre em contato conosco se tiver alguma dúvida ou problema"
+                "TEXT": "Entre em contato conosco se tiver alguma dúvida ou problema",
+                "SELECT": {
+                    "PLACEHOLDER": "A respeito de",
+                    "OPTIONS": {
+                        "ONE-TEXT": "Pergunta geral",
+                        "TWO-TEXT": "Pergunta sobre o anúncio principal",
+                        "THREE-TEXT": "Problemas gerais",
+                        "FOUR-TEXT": "Problema de pagamento"
+                    }
+                },
+                "EMAIL-INPUT": {
+                    "LABEL": "endereço de e-mail",
+                    "PLACEHOLDER": "endereço de e-mail"
+                },
+                "TEXTAREA": {
+                    "LABEL": "Mensagem",
+                    "PLACEHOLDER": "Digite a mensagem"
+                },
+                "SUBMIT-BUTTON": {
+                    "LABEL": "Enviar mensagem"
+                }
             },
             "LEFT-BAR": {
                 "HEADER": {
