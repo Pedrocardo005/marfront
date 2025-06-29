@@ -8,9 +8,9 @@
       <p class="p-5">
         {{ "FEATURES.SUPPORT.MAIN-BAR.TEXT" | transloco }}
       </p>
-      <div class="form ml-5">
-        <div class="input-group">
-          <label>
+      <div class="form ml-5 flex flex-col gap-5">
+        <div class="input-group flex flex-col lg:flex-row gap-2">
+          <label class="lg:w-1/4 text-right">
             <strong>
               {{ "FEATURES.SUPPORT.MAIN-BAR.SELECT.PLACEHOLDER" | transloco }}
             </strong>
@@ -32,8 +32,8 @@
             </ng-template>
           </p-select>
         </div>
-        <div class="input-group">
-          <label>
+        <div class="input-group flex flex-col lg:flex-row gap-2">
+          <label class="lg:w-1/4 text-right">
             <strong>
               {{ "FEATURES.SUPPORT.MAIN-BAR.EMAIL-INPUT.LABEL" | transloco }}
             </strong>
@@ -48,8 +48,8 @@
             "
           />
         </div>
-        <div class="input-group">
-          <label>
+        <div class="input-group flex flex-col lg:flex-row gap-2">
+          <label class="lg:w-1/4 text-right">
             <strong>
               {{ "FEATURES.SUPPORT.MAIN-BAR.TEXTAREA.LABEL" | transloco }}
             </strong>
@@ -64,7 +64,7 @@
             "
           ></textarea>
         </div>
-        <div class="input-group">
+        <div class="input-group flex justify-center mb-5">
           <p-button
             severity="success"
             [label]="
