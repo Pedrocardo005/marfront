@@ -6,10 +6,18 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
+import { ContactItemComponent } from '../../components/contact-item/contact-item.component';
 
 interface Option {
   text: string;
   value: number;
+}
+
+interface ContactItem {
+  text: string;
+  urlImage: string;
+  urlAlt: string;
+  urlSkip: string;
 }
 
 @Component({
@@ -23,12 +31,14 @@ interface Option {
     InputTextModule,
     TextareaModule,
     ButtonModule,
+    ContactItemComponent,
   ],
   templateUrl: './support.component.html',
   styleUrl: './support.component.css',
 })
 export class SupportComponent implements OnInit {
   options: Option[] | undefined;
+  contactItems: ContactItem[] | undefined;
 
   optionSelected: Option | undefined;
 
@@ -57,5 +67,28 @@ export class SupportComponent implements OnInit {
     ];
 
     this.optionSelected = this.options[0];
+
+    this.contactItems = [
+      {
+        text: 'Whatsapp',
+        urlImage:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png',
+        urlAlt: 'Figura whatsapp',
+        urlSkip: 'http://www.whatsapp.com',
+      },
+      {
+        text: 'Facebook',
+        urlImage:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkLcBrDHgOj0B_qrNTygXlcjOPlRfGOBqZrw&s',
+        urlAlt: 'Figura facebook',
+        urlSkip: 'http://www.facebook.com',
+      },
+      {
+        text: 'Skype',
+        urlImage: 'https://cdn-icons-png.flaticon.com/256/3128/3128338.png',
+        urlAlt: 'Figura skype',
+        urlSkip: 'http://www.skype.com',
+      },
+    ];
   }
 }

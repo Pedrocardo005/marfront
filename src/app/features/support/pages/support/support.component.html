@@ -3,7 +3,11 @@
   <div class="lg:flex lg:justify-center lg:w-5xl lg:mx-auto">
     <div class="main-bar bg-white lg:w-2/3 rounded-md shadow">
       <div class="header p-5 border-0 border-b border-solid border-gray-300">
-        <h5>{{ "FEATURES.SUPPORT.MAIN-BAR.TITLE" | transloco }}</h5>
+        <h5>
+          <strong>
+            {{ "FEATURES.SUPPORT.MAIN-BAR.TITLE" | transloco }}
+          </strong>
+        </h5>
       </div>
       <p class="p-5">
         {{ "FEATURES.SUPPORT.MAIN-BAR.TEXT" | transloco }}
@@ -77,8 +81,25 @@
     <div
       class="left-bar bg-gray-50 lg:w-1/3 border-0 border-l border-solid border-gray-300 rounded-md shadow"
     >
-      <div class="header p-5">
-        <h5>{{ "FEATURES.SUPPORT.LEFT-BAR.HEADER.TITLE" | transloco }}</h5>
+      <div class="header pl-5 pt-5">
+        <h5>
+          <strong>
+            {{ "FEATURES.SUPPORT.LEFT-BAR.HEADER.TITLE" | transloco }}
+          </strong>
+        </h5>
+      </div>
+      <p class="p-5">
+        {{ "FEATURES.SUPPORT.LEFT-BAR.HEADER.TITLE-SUB" | transloco }}
+      </p>
+      <div class="contact-items flex flex-col gap-3 p-5">
+        @for (contactItem of contactItems; track $index) {
+        <app-contact-item
+          [text]="contactItem.text"
+          [urlAlt]="contactItem.urlAlt"
+          [urlSkip]="contactItem.urlSkip"
+          [urlImage]="contactItem.urlImage"
+        ></app-contact-item>
+        }
       </div>
     </div>
   </div>

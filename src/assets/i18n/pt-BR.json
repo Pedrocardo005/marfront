@@ -229,7 +229,13 @@
             },
             "LEFT-BAR": {
                 "HEADER": {
-                    "TITLE": "Contate-nos"
+                    "TITLE": "Contate-nos",
+                    "TITLE-SUB": "Para nos contatar de outras formas, oferecemos-lhe as seguintes opções:"
+                },
+                "CONTACT-ITEMS": {
+                    "WHATSAPP-ALT": "Figura whatsapp",
+                    "FACEBOOK-ALT": "Figura facebook",
+                    "SKYPE-ALT": "Figura skype"
                 }
             }
         }
