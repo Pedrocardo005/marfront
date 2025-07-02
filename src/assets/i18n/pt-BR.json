@@ -225,9 +225,13 @@
                 },
                 "SUBMIT-BUTTON": {
                     "LABEL": "Enviar mensagem"
+                },
+                "BOTTOM": {
+                    "HEADER": "Perguntas e respostas úteis",
+                    "TEXT": "Talvez você já encontre sua resposta em nossas Perguntas Frequentes."
                 }
             },
-            "LEFT-BAR": {
+            "RIGHT-BAR": {
                 "HEADER": {
                     "TITLE": "Contate-nos",
                     "TITLE-SUB": "Para nos contatar de outras formas, oferecemos-lhe as seguintes opções:"
