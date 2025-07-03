@@ -91,7 +91,14 @@
           </p>
         </div>
         <div class="body">
-          <!-- #TODO <app-question-answer></app-question-answer> -->
+          @for (question of questions; track $index) {
+          <p-accordion [value]="['0']" [multiple]="true">
+            <app-question-answer
+              [text]="question.text"
+              [title]="question.title"
+            ></app-question-answer>
+          </p-accordion>
+          }
         </div>
       </div>
     </div>

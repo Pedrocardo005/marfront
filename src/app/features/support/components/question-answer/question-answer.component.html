@@ -1,1 +1,10 @@
-<p>question-answer works!</p>
+<p-accordion-panel value="1">
+  <p-accordion-header>
+    {{ title | transloco }}
+  </p-accordion-header>
+  <p-accordion-content>
+    <p class="m-0">
+      {{ text | transloco }}
+    </p>
+  </p-accordion-content>
+</p-accordion-panel>

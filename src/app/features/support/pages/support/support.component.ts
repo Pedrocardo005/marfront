@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QuestionAnswerComponent } from '@features/support/components/question-answer/question-answer.component';
 import { TranslocoModule } from '@jsverse/transloco';
 import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
+import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
@@ -20,6 +22,11 @@ interface ContactItem {
   urlSkip: string;
 }
 
+interface Question {
+  title: string;
+  text: string;
+}
+
 @Component({
   selector: 'app-support',
   imports: [
@@ -32,6 +39,8 @@ interface ContactItem {
     TextareaModule,
     ButtonModule,
     ContactItemComponent,
+    QuestionAnswerComponent,
+    AccordionModule,
   ],
   templateUrl: './support.component.html',
   styleUrl: './support.component.css',
@@ -39,6 +48,7 @@ interface ContactItem {
 export class SupportComponent implements OnInit {
   options: Option[] | undefined;
   contactItems: ContactItem[] | undefined;
+  questions: Question[] | undefined;
 
   optionSelected: Option | undefined;
 
@@ -88,6 +98,21 @@ export class SupportComponent implements OnInit {
         urlImage: 'https://cdn-icons-png.flaticon.com/256/3128/3128338.png',
         urlAlt: 'Figura skype',
         urlSkip: 'http://www.skype.com',
+      },
+    ];
+
+    this.questions = [
+      {
+        title: 'FEATURES.SUPPORT.MAIN-BAR.BOTTOM.QUESTION-ONE.TITLE',
+        text: 'FEATURES.SUPPORT.MAIN-BAR.BOTTOM.QUESTION-ONE.TEXT',
+      },
+      {
+        title: 'FEATURES.SUPPORT.MAIN-BAR.BOTTOM.QUESTION-TWO.TITLE',
+        text: 'FEATURES.SUPPORT.MAIN-BAR.BOTTOM.QUESTION-TWO.TEXT',
+      },
+      {
+        title: 'FEATURES.SUPPORT.MAIN-BAR.BOTTOM.QUESTION-THREE.TITLE',
+        text: 'FEATURES.SUPPORT.MAIN-BAR.BOTTOM.QUESTION-THREE.TEXT',
       },
     ];
   }

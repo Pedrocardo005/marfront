@@ -228,7 +228,19 @@
                 },
                 "BOTTOM": {
                     "HEADER": "Perguntas e respostas úteis",
-                    "TEXT": "Talvez você já encontre sua resposta em nossas Perguntas Frequentes."
+                    "TEXT": "Talvez você já encontre sua resposta em nossas Perguntas Frequentes.",
+                    "QUESTION-ONE": {
+                        "TITLE": "A inscrição é gratuita?",
+                        "TEXT": "Sim, o registro no sistema é totalmente gratuito."
+                    },
+                    "QUESTION-TWO": {
+                        "TITLE": "Criar anúncios é gratuito?",
+                        "TEXT": "Sim, você pode criar seus anúncios gratuitamente."
+                    },
+                    "QUESTION-THREE": {
+                        "TITLE": "Como posso excluir minha conta?",
+                        "TEXT": "Para fazer isso, acesse o menu do usuário e, em seguida, as configurações do perfil. Na parte inferior, você encontrará 'Excluir conta'. Esteja ciente de que todas as informações, incluindo anúncios atuais, serão excluídas."
+                    }
                 }
             },
             "RIGHT-BAR": {
