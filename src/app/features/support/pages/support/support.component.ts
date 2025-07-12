@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionAnswerComponent } from '@features/support/components/question-answer/question-answer.component';
-import { TranslocoModule } from '@jsverse/transloco';
+import { SupportMessage } from '@features/support/models/SupportMessage.models';
+import { SupportService } from '@features/support/services/support.service';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
 import { AccordionModule } from 'primeng/accordion';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
+import { Toast } from 'primeng/toast';
 import { ContactItemComponent } from '../../components/contact-item/contact-item.component';
 
 interface Option {
@@ -41,9 +45,11 @@ interface Question {
     ContactItemComponent,
     QuestionAnswerComponent,
     AccordionModule,
+    Toast,
   ],
   templateUrl: './support.component.html',
   styleUrl: './support.component.css',
+  providers: [MessageService],
 })
 export class SupportComponent implements OnInit {
   options: Option[] | undefined;
@@ -55,6 +61,14 @@ export class SupportComponent implements OnInit {
   email: string | undefined;
 
   text: string | undefined;
+
+  supportMessage: SupportMessage | undefined;
+
+  constructor(
+    private supportService: SupportService,
+    private translocoService: TranslocoService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit() {
     this.options = [
@@ -115,5 +129,37 @@ export class SupportComponent implements OnInit {
         text: 'FEATURES.SUPPORT.MAIN-BAR.BOTTOM.QUESTION-THREE.TEXT',
       },
     ];
+  }
+
+  sendSupportMessage() {
+    const self = this;
+    this.supportMessage = {
+      assunto: this.translocoService.translateObject(
+        this.optionSelected?.text || ''
+      ),
+      email: this.email || '',
+      mensagem: this.text || '',
+    };
+
+    this.supportService
+      .sendSupportMessage(this.supportMessage)
+      .pipe()
+      .subscribe({
+        next: () => {
+          self.messageService.add({
+            severity: 'success',
+            summary: 'Sucesso',
+            detail: 'Mensagem enviada com sucesso!',
+          });
+        },
+        error: (err) => {
+          self.messageService.add({
+            severity: 'error',
+            summary: 'Erro',
+            detail: `Erro ao enviar sua mensagem.
+              \n ${JSON.stringify(err.error)}`,
+          });
+        },
+      });
   }
 }

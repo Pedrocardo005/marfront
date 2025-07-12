@@ -1,5 +1,6 @@
 <main class="bg-gray-100 pb-10">
   <app-search-bar></app-search-bar>
+  <p-toast></p-toast>
   <div class="lg:flex lg:justify-center lg:w-5xl lg:mx-auto">
     <div class="main-bar bg-white lg:w-2/3 rounded-md shadow">
       <div class="header p-5 border-0 border-b border-solid border-gray-300">
@@ -47,7 +48,7 @@
           <input
             pInputText
             type="email"
-            ngModel
+            [(ngModel)]="email"
             email="true"
             [placeholder]="
               'FEATURES.SUPPORT.MAIN-BAR.EMAIL-INPUT.PLACEHOLDER' | transloco
@@ -76,6 +77,7 @@
             [label]="
               'FEATURES.SUPPORT.MAIN-BAR.SUBMIT-BUTTON.LABEL' | transloco
             "
+            (onClick)="sendSupportMessage()"
           ></p-button>
         </div>
       </div>
