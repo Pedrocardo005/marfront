@@ -62,6 +62,27 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "vercel": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.development.ts",
+                  "with": "src/environments/environment.vercel.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
