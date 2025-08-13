@@ -2,33 +2,20 @@
   <div class="card">
     <p-menubar>
       <ng-template #start>
-        <img
-          src="https://www.expoprint.com.br/public/imagens/noticias/efilogo600(43).jpg"
-          alt="Logo"
-          width="100"
-          routerLink="/"
-        />
+        <img src="https://www.expoprint.com.br/public/imagens/noticias/efilogo600(43).jpg" alt="Logo" width="100"
+          routerLink="/" />
       </ng-template>
       <ng-template #end>
         <div class="flex gap-5">
-          <input
-            type="text"
-            [placeholder]="'CORE.LAYOUT.HEADER.SEARCH' | transloco"
-            class="lg:hidden"
-            pInputText
-          />
+          <input type="text" [placeholder]="'CORE.LAYOUT.HEADER.SEARCH' | transloco" class="lg:hidden" pInputText />
           <p-menu #menu [model]="items" [popup]="true">
             <ng-template #item let-item>
-              <a pRipple class="flex items-center p-menu-item-link">
+              <a pRipple [routerLink]="item.url" class="flex items-center p-menu-item-link">
                 <span class="ml-2">{{ item.label | transloco }}</span>
               </a>
             </ng-template>
           </p-menu>
-          <span
-            (click)="menu.toggle($event)"
-            class="pi pi-user"
-            style="font-size: 2.5rem"
-          ></span>
+          <span (click)="menu.toggle($event)" class="pi pi-user" style="font-size: 2.5rem"></span>
         </div>
       </ng-template>
     </p-menubar>

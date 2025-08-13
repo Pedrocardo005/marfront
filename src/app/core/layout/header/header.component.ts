@@ -29,9 +29,11 @@ export class HeaderComponent implements OnInit {
         items: [
           {
             label: 'CORE.LAYOUT.HEADER.DISCONNECT.LOGIN',
+            url: 'login'
           },
           {
             label: 'CORE.LAYOUT.HEADER.DISCONNECT.REGISTER',
+            url: 'register'
           },
         ],
       },

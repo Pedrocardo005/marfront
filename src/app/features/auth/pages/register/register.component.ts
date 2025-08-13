@@ -1,13 +1,16 @@
-import { NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   FormControl,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { UserService } from 'src/app/core/services/user.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
+import { TranslocoPipe } from '@jsverse/transloco';
+import { InputTextModule } from 'primeng/inputtext';
 
 interface RegisterForm {
   username?: FormControl<string>;
@@ -16,10 +19,10 @@ interface RegisterForm {
 }
 
 @Component({
-    selector: 'app-register',
-    templateUrl: './register.component.html',
-    styleUrls: ['./register.component.css'],
-    imports: [ReactiveFormsModule, NgClass, NgIf]
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
+  imports: [ReactiveFormsModule, SearchBarComponent, TranslocoPipe, RouterLink, InputTextModule, FormsModule]
 })
 export class RegisterComponent {
   focus = false;
@@ -27,57 +30,23 @@ export class RegisterComponent {
   focus2 = false;
   emailValid = true;
 
-  registerForm: FormGroup<RegisterForm>;
-
   success = false;
   error = false;
+
+  formEmail: string | undefined;
 
   constructor(
     private readonly userService: UserService,
     private route: Router
   ) {
-    this.registerForm = new FormGroup<RegisterForm>({
-      email: new FormControl('', {
-        validators: [Validators.required, Validators.email],
-        nonNullable: true,
-      }),
-      password: new FormControl('', {
-        validators: [Validators.required],
-        nonNullable: true,
-      }),
-      username: new FormControl(),
-    });
   }
 
-  submitForm() {
-    if (this.registerForm.valid) {
-      const observable = this.userService.register(
-        this.registerForm.value as {
-          email: string;
-          username?: string;
-          password: string;
-        }
-      );
-  
-      observable.pipe().subscribe({
-        next: () => {
-          this.success = true;
-          this.registerForm.reset();
-          setTimeout(() => {
-            this.route.navigate(['/login']);
-          }, 3000);
-        },
-        error: () => {
-          this.error = true;
-          setTimeout(() => {
-            this.error = false;
-          }, 3000);
-        },
-      });
-    }
-  }
+  // Função criada para saber se o valor é válido, usar para contruir o formulário
+  isValidEmail() {
+    const control = new FormControl(this.formEmail, Validators.email)
+    console.log('O que tem no erros', control.errors);
 
-  get email() {
-    return this.registerForm.get('email');
+    console.log('O que tem no valid', control.valid);
+    return '';
   }
 }
