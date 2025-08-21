@@ -8,12 +8,24 @@
           'FEATURES.AUTH.PAGES.REGISTER.SUB-TITLE-FIRST'|transloco}}</a>
         {{'FEATURES.AUTH.PAGES.REGISTER.SUB-TITLE-SECOND'|transloco}}</p>
     </div>
-    <div class="main-form bg-white flex flex-col items-center lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10">
-      <span>{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.TITLE'|transloco }}</span>
-      <div class="form">
-        <input pInputText class="w-full" name="email" type="email" email="true" [(ngModel)]="formEmail"
-          (blur)="isValidEmail()"
-          [placeholder]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.EMAIL-PLACEHOLDER' | transloco" />
+    <div class="main-form bg-white flex flex-col items-center lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10 gap-3">
+      <div class="flex flex-col">
+        <span>{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.TITLE'|transloco }}</span>
+        <div class="form">
+          <input pInputText class="w-full" name="email" type="email" email="true" [(ngModel)]="formEmail"
+            (blur)="isValidEmail()"
+            [placeholder]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.EMAIL-PLACEHOLDER' | transloco" />
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <span>{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-TITLE'|transloco}}</span>
+        <p-password [(ngModel)]="formPasword"
+          [promptLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-LABEL'|transloco"
+          [weakLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK'|transloco"
+          [mediumLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM'|transloco"
+          [strongLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-STRONG'|transloco" [mediumRegex]="mediumRegex"
+          [strongRegex]="strongRegex" />
+        <!-- #TODO Adicionar um listar características para ser uma senha mediana ou forte -->
       </div>
     </div>
   </section>

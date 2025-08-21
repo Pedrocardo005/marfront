@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {
   FormControl,
-  FormGroup,
   FormsModule,
   ReactiveFormsModule,
   Validators,
@@ -11,18 +10,13 @@ import { Router, RouterLink } from '@angular/router';
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
 import { TranslocoPipe } from '@jsverse/transloco';
 import { InputTextModule } from 'primeng/inputtext';
-
-interface RegisterForm {
-  username?: FormControl<string>;
-  email: FormControl<string>;
-  password: FormControl<string>;
-}
+import { PasswordModule } from 'primeng/password';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  imports: [ReactiveFormsModule, SearchBarComponent, TranslocoPipe, RouterLink, InputTextModule, FormsModule]
+  imports: [ReactiveFormsModule, SearchBarComponent, TranslocoPipe, RouterLink, InputTextModule, FormsModule, PasswordModule]
 })
 export class RegisterComponent {
   focus = false;
@@ -34,6 +28,11 @@ export class RegisterComponent {
   error = false;
 
   formEmail: string | undefined;
+  formPasword?: string;
+
+  // Regex about passwords
+  mediumRegex = "^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9]))).{6,}$";
+  strongRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$";
 
   constructor(
     private readonly userService: UserService,

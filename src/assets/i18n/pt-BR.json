@@ -44,7 +44,12 @@
                     "SUB-TITLE-SECOND": "ou crie uma conta no ecommerce",
                     "MAIN-FORM": {
                         "TITLE": "Registrar",
-                        "EMAIL-PLACEHOLDER": "endereço de e-mail"
+                        "EMAIL-PLACEHOLDER": "endereço de e-mail",
+                        "PASSWORD-TITLE": "Senha",
+                        "PASSWORD-LABEL": "Escolha uma senha",
+                        "PASSWORD-WEAK": "Muito simples",
+                        "PASSWORD-MEDIUM": "Complexidade mediana",
+                        "PASSWORD-STRONG": "Complexidade alta"
                     }
                 }
             }
