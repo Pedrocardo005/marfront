@@ -13,19 +13,24 @@
         <span>{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.TITLE'|transloco }}</span>
         <div class="form">
           <input pInputText class="w-full" name="email" type="email" email="true" [(ngModel)]="formEmail"
-            (blur)="isValidEmail()"
             [placeholder]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.EMAIL-PLACEHOLDER' | transloco" />
         </div>
       </div>
       <div class="flex flex-col">
         <span>{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-TITLE'|transloco}}</span>
-        <p-password [(ngModel)]="formPasword"
+        <p-password [(ngModel)]="formPassword"
           [promptLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-LABEL'|transloco"
           [weakLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK'|transloco"
           [mediumLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM'|transloco"
           [strongLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-STRONG'|transloco" [mediumRegex]="mediumRegex"
           [strongRegex]="strongRegex" />
         <!-- #TODO Adicionar um listar características para ser uma senha mediana ou forte -->
+      </div>
+      <div class="flex flex-col">
+        <span>{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.CONFIRM-PASSWORD-TITLE'|transloco}}</span>
+        <p-password [(ngModel)]="formConfirmPassword" [inputStyleClass]="getConfirmPasswordClasses()"
+          [weakLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK'|transloco"
+          [mediumLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM'|transloco" />
       </div>
     </div>
   </section>
