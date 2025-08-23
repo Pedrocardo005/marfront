@@ -11,13 +11,13 @@
     <div class="main-form bg-white flex flex-col items-center lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10 gap-3">
       <div class="flex flex-col">
         <span>{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.TITLE'|transloco }}</span>
-        <div class="form">
-          <input pInputText class="w-full" name="email" type="email" email="true" [(ngModel)]="formEmail"
-            [placeholder]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.EMAIL-PLACEHOLDER' | transloco" />
+        <div class="form flex flex-col">
+          <span class="font-bold">{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.EMAIL-TITLE'|transloco }}</span>
+          <input pInputText name="email" type="email" email="true" [(ngModel)]="formEmail" />
         </div>
       </div>
       <div class="flex flex-col">
-        <span>{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-TITLE'|transloco}}</span>
+        <span class="font-bold">{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-TITLE'|transloco}}</span>
         <p-password [(ngModel)]="formPassword"
           [promptLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-LABEL'|transloco"
           [weakLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK'|transloco"
@@ -27,10 +27,14 @@
         <!-- #TODO Adicionar um listar características para ser uma senha mediana ou forte -->
       </div>
       <div class="flex flex-col">
-        <span>{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.CONFIRM-PASSWORD-TITLE'|transloco}}</span>
+        <span class="font-bold">{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.CONFIRM-PASSWORD-TITLE'|transloco}}</span>
         <p-password [(ngModel)]="formConfirmPassword" [inputStyleClass]="getConfirmPasswordClasses()"
           [weakLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK'|transloco"
           [mediumLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM'|transloco" />
+      </div>
+      <div class="flex flex-col">
+        <span class="font-bold">{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.USERNAME-TITLE'|transloco }}</span>
+        <input pInputText type="text" name="username" />
       </div>
     </div>
   </section>
