@@ -13,7 +13,7 @@
       </p>
     </div>
     <div
-      class="main-form bg-white flex flex-col items-center lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10 gap-3"
+      class="main-form bg-white flex flex-col lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10 gap-3"
     >
       <div class="flex flex-col">
         <span>{{
@@ -52,6 +52,7 @@
           "
           [mediumRegex]="mediumRegex"
           [strongRegex]="strongRegex"
+          styleClass="p-password-full-width"
         />
         <!-- #TODO Adicionar um listar características para ser uma senha mediana ou forte -->
       </div>
@@ -69,6 +70,7 @@
           [mediumLabel]="
             'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM' | transloco
           "
+          styleClass="p-password-full-width"
         />
       </div>
       <div class="flex flex-col">
@@ -80,8 +82,8 @@
       <div class="flex flex-col">
         <!-- #TODO Adicionar tradução -->
         <span class="font-bold">Entrar como</span>
-        <div class="flex">
-          <div class="flex">
+        <div class="flex gap-5">
+          <div class="flex gap-3">
             <p-radiobutton
               inputId="opt1"
               name="login-with"
@@ -90,7 +92,7 @@
             ></p-radiobutton>
             <label for="opt1">Privado</label>
           </div>
-          <div class="flex">
+          <div class="flex gap-3">
             <p-radiobutton
               inputId="opt2"
               name="login-with"

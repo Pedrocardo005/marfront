@@ -2,3 +2,14 @@
 @import "tailwindcss";
 @plugin "tailwindcss-primeui";
 @import "primeicons/primeicons.css";
+
+/* Garante que o container do p-password se comporte como um bloco */
+.p-password-full-width {
+  display: block;
+  width: 100%;
+}
+
+/* O mais importante: força o input de texto DENTRO do componente a ocupar 100% */
+.p-password-full-width .p-inputtext {
+  width: 100%;
+}
