@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
+import { User } from "@core/models/User.model";
+import { UserService } from "@core/services/user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
 import { ButtonModule } from "primeng/button";
@@ -37,13 +39,16 @@ export class RegisterComponent {
   formEmail?: string;
   formPassword?: string;
   formConfirmPassword?: string;
-  formLoginWith?: string;
+  formUsername?: string;
+  formLoginWith?: number;
 
   // Regex about passwords
   mediumRegex =
     "^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9]))).{6,}$";
   strongRegex =
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$";
+
+  constructor(private userService: UserService) {}
 
   get samePassword(): boolean {
     return this.formPassword === this.formConfirmPassword;
@@ -57,11 +62,54 @@ export class RegisterComponent {
   }
 
   register() {
+    const accountToSend: User = {
+      email: this.formEmail,
+      password: this.formPassword,
+      username: this.formUsername,
+      account_type: this.formLoginWith,
+    };
+
     this.load = true;
-    // Simulate an asynchronous operation
-    setTimeout(() => {
-      this.load = false;
-      this.success = true;
-    }, 2000);
+
+    this.userService.register(accountToSend).subscribe({
+      next: () => {
+        this.success = true;
+        this.load = false;
+      },
+      error: (error: Error) => {
+        this.error = true;
+        this.load = false;
+        console.error("RegisterComponent.register(): ", error);
+      },
+    });
+  }
+
+  isEmail(text: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(text);
+  }
+
+  get validForm(): boolean {
+    if (!this.formEmail || !this.isEmail(this.formEmail)) {
+      return false;
+    }
+
+    if (!this.formPassword || !this.formConfirmPassword) {
+      return false;
+    }
+
+    if (!this.samePassword) {
+      return false;
+    }
+
+    if (!this.formUsername) {
+      return false;
+    }
+
+    if (!this.formLoginWith) {
+      return false;
+    }
+
+    return true;
   }
 }

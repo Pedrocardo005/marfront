@@ -1,5 +1,6 @@
 <main class="bg-gray-100 pb-10">
   <app-search-bar></app-search-bar>
+  <!-- #TODO: Implement success or error alert -->
   <section class="mx-auto lg:max-w-5xl">
     <div class="flex flex-col items-center">
       <h3>
@@ -75,7 +76,7 @@
         <span class="font-bold">{{
           "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.USERNAME-TITLE" | transloco
         }}</span>
-        <input pInputText type="text" name="username" />
+        <input pInputText type="text" name="username" [(ngModel)]="formUsername" />
       </div>
       <div class="flex flex-col gap-2">
         <span class="font-bold">{{ "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PROFILE-STYLE" | transloco }}</span>
@@ -84,7 +85,7 @@
             <p-radiobutton
               inputId="opt1"
               name="login-with"
-              value="private"
+              value="2"
               [(ngModel)]="formLoginWith"
             ></p-radiobutton>
             <label for="opt1">{{ "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PRIVATE-PROFILE" | transloco }}</label>
@@ -93,7 +94,7 @@
             <p-radiobutton
               inputId="opt2"
               name="login-with"
-              value="commercial"
+              value="1"
               [(ngModel)]="formLoginWith"
             ></p-radiobutton>
             <label for="opt2">{{ "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.COMMERCIAL-PROFILE" | transloco }}</label>
@@ -105,6 +106,7 @@
           [label]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.REGISTER-BUTTON'|transloco"
           severity="info"
           [loading]="load"
+          [disabled]="!validForm"
           (onClick)="register()"
         />
       </div>
