@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-import { TranslocoPipe } from '@jsverse/transloco';
-import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { Component } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { RouterLink } from "@angular/router";
+import { TranslocoPipe } from "@jsverse/transloco";
+import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
+import { ButtonModule } from "primeng/button";
+import { InputTextModule } from "primeng/inputtext";
+import { PasswordModule } from "primeng/password";
+import { RadioButtonModule } from "primeng/radiobutton";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.css"],
   imports: [
     ReactiveFormsModule,
     SearchBarComponent,
@@ -20,6 +21,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     FormsModule,
     PasswordModule,
     RadioButtonModule,
+    ButtonModule,
   ],
 })
 export class RegisterComponent {
@@ -30,6 +32,7 @@ export class RegisterComponent {
 
   success = false;
   error = false;
+  load = false;
 
   formEmail?: string;
   formPassword?: string;
@@ -38,9 +41,9 @@ export class RegisterComponent {
 
   // Regex about passwords
   mediumRegex =
-    '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9]))).{6,}$';
+    "^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9]))).{6,}$";
   strongRegex =
-    '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$';
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$";
 
   get samePassword(): boolean {
     return this.formPassword === this.formConfirmPassword;
@@ -48,8 +51,17 @@ export class RegisterComponent {
 
   getConfirmPasswordClasses() {
     if (!this.samePassword) {
-      return 'ng-invalid ng-dirty';
+      return "ng-invalid ng-dirty";
     }
-    return '';
+    return "";
+  }
+
+  register() {
+    this.load = true;
+    // Simulate an asynchronous operation
+    setTimeout(() => {
+      this.load = false;
+      this.success = true;
+    }, 2000);
   }
 }

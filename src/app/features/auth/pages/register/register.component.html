@@ -1,4 +1,4 @@
-<main class="bg-gray-100">
+<main class="bg-gray-100 pb-10">
   <app-search-bar></app-search-bar>
   <section class="mx-auto lg:max-w-5xl">
     <div class="flex flex-col items-center">
@@ -99,6 +99,14 @@
             <label for="opt2">{{ "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.COMMERCIAL-PROFILE" | transloco }}</label>
           </div>
         </div>
+      </div>
+      <div class="flex justify-center">
+        <p-button
+          [label]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.REGISTER-BUTTON'|transloco"
+          severity="info"
+          [loading]="load"
+          (onClick)="register()"
+        />
       </div>
     </div>
   </section>
