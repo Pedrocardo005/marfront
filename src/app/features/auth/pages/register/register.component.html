@@ -81,7 +81,7 @@
       </div>
       <div class="flex flex-col">
         <!-- #TODO Adicionar tradução -->
-        <span class="font-bold">Entrar como</span>
+        <span class="font-bold">{{ "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PROFILE-STYLE" | transloco }}</span>
         <div class="flex gap-5">
           <div class="flex gap-3">
             <p-radiobutton
@@ -90,7 +90,7 @@
               value="private"
               [(ngModel)]="formLoginWith"
             ></p-radiobutton>
-            <label for="opt1">Privado</label>
+            <label for="opt1">{{ "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PRIVATE-PROFILE" | transloco }}</label>
           </div>
           <div class="flex gap-3">
             <p-radiobutton
@@ -99,7 +99,7 @@
               value="commercial"
               [(ngModel)]="formLoginWith"
             ></p-radiobutton>
-            <label for="opt2">Comercial</label>
+            <label for="opt2">{{ "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.COMMERCIAL-PROFILE" | transloco }}</label>
           </div>
         </div>
       </div>

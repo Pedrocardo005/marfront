@@ -1,278 +1,281 @@
 {
-    "CORE": {
-        "LAYOUT": {
-            "HEADER": {
-                "SEARCH": "Buscar",
-                "DISCONNECT": {
-                    "LOGIN": "Entrar",
-                    "REGISTER": "Criar uma conta"
-                }
-            },
-            "FOOTER": {
-                "INFORMATION": {
-                    "TITLE": "Informação",
-                    "LINKS": {
-                        "ZERO": "Ajuda e Suporte",
-                        "ONE": "Dicas de Segurança",
-                        "TWO": "Política de Privacidade",
-                        "THREE": "Configuração de Privacidade",
-                        "FOUR": "Termos de Uso"
-                    }
-                },
-                "SUPPORT": {
-                    "TITLE": "Ajuda e Suporte",
-                    "LINKS": {
-                        "ONE": "Ajuda",
-                        "TWO": "Impressum"
-                    }
-                },
-                "COUNTRIES-ALT": {
-                    "BRAZIL": "Bandeira do Brasil",
-                    "UNITED-STATE": "Flag of the United States",
-                    "SPAIN": "Bandera de España",
-                    "GERMANY": "Flagge von Deutschland"
-                }
-            }
+  "CORE": {
+    "LAYOUT": {
+      "HEADER": {
+        "SEARCH": "Buscar",
+        "DISCONNECT": {
+          "LOGIN": "Entrar",
+          "REGISTER": "Criar uma conta"
         }
-    },
-    "FEATURES": {
-        "AUTH": {
-            "PAGES": {
-                "REGISTER": {
-                    "TITLE": "Olá",
-                    "SUB-TITLE-FIRST": "Entre",
-                    "SUB-TITLE-SECOND": "ou crie uma conta no ecommerce",
-                    "MAIN-FORM": {
-                        "TITLE": "Registrar",
-                        "EMAIL-TITLE": "endereço de e-mail",
-                        "PASSWORD-TITLE": "Senha",
-                        "PASSWORD-LABEL": "Escolha uma senha",
-                        "PASSWORD-WEAK": "Muito simples",
-                        "PASSWORD-MEDIUM": "Complexidade mediana",
-                        "PASSWORD-STRONG": "Complexidade alta",
-                        "CONFIRM-PASSWORD-TITLE": "Confirme sua senha",
-                        "USERNAME-TITLE": "Nome de usuário"
-                    }
-                }
-            }
-        },
-        "HOME": {
-            "PAGES": {
-                "HOME": {
-                    "SEARCH-INPUT": {
-                        "PLACEHOLDER": "O que você está procurando?"
-                    },
-                    "SEARCH-ADDRESS": {
-                        "PLACEHOLDER": "Cidade ou código postal"
-                    },
-                    "SEARCH-BUTTON": {
-                        "LABEL": "Buscar"
-                    },
-                    "CATEGORIES": {
-                        "CAR-MOTORCYCLE": {
-                            "TITLE": "Carros e Motos",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Carros",
-                                "SECOND": "Barcos e acessórios para barcos",
-                                "THIRD": "Reparos e Serviços"
-                            }
-                        },
-                        "REAL-ESTATE-HOUSES": {
-                            "TITLE": "Imóveis e Casas",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Comprar um apartamento",
-                                "SECOND": "Comprar uma casa",
-                                "THIRD": "Imóveis comerciais"
-                            }
-                        },
-                        "JOBS": {
-                            "TITLE": "Empregos",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Setor Social e Assistência",
-                                "SECOND": "Gastronomia e Turismo",
-                                "THIRD": "Transporte, Logística e Tráfego"
-                            }
-                        },
-                        "ADMISSION-TICKETS": {
-                            "TITLE": "Ingressos e ingressos",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Comédia e Cabaré",
-                                "SECOND": "Esporte",
-                                "THIRD": "Crianças"
-                            }
-                        },
-                        "LEISURE-HOBBIES-FUN": {
-                            "TITLE": "Lazer, Hobbies e Diversão",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Arte e Antiguidades",
-                                "SECOND": "Achados e Perdidos",
-                                "THIRD": "Lixo e caixas"
-                            }
-                        },
-                        "MUSIC-FILM-BOOKS": {
-                            "TITLE": "Música, Cinema e Livros",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Mais",
-                                "SECOND": "Filme e DVD",
-                                "THIRD": "Escritório e papelaria"
-                            }
-                        },
-                        "HOME-GARDEN": {
-                            "TITLE": "Casa e Jardim",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Quarto",
-                                "SECOND": "Serviços para casa e jardim",
-                                "THIRD": "Lâmpadas e Luzes"
-                            }
-                        },
-                        "GIVE-AWAY-EXCHANGE": {
-                            "TITLE": "Para dar e trocar",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Empréstimos",
-                                "SECOND": "Para trocar",
-                                "THIRD": "Para dar de presente"
-                            }
-                        },
-                        "PETS": {
-                            "TITLE": "Animais de estimação",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Répteis e Acessórios",
-                                "SECOND": "Gatos e Acessórios",
-                                "THIRD": "Peixes e Acessórios"
-                            }
-                        },
-                        "FAMILY-CHILD-BABY": {
-                            "TITLE": "Família, Criança e Bebê",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Mais",
-                                "SECOND": "Babás e Cuidados Infantis",
-                                "THIRD": "Cuidados com idosos"
-                            }
-                        },
-                        "FASHION-BEAUTY": {
-                            "TITLE": "Moda e Beleza",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Mais",
-                                "SECOND": "Roupas femininas",
-                                "THIRD": "Beleza e Saúde"
-                            }
-                        },
-                        "LESSONS-COURSES": {
-                            "TITLE": "Aulas e Cursos",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Mais",
-                                "SECOND": "Cursos de idiomas",
-                                "THIRD": "beleza"
-                            }
-                        },
-                        "MULTIMEDIA-ELECTRONICS": {
-                            "TITLE": "Multimídia e Eletrônicos",
-                            "SUBCATEGORIES": {
-                                "FIRST": "Tablets e Leitores",
-                                "SECOND": "Eletrodomésticos",
-                                "THIRD": "Áudio e Wi-Fi"
-                            }
-                        }
-                    },
-                    "LEFT-BAR": {
-                        "TITLE": "Categorias",
-                        "LINK": "Mostrar tudo"
-                    },
-                    "MAIN-BAR": {
-                        "IMAGE": {
-                            "ALT": "Descrição da imagem do anuncio de"
-                        }
-                    }
-                }
-            }
-        },
-        "SEARCHS": {
-            "PAGES": {
-                "SEARCH": {
-                    "LEFT-BAR": {
-                        "LINK": "Todas as categorias"
-                    },
-                    "MAIN-BAR": {
-                        "HEADER-BAR": {
-                            "TITLE": "Visão geral das ofertas",
-                            "CREATE-AD": "Criar anúncio",
-                            "SELECT": {
-                                "BEST": "Melhor primeiro",
-                                "NEWEST": "Mais recente primeiro",
-                                "CHEAP": "Barato primeiro"
-                            }
-                        },
-                        "NOT-FOUND": "Nenhum anuncio encontrado"
-                    }
-                },
-                "FILTERS": {
-                    "PLACEHOLDERS": {
-                        "MIN": "De",
-                        "MAX": "Até"
-                    },
-                    "BUTTON": {
-                        "LABEL": "Filtrar"
-                    }
-                }
-            },
-            "COMPONENTS": {
-                "RIGHT-DRAWER": {
-                    "HEADER": "Filtrar itens"
-                }
-            }
+      },
+      "FOOTER": {
+        "INFORMATION": {
+          "TITLE": "Informação",
+          "LINKS": {
+            "ZERO": "Ajuda e Suporte",
+            "ONE": "Dicas de Segurança",
+            "TWO": "Política de Privacidade",
+            "THREE": "Configuração de Privacidade",
+            "FOUR": "Termos de Uso"
+          }
         },
         "SUPPORT": {
-            "MAIN-BAR": {
-                "TITLE": "Apoiar",
-                "TEXT": "Entre em contato conosco se tiver alguma dúvida ou problema",
-                "SELECT": {
-                    "PLACEHOLDER": "A respeito de",
-                    "OPTIONS": {
-                        "ONE-TEXT": "Pergunta geral",
-                        "TWO-TEXT": "Pergunta sobre o anúncio principal",
-                        "THREE-TEXT": "Problemas gerais",
-                        "FOUR-TEXT": "Problema de pagamento"
-                    }
-                },
-                "EMAIL-INPUT": {
-                    "LABEL": "endereço de e-mail",
-                    "PLACEHOLDER": "endereço de e-mail"
-                },
-                "TEXTAREA": {
-                    "LABEL": "Mensagem",
-                    "PLACEHOLDER": "Digite a mensagem"
-                },
-                "SUBMIT-BUTTON": {
-                    "LABEL": "Enviar mensagem"
-                },
-                "BOTTOM": {
-                    "HEADER": "Perguntas e respostas úteis",
-                    "TEXT": "Talvez você já encontre sua resposta em nossas Perguntas Frequentes.",
-                    "QUESTION-ONE": {
-                        "TITLE": "A inscrição é gratuita?",
-                        "TEXT": "Sim, o registro no sistema é totalmente gratuito."
-                    },
-                    "QUESTION-TWO": {
-                        "TITLE": "Criar anúncios é gratuito?",
-                        "TEXT": "Sim, você pode criar seus anúncios gratuitamente."
-                    },
-                    "QUESTION-THREE": {
-                        "TITLE": "Como posso excluir minha conta?",
-                        "TEXT": "Para fazer isso, acesse o menu do usuário e, em seguida, as configurações do perfil. Na parte inferior, você encontrará 'Excluir conta'. Esteja ciente de que todas as informações, incluindo anúncios atuais, serão excluídas."
-                    }
-                }
-            },
-            "RIGHT-BAR": {
-                "HEADER": {
-                    "TITLE": "Contate-nos",
-                    "TITLE-SUB": "Para nos contatar de outras formas, oferecemos-lhe as seguintes opções:"
-                },
-                "CONTACT-ITEMS": {
-                    "WHATSAPP-ALT": "Figura whatsapp",
-                    "FACEBOOK-ALT": "Figura facebook",
-                    "SKYPE-ALT": "Figura skype"
-                }
-            }
+          "TITLE": "Ajuda e Suporte",
+          "LINKS": {
+            "ONE": "Ajuda",
+            "TWO": "Impressum"
+          }
+        },
+        "COUNTRIES-ALT": {
+          "BRAZIL": "Bandeira do Brasil",
+          "UNITED-STATE": "Flag of the United States",
+          "SPAIN": "Bandera de España",
+          "GERMANY": "Flagge von Deutschland"
         }
+      }
     }
+  },
+  "FEATURES": {
+    "AUTH": {
+      "PAGES": {
+        "REGISTER": {
+          "TITLE": "Olá",
+          "SUB-TITLE-FIRST": "Entre",
+          "SUB-TITLE-SECOND": "ou crie uma conta no ecommerce",
+          "MAIN-FORM": {
+            "TITLE": "Registrar",
+            "EMAIL-TITLE": "endereço de e-mail",
+            "PASSWORD-TITLE": "Senha",
+            "PASSWORD-LABEL": "Escolha uma senha",
+            "PASSWORD-WEAK": "Muito simples",
+            "PASSWORD-MEDIUM": "Complexidade mediana",
+            "PASSWORD-STRONG": "Complexidade alta",
+            "CONFIRM-PASSWORD-TITLE": "Confirme sua senha",
+            "USERNAME-TITLE": "Nome de usuário",
+            "PROFILE-STYLE": "Entrar como",
+            "PRIVATE-PROFILE": "Privado",
+            "COMMERCIAL-PROFILE": "Comercial"
+          }
+        }
+      }
+    },
+    "HOME": {
+      "PAGES": {
+        "HOME": {
+          "SEARCH-INPUT": {
+            "PLACEHOLDER": "O que você está procurando?"
+          },
+          "SEARCH-ADDRESS": {
+            "PLACEHOLDER": "Cidade ou código postal"
+          },
+          "SEARCH-BUTTON": {
+            "LABEL": "Buscar"
+          },
+          "CATEGORIES": {
+            "CAR-MOTORCYCLE": {
+              "TITLE": "Carros e Motos",
+              "SUBCATEGORIES": {
+                "FIRST": "Carros",
+                "SECOND": "Barcos e acessórios para barcos",
+                "THIRD": "Reparos e Serviços"
+              }
+            },
+            "REAL-ESTATE-HOUSES": {
+              "TITLE": "Imóveis e Casas",
+              "SUBCATEGORIES": {
+                "FIRST": "Comprar um apartamento",
+                "SECOND": "Comprar uma casa",
+                "THIRD": "Imóveis comerciais"
+              }
+            },
+            "JOBS": {
+              "TITLE": "Empregos",
+              "SUBCATEGORIES": {
+                "FIRST": "Setor Social e Assistência",
+                "SECOND": "Gastronomia e Turismo",
+                "THIRD": "Transporte, Logística e Tráfego"
+              }
+            },
+            "ADMISSION-TICKETS": {
+              "TITLE": "Ingressos e ingressos",
+              "SUBCATEGORIES": {
+                "FIRST": "Comédia e Cabaré",
+                "SECOND": "Esporte",
+                "THIRD": "Crianças"
+              }
+            },
+            "LEISURE-HOBBIES-FUN": {
+              "TITLE": "Lazer, Hobbies e Diversão",
+              "SUBCATEGORIES": {
+                "FIRST": "Arte e Antiguidades",
+                "SECOND": "Achados e Perdidos",
+                "THIRD": "Lixo e caixas"
+              }
+            },
+            "MUSIC-FILM-BOOKS": {
+              "TITLE": "Música, Cinema e Livros",
+              "SUBCATEGORIES": {
+                "FIRST": "Mais",
+                "SECOND": "Filme e DVD",
+                "THIRD": "Escritório e papelaria"
+              }
+            },
+            "HOME-GARDEN": {
+              "TITLE": "Casa e Jardim",
+              "SUBCATEGORIES": {
+                "FIRST": "Quarto",
+                "SECOND": "Serviços para casa e jardim",
+                "THIRD": "Lâmpadas e Luzes"
+              }
+            },
+            "GIVE-AWAY-EXCHANGE": {
+              "TITLE": "Para dar e trocar",
+              "SUBCATEGORIES": {
+                "FIRST": "Empréstimos",
+                "SECOND": "Para trocar",
+                "THIRD": "Para dar de presente"
+              }
+            },
+            "PETS": {
+              "TITLE": "Animais de estimação",
+              "SUBCATEGORIES": {
+                "FIRST": "Répteis e Acessórios",
+                "SECOND": "Gatos e Acessórios",
+                "THIRD": "Peixes e Acessórios"
+              }
+            },
+            "FAMILY-CHILD-BABY": {
+              "TITLE": "Família, Criança e Bebê",
+              "SUBCATEGORIES": {
+                "FIRST": "Mais",
+                "SECOND": "Babás e Cuidados Infantis",
+                "THIRD": "Cuidados com idosos"
+              }
+            },
+            "FASHION-BEAUTY": {
+              "TITLE": "Moda e Beleza",
+              "SUBCATEGORIES": {
+                "FIRST": "Mais",
+                "SECOND": "Roupas femininas",
+                "THIRD": "Beleza e Saúde"
+              }
+            },
+            "LESSONS-COURSES": {
+              "TITLE": "Aulas e Cursos",
+              "SUBCATEGORIES": {
+                "FIRST": "Mais",
+                "SECOND": "Cursos de idiomas",
+                "THIRD": "beleza"
+              }
+            },
+            "MULTIMEDIA-ELECTRONICS": {
+              "TITLE": "Multimídia e Eletrônicos",
+              "SUBCATEGORIES": {
+                "FIRST": "Tablets e Leitores",
+                "SECOND": "Eletrodomésticos",
+                "THIRD": "Áudio e Wi-Fi"
+              }
+            }
+          },
+          "LEFT-BAR": {
+            "TITLE": "Categorias",
+            "LINK": "Mostrar tudo"
+          },
+          "MAIN-BAR": {
+            "IMAGE": {
+              "ALT": "Descrição da imagem do anuncio de"
+            }
+          }
+        }
+      }
+    },
+    "SEARCHS": {
+      "PAGES": {
+        "SEARCH": {
+          "LEFT-BAR": {
+            "LINK": "Todas as categorias"
+          },
+          "MAIN-BAR": {
+            "HEADER-BAR": {
+              "TITLE": "Visão geral das ofertas",
+              "CREATE-AD": "Criar anúncio",
+              "SELECT": {
+                "BEST": "Melhor primeiro",
+                "NEWEST": "Mais recente primeiro",
+                "CHEAP": "Barato primeiro"
+              }
+            },
+            "NOT-FOUND": "Nenhum anuncio encontrado"
+          }
+        },
+        "FILTERS": {
+          "PLACEHOLDERS": {
+            "MIN": "De",
+            "MAX": "Até"
+          },
+          "BUTTON": {
+            "LABEL": "Filtrar"
+          }
+        }
+      },
+      "COMPONENTS": {
+        "RIGHT-DRAWER": {
+          "HEADER": "Filtrar itens"
+        }
+      }
+    },
+    "SUPPORT": {
+      "MAIN-BAR": {
+        "TITLE": "Apoiar",
+        "TEXT": "Entre em contato conosco se tiver alguma dúvida ou problema",
+        "SELECT": {
+          "PLACEHOLDER": "A respeito de",
+          "OPTIONS": {
+            "ONE-TEXT": "Pergunta geral",
+            "TWO-TEXT": "Pergunta sobre o anúncio principal",
+            "THREE-TEXT": "Problemas gerais",
+            "FOUR-TEXT": "Problema de pagamento"
+          }
+        },
+        "EMAIL-INPUT": {
+          "LABEL": "endereço de e-mail",
+          "PLACEHOLDER": "endereço de e-mail"
+        },
+        "TEXTAREA": {
+          "LABEL": "Mensagem",
+          "PLACEHOLDER": "Digite a mensagem"
+        },
+        "SUBMIT-BUTTON": {
+          "LABEL": "Enviar mensagem"
+        },
+        "BOTTOM": {
+          "HEADER": "Perguntas e respostas úteis",
+          "TEXT": "Talvez você já encontre sua resposta em nossas Perguntas Frequentes.",
+          "QUESTION-ONE": {
+            "TITLE": "A inscrição é gratuita?",
+            "TEXT": "Sim, o registro no sistema é totalmente gratuito."
+          },
+          "QUESTION-TWO": {
+            "TITLE": "Criar anúncios é gratuito?",
+            "TEXT": "Sim, você pode criar seus anúncios gratuitamente."
+          },
+          "QUESTION-THREE": {
+            "TITLE": "Como posso excluir minha conta?",
+            "TEXT": "Para fazer isso, acesse o menu do usuário e, em seguida, as configurações do perfil. Na parte inferior, você encontrará 'Excluir conta'. Esteja ciente de que todas as informações, incluindo anúncios atuais, serão excluídas."
+          }
+        }
+      },
+      "RIGHT-BAR": {
+        "HEADER": {
+          "TITLE": "Contate-nos",
+          "TITLE-SUB": "Para nos contatar de outras formas, oferecemos-lhe as seguintes opções:"
+        },
+        "CONTACT-ITEMS": {
+          "WHATSAPP-ALT": "Figura whatsapp",
+          "FACEBOOK-ALT": "Figura facebook",
+          "SKYPE-ALT": "Figura skype"
+        }
+      }
+    }
+  }
 }
