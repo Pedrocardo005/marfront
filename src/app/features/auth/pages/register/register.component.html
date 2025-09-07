@@ -2,39 +2,104 @@
   <app-search-bar></app-search-bar>
   <section class="mx-auto lg:max-w-5xl">
     <div class="flex flex-col items-center">
-
-      <h3><strong>{{ 'FEATURES.AUTH.PAGES.REGISTER.TITLE'| transloco }}</strong></h3>
-      <p><a [routerLink]="['/login']" class="text-blue-500"> {{
-          'FEATURES.AUTH.PAGES.REGISTER.SUB-TITLE-FIRST'|transloco}}</a>
-        {{'FEATURES.AUTH.PAGES.REGISTER.SUB-TITLE-SECOND'|transloco}}</p>
+      <h3>
+        <strong>{{ "FEATURES.AUTH.PAGES.REGISTER.TITLE" | transloco }}</strong>
+      </h3>
+      <p>
+        <a [routerLink]="['/login']" class="text-blue-500">
+          {{ "FEATURES.AUTH.PAGES.REGISTER.SUB-TITLE-FIRST" | transloco }}</a
+        >
+        {{ "FEATURES.AUTH.PAGES.REGISTER.SUB-TITLE-SECOND" | transloco }}
+      </p>
     </div>
-    <div class="main-form bg-white flex flex-col items-center lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10 gap-3">
+    <div
+      class="main-form bg-white flex flex-col items-center lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10 gap-3"
+    >
       <div class="flex flex-col">
-        <span>{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.TITLE'|transloco }}</span>
+        <span>{{
+          "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.TITLE" | transloco
+        }}</span>
         <div class="form flex flex-col">
-          <span class="font-bold">{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.EMAIL-TITLE'|transloco }}</span>
-          <input pInputText name="email" type="email" email="true" [(ngModel)]="formEmail" />
+          <span class="font-bold">{{
+            "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.EMAIL-TITLE" | transloco
+          }}</span>
+          <input
+            pInputText
+            name="email"
+            type="email"
+            email="true"
+            [(ngModel)]="formEmail"
+          />
         </div>
       </div>
       <div class="flex flex-col">
-        <span class="font-bold">{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-TITLE'|transloco}}</span>
-        <p-password [(ngModel)]="formPassword"
-          [promptLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-LABEL'|transloco"
-          [weakLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK'|transloco"
-          [mediumLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM'|transloco"
-          [strongLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-STRONG'|transloco" [mediumRegex]="mediumRegex"
-          [strongRegex]="strongRegex" />
+        <span class="font-bold">{{
+          "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-TITLE" | transloco
+        }}</span>
+        <p-password
+          [(ngModel)]="formPassword"
+          [promptLabel]="
+            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-LABEL' | transloco
+          "
+          [weakLabel]="
+            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK' | transloco
+          "
+          [mediumLabel]="
+            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM' | transloco
+          "
+          [strongLabel]="
+            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-STRONG' | transloco
+          "
+          [mediumRegex]="mediumRegex"
+          [strongRegex]="strongRegex"
+        />
         <!-- #TODO Adicionar um listar características para ser uma senha mediana ou forte -->
       </div>
       <div class="flex flex-col">
-        <span class="font-bold">{{'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.CONFIRM-PASSWORD-TITLE'|transloco}}</span>
-        <p-password [(ngModel)]="formConfirmPassword" [inputStyleClass]="getConfirmPasswordClasses()"
-          [weakLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK'|transloco"
-          [mediumLabel]="'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM'|transloco" />
+        <span class="font-bold">{{
+          "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.CONFIRM-PASSWORD-TITLE"
+            | transloco
+        }}</span>
+        <p-password
+          [(ngModel)]="formConfirmPassword"
+          [inputStyleClass]="getConfirmPasswordClasses()"
+          [weakLabel]="
+            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK' | transloco
+          "
+          [mediumLabel]="
+            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM' | transloco
+          "
+        />
       </div>
       <div class="flex flex-col">
-        <span class="font-bold">{{ 'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.USERNAME-TITLE'|transloco }}</span>
+        <span class="font-bold">{{
+          "FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.USERNAME-TITLE" | transloco
+        }}</span>
         <input pInputText type="text" name="username" />
+      </div>
+      <div class="flex flex-col">
+        <!-- #TODO Adicionar tradução -->
+        <span class="font-bold">Entrar como</span>
+        <div class="flex">
+          <div class="flex">
+            <p-radiobutton
+              inputId="opt1"
+              name="login-with"
+              value="private"
+              [(ngModel)]="formLoginWith"
+            ></p-radiobutton>
+            <label for="opt1">Privado</label>
+          </div>
+          <div class="flex">
+            <p-radiobutton
+              inputId="opt2"
+              name="login-with"
+              value="commercial"
+              [(ngModel)]="formLoginWith"
+            ></p-radiobutton>
+            <label for="opt2">Comercial</label>
+          </div>
+        </div>
       </div>
     </div>
   </section>

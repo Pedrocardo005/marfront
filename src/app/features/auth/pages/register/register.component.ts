@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
 import { TranslocoPipe } from '@jsverse/transloco';
+import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @Component({
   selector: 'app-register',
@@ -20,8 +18,9 @@ import { PasswordModule } from 'primeng/password';
     RouterLink,
     InputTextModule,
     FormsModule,
-    PasswordModule
-  ]
+    PasswordModule,
+    RadioButtonModule,
+  ],
 })
 export class RegisterComponent {
   focus = false;
@@ -35,10 +34,13 @@ export class RegisterComponent {
   formEmail?: string;
   formPassword?: string;
   formConfirmPassword?: string;
+  formLoginWith?: string;
 
   // Regex about passwords
-  mediumRegex = "^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9]))).{6,}$";
-  strongRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$";
+  mediumRegex =
+    '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9]))).{6,}$';
+  strongRegex =
+    '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$';
 
   get samePassword(): boolean {
     return this.formPassword === this.formConfirmPassword;
