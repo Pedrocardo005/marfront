@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
 import { User } from "@core/models/User.model";
+import { ErrorHandlerService } from "@core/services/error-handler.service";
 import { UserService } from "@core/services/user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
@@ -55,6 +56,7 @@ export class RegisterComponent {
   constructor(
     private userService: UserService,
     private messageService: MessageService,
+    private errorHandlerService: ErrorHandlerService,
   ) {}
 
   get samePassword(): boolean {
@@ -88,10 +90,11 @@ export class RegisterComponent {
         this.load = false;
       },
       error: (error: Error) => {
+        const errorMessage = this.errorHandlerService.getErrorMessage(error);
         this.messageService.add({
           severity: "error",
           summary: "Erro",
-          detail: "Erro ao registrar!",
+          detail: `Erro ao registrar! ${errorMessage}`,
         });
         this.load = false;
         console.error("RegisterComponent.register(): ", error);
