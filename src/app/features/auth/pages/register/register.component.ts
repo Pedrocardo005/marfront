@@ -5,10 +5,12 @@ import { User } from "@core/models/User.model";
 import { UserService } from "@core/services/user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
+import { MessageService } from "primeng/api";
 import { ButtonModule } from "primeng/button";
 import { InputTextModule } from "primeng/inputtext";
 import { PasswordModule } from "primeng/password";
 import { RadioButtonModule } from "primeng/radiobutton";
+import { Toast } from "primeng/toast";
 
 @Component({
   selector: "app-register",
@@ -24,7 +26,9 @@ import { RadioButtonModule } from "primeng/radiobutton";
     PasswordModule,
     RadioButtonModule,
     ButtonModule,
+    Toast,
   ],
+  providers: [MessageService],
 })
 export class RegisterComponent {
   focus = false;
@@ -48,7 +52,10 @@ export class RegisterComponent {
   strongRegex =
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$";
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private messageService: MessageService,
+  ) {}
 
   get samePassword(): boolean {
     return this.formPassword === this.formConfirmPassword;
@@ -73,11 +80,19 @@ export class RegisterComponent {
 
     this.userService.register(accountToSend).subscribe({
       next: () => {
-        this.success = true;
+        this.messageService.add({
+          severity: "success",
+          summary: "Sucesso",
+          detail: "Registro bem-sucedido!",
+        });
         this.load = false;
       },
       error: (error: Error) => {
-        this.error = true;
+        this.messageService.add({
+          severity: "error",
+          summary: "Erro",
+          detail: "Erro ao registrar!",
+        });
         this.load = false;
         console.error("RegisterComponent.register(): ", error);
       },
