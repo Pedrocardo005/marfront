@@ -57,6 +57,12 @@
             "COMMERCIAL-PROFILE": "Comercial",
             "REGISTER-BUTTON": "Registrar"
           }
+        },
+        "LOGIN": {
+          "TITLE": "Olá",
+          "SUB-TITLE-FIRST": "Entre ou ",
+          "SUB-TITLE-SECOND": "crie uma conta",
+          "SUB-TITLE-THIRD": " no ecommerce"
         }
       }
     },
