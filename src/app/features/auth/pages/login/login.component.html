@@ -21,14 +21,12 @@
       }}</span>
       <div class="form flex flex-col gap-2">
         <span class="font-bold">{{
-          "FEATURES.AUTH.PAGES.LOGIN.MAIN-FORM.EMAIL-TITLE" | transloco
+          "FEATURES.AUTH.PAGES.LOGIN.MAIN-FORM.USERNAME-TITLE" | transloco
         }}</span>
         <input
           pInputText
-          name="email"
-          type="email"
-          email="true"
-          [(ngModel)]="formEmail"
+          name="username"
+          [(ngModel)]="formUsername"
         />
       </div>
       <div class="form flex flex-col gap-2">

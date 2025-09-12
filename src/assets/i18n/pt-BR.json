@@ -65,7 +65,7 @@
           "SUB-TITLE-THIRD": " no ecommerce",
           "MAIN-FORM": {
             "TITLE": "Conecte-se",
-            "EMAIL-TITLE": "Endereço de e-mail",
+            "USERNAME-TITLE": "Nome de usuário",
             "PASSWORD-LABEL": "Senha",
             "BUTTON-LABEL": "Conecte-se"
           }
