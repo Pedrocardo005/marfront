@@ -62,13 +62,7 @@
         }}</span>
         <p-password
           [(ngModel)]="formConfirmPassword"
-          [inputStyleClass]="getConfirmPasswordClasses()"
-          [weakLabel]="
-            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-WEAK' | transloco
-          "
-          [mediumLabel]="
-            'FEATURES.AUTH.PAGES.REGISTER.MAIN-FORM.PASSWORD-MEDIUM' | transloco
-          "
+          [feedback]="false"
           styleClass="p-password-full-width"
         />
       </div>

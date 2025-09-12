@@ -18,7 +18,7 @@ export class UserService {
   }
 
   login(usuario: User) {
-    return this.http.post<{ user: User }>(`${this.apiUrl}/login`, {
+    return this.http.post<{ user: User }>(`${this.apiUrl}login/`, {
       ...usuario,
     });
   }

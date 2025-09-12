@@ -62,7 +62,13 @@
           "TITLE": "Olá",
           "SUB-TITLE-FIRST": "Entre ou ",
           "SUB-TITLE-SECOND": "crie uma conta",
-          "SUB-TITLE-THIRD": " no ecommerce"
+          "SUB-TITLE-THIRD": " no ecommerce",
+          "MAIN-FORM": {
+            "TITLE": "Conecte-se",
+            "EMAIL-TITLE": "Endereço de e-mail",
+            "PASSWORD-LABEL": "Senha",
+            "BUTTON-LABEL": "Conecte-se"
+          }
         }
       }
     },

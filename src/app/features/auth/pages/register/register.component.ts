@@ -6,6 +6,7 @@ import { ErrorHandlerService } from "@core/services/error-handler.service";
 import { UserService } from "@core/services/user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
+import { RegexTextsService } from "@shared/services/regex-texts.service";
 import { MessageService } from "primeng/api";
 import { ButtonModule } from "primeng/button";
 import { InputTextModule } from "primeng/inputtext";
@@ -57,6 +58,7 @@ export class RegisterComponent {
     private userService: UserService,
     private messageService: MessageService,
     private errorHandlerService: ErrorHandlerService,
+    private regexTextsService: RegexTextsService,
   ) {}
 
   get samePassword(): boolean {
@@ -102,13 +104,8 @@ export class RegisterComponent {
     });
   }
 
-  isEmail(text: string): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(text);
-  }
-
   get validForm(): boolean {
-    if (!this.formEmail || !this.isEmail(this.formEmail)) {
+    if (!this.formEmail || !this.regexTextsService.isEmail(this.formEmail)) {
       return false;
     }
 

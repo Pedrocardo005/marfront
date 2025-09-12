@@ -16,6 +16,39 @@
     <div
       class="main-form bg-white flex flex-col lg:w-1/2 mx-auto mt-7 rounded-xl py-14 px-10 gap-5"
     >
+      <span class="text-2xl">{{
+        "FEATURES.AUTH.PAGES.LOGIN.MAIN-FORM.TITLE" | transloco
+      }}</span>
+      <div class="form flex flex-col gap-2">
+        <span class="font-bold">{{
+          "FEATURES.AUTH.PAGES.LOGIN.MAIN-FORM.EMAIL-TITLE" | transloco
+        }}</span>
+        <input
+          pInputText
+          name="email"
+          type="email"
+          email="true"
+          [(ngModel)]="formEmail"
+        />
+      </div>
+      <div class="form flex flex-col gap-2">
+        <span class="font-bold">{{
+          "FEATURES.AUTH.PAGES.LOGIN.MAIN-FORM.PASSWORD-LABEL" | transloco
+        }}</span>
+        <p-password
+          [(ngModel)]="formPassword"
+          styleClass="p-password-full-width"
+          [feedback]="false">
+        </p-password>
+      </div>
+      <div class="flex justify-center">
+        <p-button
+          [label]="'FEATURES.AUTH.PAGES.LOGIN.MAIN-FORM.BUTTON-LABEL' | transloco"
+          severity="info"
+          [loading]="loading"
+          [disabled]="!isValidForm()"
+        />
+      </div>
     </div>
   </section>
 </main>
