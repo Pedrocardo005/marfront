@@ -12,6 +12,7 @@ import { TokenService } from "@core/services/token.service";
 import { Toast } from "primeng/toast";
 import { MessageService } from "primeng/api";
 import { ErrorHandlerService } from "@core/services/error-handler.service";
+import { AuthService } from "@core/services/auth.service";
 
 @Component({
   selector: "app-login",
@@ -37,6 +38,7 @@ export class LoginComponent {
 
   constructor(
     private userService: UserService,
+    private authService: AuthService,
     private tokenService: TokenService,
     private messageService: MessageService,
     private errorHandlerService: ErrorHandlerService,
@@ -57,11 +59,18 @@ export class LoginComponent {
       next: (response) => {
         this.loading = false;
         this.tokenService.saveToken(response.token);
+
         this.messageService.add({
           severity: "success",
           summary: "Sucesso",
           detail: "Login efetuado com sucesso",
         });
+
+        this.authService.setAuthenticated(true);
+
+        this.formUsername = "";
+        this.formPassword = "";
+
         setTimeout(() => {
           this.router.navigate(["/"]);
         }, 4000);

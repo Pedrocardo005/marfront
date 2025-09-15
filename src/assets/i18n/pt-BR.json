@@ -5,8 +5,10 @@
         "SEARCH": "Buscar",
         "DISCONNECT": {
           "LOGIN": "Entrar",
-          "REGISTER": "Criar uma conta"
-        }
+          "REGISTER": "Criar uma conta",
+          "LOGOUT": "Sair"
+        },
+        "MY-ADDS": "Meus anúncios"
       },
       "FOOTER": {
         "INFORMATION": {
