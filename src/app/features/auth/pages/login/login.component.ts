@@ -66,7 +66,7 @@ export class LoginComponent {
           detail: "Login efetuado com sucesso",
         });
 
-        this.authService.setAuthenticated(true);
+        this.authService.updateAuthenticated();
 
         this.formUsername = "";
         this.formPassword = "";

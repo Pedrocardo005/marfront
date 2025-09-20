@@ -55,6 +55,8 @@ export class HeaderComponent implements OnInit {
       },
     ];
 
+    this.authService.updateAuthenticated();
+
     this.authService.isAuthenticated().subscribe((isAuthenticated) => {
       if (isAuthenticated) {
         this.items = logedItems;
