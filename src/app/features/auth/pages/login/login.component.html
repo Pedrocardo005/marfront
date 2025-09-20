@@ -28,6 +28,7 @@
           pInputText
           name="username"
           [(ngModel)]="formUsername"
+          (keyup.enter)="enterLogin()"
         />
       </div>
       <div class="form flex flex-col gap-2">
@@ -37,7 +38,9 @@
         <p-password
           [(ngModel)]="formPassword"
           styleClass="p-password-full-width"
-          [feedback]="false">
+          [feedback]="false"
+          (keyup.enter)="enterLogin()"
+        >
         </p-password>
       </div>
       <div class="flex justify-center">

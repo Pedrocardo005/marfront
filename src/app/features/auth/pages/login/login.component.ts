@@ -87,4 +87,10 @@ export class LoginComponent {
       },
     });
   }
+
+  enterLogin() {
+    if (this.isValidForm()) {
+      this.login();
+    }
+  }
 }
