@@ -291,6 +291,13 @@
           "SKYPE-ALT": "Figura skype"
         }
       }
+    },
+    "LISTINGS": {
+      "PAGES": {
+        "MY-LIST": {
+          "HEADER": "Meus Anúncios"
+        }
+      }
     }
   }
 }
