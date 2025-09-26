@@ -1,5 +1,5 @@
 import { provideHttpClient } from "@angular/common/http";
-import { ApplicationConfig, isDevMode } from "@angular/core";
+import { ApplicationConfig, inject, isDevMode } from "@angular/core";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 import { provideRouter, Routes } from "@angular/router";
 import { SupportComponent } from "@features/support/pages/support/support.component";
@@ -12,6 +12,8 @@ import { SearchComponent } from "./features/searchs/pages/search/search.componen
 import MyPreset from "./mypreset";
 import { TranslocoHttpLoader } from "./transloco-loader";
 import { MyListComponent } from "@features/listings/pages/my-list/my-list.component";
+import { AuthService } from "@core/services/auth.service";
+import { map } from "rxjs";
 
 const routes: Routes = [
   {
@@ -21,10 +23,22 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent,
+    canActivate: [
+      () =>
+        inject(AuthService)
+          .isAuthenticated()
+          .pipe(map((isAuth) => !isAuth)),
+    ],
   },
   {
     path: "register",
     component: RegisterComponent,
+    canActivate: [
+      () =>
+        inject(AuthService)
+          .isAuthenticated()
+          .pipe(map((isAuth) => !isAuth)),
+    ],
   },
   {
     path: "listsearch",
@@ -37,6 +51,12 @@ const routes: Routes = [
   {
     path: "mylist",
     component: MyListComponent,
+    canActivate: [
+      () =>
+        inject(AuthService)
+          .isAuthenticated()
+          .pipe(map((isAuth) => isAuth)),
+    ],
   },
 ];
 

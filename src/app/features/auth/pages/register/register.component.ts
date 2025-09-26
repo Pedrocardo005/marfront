@@ -1,8 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { Router, RouterLink } from "@angular/router";
+import { RouterLink } from "@angular/router";
 import { User } from "@core/models/User.model";
-import { AuthService } from "@core/services/auth.service";
 import { ErrorHandlerService } from "@core/services/error-handler.service";
 import { UserService } from "@core/services/user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
@@ -33,7 +32,7 @@ import { Toast } from "primeng/toast";
   ],
   providers: [MessageService],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   focus = false;
   focus1 = false;
   focus2 = false;
@@ -60,15 +59,7 @@ export class RegisterComponent implements OnInit {
     private messageService: MessageService,
     private errorHandlerService: ErrorHandlerService,
     private regexTextsService: RegexTextsService,
-    private authService: AuthService,
-    private router: Router,
   ) {}
-
-  ngOnInit(): void {
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(["mylist"]);
-    }
-  }
 
   get samePassword(): boolean {
     return this.formPassword === this.formConfirmPassword;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Router, RouterLink } from "@angular/router";
 import { User } from "@core/models/User.model";
@@ -30,7 +30,7 @@ import { AuthService } from "@core/services/auth.service";
   ],
   providers: [MessageService],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   formUsername = "";
   formPassword = "";
 
@@ -44,12 +44,6 @@ export class LoginComponent implements OnInit {
     private errorHandlerService: ErrorHandlerService,
     private router: Router,
   ) {}
-
-  ngOnInit(): void {
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(["mylist"]);
-    }
-  }
 
   isValidForm(): boolean {
     return this.formUsername.length > 0 && this.formPassword.length >= 8;

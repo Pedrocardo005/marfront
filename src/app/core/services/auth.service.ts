@@ -8,13 +8,14 @@ import { TokenService } from "./token.service";
 export class AuthService {
   private authenticaded$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(private tokenService: TokenService) {}
+  constructor(private tokenService: TokenService) { }
 
   private setAuthenticated(value: boolean): void {
     this.authenticaded$.next(value);
   }
 
   isAuthenticated(): Observable<boolean> {
+    this.updateAuthenticated();
     return this.authenticaded$.asObservable();
   }
 
