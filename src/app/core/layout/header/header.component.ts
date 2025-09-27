@@ -51,6 +51,11 @@ export class HeaderComponent implements OnInit {
             label: "CORE.LAYOUT.HEADER.MY-ADDS",
             url: "mylist",
           },
+          {
+            label: "CORE.LAYOUT.HEADER.LOGOUT",
+            command: () =>
+              this.authService.logout(),
+          },
         ],
       },
     ];

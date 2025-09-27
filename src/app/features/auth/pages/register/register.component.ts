@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
 import { User } from "@core/models/User.model";
+import { AuthService } from "@core/services/auth.service";
 import { ErrorHandlerService } from "@core/services/error-handler.service";
-import { UserService } from "@core/services/user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
 import { RegexTextsService } from "@shared/services/regex-texts.service";
@@ -55,11 +55,11 @@ export class RegisterComponent {
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&])[A-Za-z\\d$@!%*?&]{8,}$";
 
   constructor(
-    private userService: UserService,
+    private authService: AuthService,
     private messageService: MessageService,
     private errorHandlerService: ErrorHandlerService,
     private regexTextsService: RegexTextsService,
-  ) {}
+  ) { }
 
   get samePassword(): boolean {
     return this.formPassword === this.formConfirmPassword;
@@ -82,7 +82,7 @@ export class RegisterComponent {
 
     this.load = true;
 
-    this.userService.register(accountToSend).subscribe({
+    this.authService.register(accountToSend).subscribe({
       next: () => {
         this.messageService.add({
           severity: "success",
