@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.development';
-import { ThreeFirstAnuncio } from '../models/ThreeFirstAnuncio.model';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment.development";
+import { ThreeFirstAnuncio } from "../models/ThreeFirstAnuncio.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class ThreeFirstAnunciosService {
   private apiUrl = environment.apiUrl;
@@ -13,7 +13,7 @@ export class ThreeFirstAnunciosService {
 
   getThreeFirstAnuncios() {
     return this.http.get<ThreeFirstAnuncio[]>(
-      `${this.apiUrl}anuncios/primeiros`
+      `${this.apiUrl}/anuncios/primeiros`,
     );
   }
 }

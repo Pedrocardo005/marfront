@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.development';
-import { CatSubcat } from '../models/CatSubcat.model';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment.development";
+import { CatSubcat } from "../models/CatSubcat.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class CatSubcatService {
   private apiUrl = environment.apiUrl;
@@ -12,6 +12,6 @@ export class CatSubcatService {
   constructor(private http: HttpClient) {}
 
   getCatSubcat() {
-    return this.http.get<CatSubcat[]>(`${this.apiUrl}cat-subcat/`);
+    return this.http.get<CatSubcat[]>(`${this.apiUrl}/cat-subcat/`);
   }
 }

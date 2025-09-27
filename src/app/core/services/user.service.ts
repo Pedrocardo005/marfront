@@ -12,13 +12,13 @@ export class UserService {
   constructor(private readonly http: HttpClient) {}
 
   register(usuario: User) {
-    return this.http.post<User>(`${this.apiUrl}register/`, {
+    return this.http.post<User>(`${this.apiUrl}/register/`, {
       ...usuario,
     });
   }
 
   login(usuario: User) {
-    return this.http.post<{ token: string }>(`${this.apiUrl}login/`, {
+    return this.http.post<{ token: string }>(`${this.apiUrl}/login/`, {
       ...usuario,
     });
   }

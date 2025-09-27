@@ -1,4 +1,4 @@
-import { provideHttpClient } from "@angular/common/http";
+import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { ApplicationConfig, inject, isDevMode } from "@angular/core";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 import { provideRouter, Routes } from "@angular/router";
@@ -14,6 +14,7 @@ import { TranslocoHttpLoader } from "./transloco-loader";
 import { MyListComponent } from "@features/listings/pages/my-list/my-list.component";
 import { AuthService } from "@core/services/auth.service";
 import { map } from "rxjs";
+import { tokenInterceptor } from "@core/interceptors/token.interceptor";
 
 const routes: Routes = [
   {
@@ -63,7 +64,7 @@ const routes: Routes = [
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([tokenInterceptor])),
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
