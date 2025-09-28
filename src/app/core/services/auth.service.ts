@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { User } from "@core/models/User.model";
 import { environment } from "@environments/environment.development";
 import { BehaviorSubject, catchError, Observable, tap } from "rxjs";
@@ -13,7 +14,7 @@ export class AuthService {
   private authenticaded$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private apiUrl: string = environment.apiUrl;
 
-  constructor(private tokenService: TokenService, private readonly http: HttpClient, private readonly errorHandlerService: ErrorHandlerService) { }
+  constructor(private tokenService: TokenService, private readonly http: HttpClient, private readonly errorHandlerService: ErrorHandlerService, private readonly router: Router) { }
 
   private setAuthenticated(value: boolean): void {
     this.authenticaded$.next(value);
@@ -50,6 +51,7 @@ export class AuthService {
   logout() {
     this.tokenService.removeToken();
     this.updateAuthenticated();
+    this.router.navigate(["/"]);
     return this.http.post(`${this.apiUrl}/logout/`, {});
   }
 }

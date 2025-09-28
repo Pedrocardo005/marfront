@@ -1,0 +1,22 @@
+<div class="w-full bg-white p-5 rounded-lg">
+    <div class="flex gap-5">
+        <img [src]="anuncio?.url_foto" class="h-[150px] w-[150px] object-cover"
+            [alt]=" `${'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.IMG-ALT'|transloco} ${anuncio?.titulo}`" />
+
+        <div>
+            <a href="#" class="text-lg font-medium hover:underline text-blue-600">
+                {{ anuncio?.titulo }}
+            </a>
+            <div>
+                <span class="text-amber-500 text-sm">
+                    @if (anuncio?.ativo) {
+                    {{ "FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.ACTIVE"|transloco }}
+                    } @else {
+                    {{ "FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.INACTIVE"|transloco }}
+                    }
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>
