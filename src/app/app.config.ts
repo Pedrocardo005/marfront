@@ -1,20 +1,24 @@
+import { registerLocaleData } from "@angular/common";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
+import localeBr from '@angular/common/locales/pt';
 import { ApplicationConfig, inject, isDevMode } from "@angular/core";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 import { provideRouter, Routes } from "@angular/router";
+import { tokenInterceptor } from "@core/interceptors/token.interceptor";
+import { AuthService } from "@core/services/auth.service";
+import { MyListComponent } from "@features/listings/pages/my-list/my-list.component";
 import { SupportComponent } from "@features/support/pages/support/support.component";
 import { provideTransloco } from "@jsverse/transloco";
 import { providePrimeNG } from "primeng/config";
+import { map } from "rxjs";
 import { LoginComponent } from "./features/auth/pages/login/login.component";
 import { RegisterComponent } from "./features/auth/pages/register/register.component";
 import { HomeComponent } from "./features/home/pages/home/home.component";
 import { SearchComponent } from "./features/searchs/pages/search/search.component";
 import MyPreset from "./mypreset";
 import { TranslocoHttpLoader } from "./transloco-loader";
-import { MyListComponent } from "@features/listings/pages/my-list/my-list.component";
-import { AuthService } from "@core/services/auth.service";
-import { map } from "rxjs";
-import { tokenInterceptor } from "@core/interceptors/token.interceptor";
+
+registerLocaleData(localeBr);
 
 const routes: Routes = [
   {

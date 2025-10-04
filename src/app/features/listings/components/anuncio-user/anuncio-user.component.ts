@@ -13,4 +13,12 @@ export class AnuncioUserComponent implements OnInit {
   @Input() anuncio?: AnuncioUsuario;
 
   ngOnInit(): void { }
+
+  get formatedDate() {
+    const dateObject = this.anuncio?.data_expirar
+      ? new Date(String(this.anuncio.data_expirar).split('/').reverse().join('-'))
+      : null;
+
+    return dateObject;
+  }
 }

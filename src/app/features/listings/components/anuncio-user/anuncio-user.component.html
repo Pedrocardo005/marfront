@@ -28,7 +28,7 @@
                 <p>
                     <i class="pi pi-clock">
                         {{ 'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.ACTIVE-AT'| transloco }}
-                        {{ anuncio?.data_expirar?.toLocaleString() }}
+                        {{ formatedDate |date: 'longDate': '': 'pt' }}
                     </i>
                 </p>
             </div>
