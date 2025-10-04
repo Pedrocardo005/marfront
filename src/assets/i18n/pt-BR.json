@@ -299,7 +299,10 @@
           "IMG-ALT": "Imagem do anúncio de ",
           "ACTIVE": "Anúncio ativado",
           "INACTIVE": "Anúncio desativado",
-          "INFORMATION": "Informação"
+          "INFORMATION": "Informação",
+          "VIEWS": "Visualizado",
+          "TIMES": "vezes",
+          "ACTIVE-AT": "Ativo até "
         }
       },
       "PAGES": {

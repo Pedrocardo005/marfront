@@ -19,6 +19,19 @@
             <p class="text-xs text-gray-400 mt-3">
                 {{ 'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.INFORMATION'|transloco }}
             </p>
+            <div class="mt-2">
+                <p class="flex items-center gap-1">
+                    <i class="pi pi-eye"></i>{{ 'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.VIEWS'|transloco }} {{
+                    anuncio?.views
+                    }} {{ 'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.TIMES'|transloco }}
+                </p>
+                <p>
+                    <i class="pi pi-clock">
+                        {{ 'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.ACTIVE-AT'| transloco }}
+                        {{ anuncio?.data_expirar?.toLocaleString() }}
+                    </i>
+                </p>
+            </div>
         </div>
 
     </div>
