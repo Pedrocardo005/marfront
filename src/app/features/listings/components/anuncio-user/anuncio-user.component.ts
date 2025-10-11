@@ -2,10 +2,11 @@ import { CommonModule } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { AnuncioUsuario } from "@features/listings/models/anuncio-usuario.model";
 import { TranslocoPipe } from "@jsverse/transloco";
+import { Button } from "primeng/button";
 
 @Component({
   selector: "app-anuncio-user",
-  imports: [TranslocoPipe, CommonModule],
+  imports: [TranslocoPipe, CommonModule, Button],
   templateUrl: "./anuncio-user.component.html",
   styleUrl: "./anuncio-user.component.css",
 })

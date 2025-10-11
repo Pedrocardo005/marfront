@@ -302,7 +302,8 @@
           "INFORMATION": "Informação",
           "VIEWS": "Visualizado",
           "TIMES": "vezes",
-          "ACTIVE-AT": "Ativo até "
+          "ACTIVE-AT": "Ativo até ",
+          "EDIT-BUTTON": "Editar"
         }
       },
       "PAGES": {
