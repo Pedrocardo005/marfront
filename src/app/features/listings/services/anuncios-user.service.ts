@@ -16,4 +16,8 @@ export class AnunciosUserService {
       `${this.apiUrl}/anuncios/usuario`,
     );
   }
+
+  deleteAnuncio(id: number) {
+    return this.http.delete(`${this.apiUrl}/anuncios/${id}`);
+  }
 }

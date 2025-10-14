@@ -21,4 +21,8 @@ export class MyListComponent implements OnInit {
       this.anuncios = response.results;
     });
   }
+
+  onAnuncioDeleted(anuncioId: number) {
+    this.anuncios = this.anuncios.filter(anuncio => anuncio.id !== anuncioId);
+  }
 }

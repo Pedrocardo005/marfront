@@ -303,7 +303,8 @@
           "VIEWS": "Visualizado",
           "TIMES": "vezes",
           "ACTIVE-AT": "Ativo até ",
-          "EDIT-BUTTON": "Editar"
+          "EDIT-BUTTON": "Editar",
+          "DELETE-BUTTON": "Remover anúncio"
         }
       },
       "PAGES": {

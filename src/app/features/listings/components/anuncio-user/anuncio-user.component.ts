@@ -1,6 +1,14 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  inject,
+} from "@angular/core";
 import { AnuncioUsuario } from "@features/listings/models/anuncio-usuario.model";
+import { AnunciosUserService } from "@features/listings/services/anuncios-user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
 import { Button } from "primeng/button";
 
@@ -12,12 +20,24 @@ import { Button } from "primeng/button";
 })
 export class AnuncioUserComponent implements OnInit {
   @Input() anuncio?: AnuncioUsuario;
+  @Output() anuncioDeleted = new EventEmitter<number>();
 
-  ngOnInit(): void { }
+  private anunciosUserService = inject(AnunciosUserService);
+
+  ngOnInit(): void {}
+
+  onDelete() {
+    if (this.anuncio?.id) {
+      this.anunciosUserService.deleteAnuncio(this.anuncio.id).subscribe(() => {
+        if (this.anuncio?.id)
+          this.anuncioDeleted.emit(this.anuncio.id);
+      });
+    }
+  }
 
   get formatedDate() {
     const dateObject = this.anuncio?.data_expirar
-      ? new Date(String(this.anuncio.data_expirar).split('/').reverse().join('-'))
+      ? new Date(String(this.anuncio.data_expirar).split("/").reverse().join("-"))
       : null;
 
     return dateObject;

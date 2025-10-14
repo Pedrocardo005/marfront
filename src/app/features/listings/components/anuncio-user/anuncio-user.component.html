@@ -36,9 +36,11 @@
     </div>
     <hr class="my-4 text-gray-200" />
     <div>
-        <div class="card flex">
+        <div class="card flex gap-2">
             <p-button [label]="'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.EDIT-BUTTON'|transloco"
                 icon="pi pi-pen-to-square" severity="secondary" />
+            <p-button [label]="'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.DELETE-BUTTON'|transloco"
+                (click)="onDelete()" icon="pi pi-trash" severity="danger" />
         </div>
     </div>
 </div>

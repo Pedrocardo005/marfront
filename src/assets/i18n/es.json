@@ -9,6 +9,15 @@
                 }
             }
         }
+    },
+    "FEATURES": {
+        "LISTINGS": {
+            "COMPONENTS": {
+                "ANUNCIO-USER": {
+                    "DELETE-BUTTON": "Eliminar"
+                }
+            }
+        }
     }
 }
 
