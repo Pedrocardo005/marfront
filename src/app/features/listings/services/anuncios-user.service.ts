@@ -20,4 +20,8 @@ export class AnunciosUserService {
   deleteAnuncio(id: number) {
     return this.http.delete(`${this.apiUrl}/anuncios/${id}`);
   }
+
+  toggleStatus(id: number) {
+    return this.http.patch(`${this.apiUrl}/anuncios/toggle-status/${id}`, {});
+  }
 }

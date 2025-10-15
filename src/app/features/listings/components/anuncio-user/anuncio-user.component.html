@@ -39,8 +39,15 @@
         <div class="card flex gap-2">
             <p-button [label]="'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.EDIT-BUTTON'|transloco"
                 icon="pi pi-pen-to-square" severity="secondary" />
-            <p-button [label]="'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.DELETE-BUTTON'|transloco"
-                (click)="onDelete()" icon="pi pi-trash" severity="danger" />
+            <p-button [label]="'FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.DELETE-BUTTON'|transloco" (click)="onDelete()"
+                icon="pi pi-trash" severity="danger" />
+            <div class="flex items-center gap-2">
+                @if (anuncio) {
+                <p-inputSwitch [(ngModel)]="anuncio.ativo" (onChange)="onToggleStatus()" />
+                <label>{{ anuncio.ativo ? ('FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.ACTIVE' | transloco) :
+                    ('FEATURES.LISTINGS.COMPONENTS.ANUNCIO-USER.INACTIVE' | transloco) }}</label>
+                }
+            </div>
         </div>
     </div>
 </div>

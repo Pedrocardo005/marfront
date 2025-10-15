@@ -7,14 +7,16 @@ import {
   Output,
   inject,
 } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { AnuncioUsuario } from "@features/listings/models/anuncio-usuario.model";
 import { AnunciosUserService } from "@features/listings/services/anuncios-user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
 import { Button } from "primeng/button";
+import { InputSwitchModule } from "primeng/inputswitch";
 
 @Component({
   selector: "app-anuncio-user",
-  imports: [TranslocoPipe, CommonModule, Button],
+  imports: [TranslocoPipe, CommonModule, Button, InputSwitchModule, FormsModule],
   templateUrl: "./anuncio-user.component.html",
   styleUrl: "./anuncio-user.component.css",
 })
@@ -32,6 +34,12 @@ export class AnuncioUserComponent implements OnInit {
         if (this.anuncio?.id)
           this.anuncioDeleted.emit(this.anuncio.id);
       });
+    }
+  }
+
+  onToggleStatus() {
+    if (this.anuncio?.id) {
+      this.anunciosUserService.toggleStatus(this.anuncio.id).subscribe();
     }
   }
 
