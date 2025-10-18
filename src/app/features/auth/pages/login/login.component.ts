@@ -37,11 +37,8 @@ export class LoginComponent {
   loading = false;
 
   constructor(
-    private userService: UserService,
     private authService: AuthService,
-    private tokenService: TokenService,
     private messageService: MessageService,
-    private errorHandlerService: ErrorHandlerService,
     private router: Router,
   ) { }
 

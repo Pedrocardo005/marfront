@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { User } from "@core/models/User.model";
 import { AuthService } from "@core/services/auth.service";
 import { ErrorHandlerService } from "@core/services/error-handler.service";
@@ -59,6 +59,7 @@ export class RegisterComponent {
     private messageService: MessageService,
     private errorHandlerService: ErrorHandlerService,
     private regexTextsService: RegexTextsService,
+    private router: Router
   ) { }
 
   get samePassword(): boolean {
@@ -90,6 +91,16 @@ export class RegisterComponent {
           detail: "Registro bem-sucedido!",
         });
         this.load = false;
+
+        this.formEmail = "";
+        this.formPassword = "";
+        this.formUsername = "";
+        this.formLoginWith = undefined;
+        this.formConfirmPassword = "";
+
+        setTimeout(() => {
+          this.router.navigate(["login"]);
+        }, 4000);
       },
       error: (error: Error) => {
         const errorMessage = this.errorHandlerService.getErrorMessage(error);
