@@ -311,6 +311,11 @@
       "PAGES": {
         "MY-LIST": {
           "HEADER": "Meus Anúncios"
+        },
+        "CREATE-AD": {
+          "TITLE": "Informações gerais sobre seu anúncio",
+          "FIRST-SUBTITLE": "Selecione a categoria e o tipo de exibição",
+          "CATEGORY-LABEL": "Categoria"
         }
       }
     }

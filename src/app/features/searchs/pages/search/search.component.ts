@@ -1,20 +1,20 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { SearchService } from '@core/services/search.service';
 import { MobileOffersComponent } from '@features/searchs/components/mobile-offers/mobile-offers.component';
 import { QueueOffersComponent } from '@features/searchs/components/queue-offers/queue-offers.component';
 import { RightDrawerComponent } from '@features/searchs/components/right-drawer/right-drawer.component';
 import { StackOffersComponent } from '@features/searchs/components/stack-offers/stack-offers.component';
 import { SearchAnuncio } from '@features/searchs/models/SearchAnuncio.model';
 import { TranslocoModule } from '@jsverse/transloco';
+import { CategoryCarouselComponent } from '@shared/components/category-carousel/category-carousel.component';
+import { SearchBarComponent } from '@shared/components/search-bar/search-bar.component';
+import { CatSubcat } from '@shared/models/CatSubcat.model';
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { SelectModule } from 'primeng/select';
-import { CatSubcat } from 'src/app/features/home/models/CatSubcat.model';
 import { HandleResize } from 'src/app/shared/abstracts/components/HandleResize';
-import { SearchService } from '../../../../core/services/search.service';
-import { CategoryCarouselComponent } from '../../../../shared/components/category-carousel/category-carousel.component';
-import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 
 interface Options {
   name: string;

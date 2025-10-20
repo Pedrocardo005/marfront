@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 import { CarouselModule } from 'primeng/carousel';
-import { CatSubcat } from '../../../features/home/models/CatSubcat.model';
+import { CatSubcat } from '@shared/models/CatSubcat.model';
 
 @Component({
   selector: 'app-category-carousel',
