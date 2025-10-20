@@ -17,6 +17,26 @@
                                 [(ngModel)]="selectedNodes" [options]="items" />
                         </div>
                     </div>
+                    <div class="flex flex-col mt-5">
+                        <div class="flex">
+                            <span class="text-sm font-semibold pb-2 block w-52">{{
+                                'FEATURES.LISTINGS.PAGES.CREATE-AD.EXIBITION-TYPE-LABEL'|transloco }}</span>
+                            <div class="flex gap-7">
+                                <div class="flex gap-2">
+                                    <p-radioButton name="exibition-type" value="sell" [(ngModel)]="exibitionType"
+                                        inputId="exibition-type1"></p-radioButton>
+                                    <label for="exibition-type1">{{
+                                        'FEATURES.LISTINGS.PAGES.CREATE-AD.EXIBITION-SELL'|transloco }}</label>
+                                </div>
+                                <div class="flex gap-2">
+                                    <p-radioButton name="exibition-type" value="search" [(ngModel)]="exibitionType"
+                                        inputId="exibition-type2"></p-radioButton>
+                                    <label for="exibition-type2">{{
+                                        'FEATURES.LISTINGS.PAGES.CREATE-AD.EXIBITION-SEARCH'|transloco }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="right-content w-80 bg-gray-100">
 

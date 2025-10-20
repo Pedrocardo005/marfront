@@ -10,7 +10,7 @@
         },
         "MY-ADDS": "Meus anúncios",
         "LOGOUT": "Sair",
-        "CREATE-AD":"Criar anúncio"
+        "CREATE-AD": "Criar anúncio"
       },
       "FOOTER": {
         "INFORMATION": {
@@ -315,7 +315,10 @@
         "CREATE-AD": {
           "TITLE": "Informações gerais sobre seu anúncio",
           "FIRST-SUBTITLE": "Selecione a categoria e o tipo de exibição",
-          "CATEGORY-LABEL": "Categoria"
+          "CATEGORY-LABEL": "Categoria",
+          "EXIBITION-TYPE-LABEL": "Tipo de exibição",
+          "EXIBITION-SELL": "Eu ofereço",
+          "EXIBITION-SEARCH": "Estou procurando por"
         }
       }
     }
