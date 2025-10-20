@@ -52,10 +52,14 @@ export class HeaderComponent implements OnInit {
             url: "mylist",
           },
           {
+            label: "CORE.LAYOUT.HEADER.CREATE-AD",
+            url: "create-ad",
+          },
+          {
             label: "CORE.LAYOUT.HEADER.LOGOUT",
             command: () =>
               this.authService.logout(),
-          },
+          }
         ],
       },
     ];

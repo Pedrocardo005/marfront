@@ -17,6 +17,7 @@ import { HomeComponent } from "./features/home/pages/home/home.component";
 import { SearchComponent } from "./features/searchs/pages/search/search.component";
 import MyPreset from "./mypreset";
 import { TranslocoHttpLoader } from "./transloco-loader";
+import { CreateAdComponent } from "@features/listings/pages/create-ad/create-ad.component";
 
 registerLocaleData(localeBr);
 
@@ -63,6 +64,16 @@ const routes: Routes = [
           .pipe(map((isAuth) => isAuth)),
     ],
   },
+  {
+    path: "create-ad",
+    component: CreateAdComponent,
+    canActivate: [
+      () =>
+        inject(AuthService)
+          .isAuthenticated()
+          .pipe(map((isAuth) => isAuth)),
+    ],
+  }
 ];
 
 export const appConfig: ApplicationConfig = {

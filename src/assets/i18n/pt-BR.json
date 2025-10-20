@@ -9,7 +9,8 @@
           "LOGOUT": "Sair"
         },
         "MY-ADDS": "Meus anúncios",
-        "LOGOUT": "Sair"
+        "LOGOUT": "Sair",
+        "CREATE-AD":"Criar anúncio"
       },
       "FOOTER": {
         "INFORMATION": {
