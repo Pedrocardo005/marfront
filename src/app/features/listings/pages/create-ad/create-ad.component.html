@@ -5,12 +5,12 @@
             <div class="p-1 font-semibold pb-7 border-b border-gray-200">
                 <h3>{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.TITLE'|transloco }}</h3>
             </div>
-            <div class="flex w-full">
+            <div class="flex w-full flex-col lg:flex-row ">
                 <div class="left-content w-full mt-5">
                     <p class="pb-5 mb-5 border-b border-gray-100">{{
                         'FEATURES.LISTINGS.PAGES.CREATE-AD.FIRST-SUBTITLE'|transloco }}</p>
                     <div class="flex flex-col">
-                        <div class="flex">
+                        <div class="flex flex-col md:flex-row">
                             <span class="text-sm font-semibold pb-2 block w-52">{{
                                 'FEATURES.LISTINGS.PAGES.CREATE-AD.CATEGORY-LABEL'|transloco }}</span>
                             <p-treeselect [class]="`text-sm ${!selectedNodes.data ? 'ng-invalid ng-dirty' : ''}`"
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col mt-5">
-                        <div class="flex">
+                        <div class="flex flex-col md:flex-row">
                             <span class="text-sm font-semibold pb-2 block w-52">{{
                                 'FEATURES.LISTINGS.PAGES.CREATE-AD.EXIBITION-TYPE-LABEL'|transloco }}</span>
                             <div class="flex gap-7">
@@ -40,7 +40,7 @@
                     <p class="pb-5 mb-5 mt-10 border-b border-gray-100">
                         {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.SECOND-SUBTITLE'|transloco }}</p>
                     <div class="flex flex-col mt-5">
-                        <div class="flex">
+                        <div class="flex flex-col md:flex-row">
                             <span class="text-sm font-semibold pb-2 flex items-center w-52">
                                 {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.AD-TITLE-LABEL'|transloco }}
                             </span>
