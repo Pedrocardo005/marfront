@@ -60,20 +60,29 @@
                         <div class="flex flex-col md:flex-row">
                             <span class="text-sm font-semibold pb-2 block w-52">{{
                                 'FEATURES.LISTINGS.PAGES.CREATE-AD.OFFER-TYPE.LABEL'|transloco }}</span>
-                            <p-select [options]="typeOffer" [(ngModel)]="typeOfferSelected" optionLabel="typeoffer">
-                                <ng-template #selectedItem let-selectedOption>
-                                    @if (selectedOption) {
-                                    <div class="flex items-center gap-2">
-                                        <div>{{ selectedOption.name | transloco }}</div>
-                                    </div>
-                                    }
-                                </ng-template>
-                                <ng-template let-option #item>
-                                    <div class="flex items-center gap-2">
-                                        <div>{{ option.name | transloco }}</div>
-                                    </div>
-                                </ng-template>
-                            </p-select>
+                            <div class="p-5 w-full">
+                                <p-select [options]="typeOffer" [(ngModel)]="typeOfferSelected" optionLabel="typeoffer">
+                                    <ng-template #selectedItem let-selectedOption>
+                                        @if (selectedOption) {
+                                        <div class="flex items-center gap-2">
+                                            <div>{{ selectedOption.name | transloco }}</div>
+                                        </div>
+                                        }
+                                    </ng-template>
+                                    <ng-template let-option #item>
+                                        <div class="flex items-center gap-2">
+                                            <div>{{ option.name | transloco }}</div>
+                                        </div>
+                                    </ng-template>
+                                </p-select>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row">
+                            <span class="text-sm font-semibold pb-2 block w-52">{{
+                                'FEATURES.LISTINGS.PAGES.CREATE-AD.PRICE-LABEL'|transloco }}</span>
+                            <div class="p-5 w-full">
+                                <p-inputnumber [(ngModel)]="formPrice" mode="decimal" [minFractionDigits]="2" />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -328,7 +328,8 @@
             "VB": "Base para negociação",
             "SD": "Sob demanda",
             "PRESENT": "Para dar de presente"
-          }
+          },
+          "PRICE-LABEL": "Preço*"
         }
       }
     }
