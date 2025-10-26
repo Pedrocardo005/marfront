@@ -321,7 +321,14 @@
           "EXIBITION-SEARCH": "Estou procurando por",
           "SECOND-SUBTITLE": "Informações sobre a oferta",
           "AD-TITLE-LABEL": "Título do anúncio*",
-          "AD-DESCRIPTION-LABEL": "Descrição do anúncio*"
+          "AD-DESCRIPTION-LABEL": "Descrição do anúncio*",
+          "OFFER-TYPE": {
+            "LABEL": "Tipo de oferta*",
+            "FIXED": "Preço fixo",
+            "VB": "Base para negociação",
+            "SD": "Sob demanda",
+            "PRESENT": "Para dar de presente"
+          }
         }
       }
     }
