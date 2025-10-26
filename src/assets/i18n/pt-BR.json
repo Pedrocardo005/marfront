@@ -320,7 +320,8 @@
           "EXIBITION-SELL": "Eu ofereço",
           "EXIBITION-SEARCH": "Estou procurando por",
           "SECOND-SUBTITLE": "Informações sobre a oferta",
-          "AD-TITLE-LABEL": "Título do anúncio*"
+          "AD-TITLE-LABEL": "Título do anúncio*",
+          "AD-DESCRIPTION-LABEL": "Descrição do anúncio*"
         }
       }
     }

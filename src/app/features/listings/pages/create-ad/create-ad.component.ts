@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
@@ -5,17 +6,19 @@ import { SearchBarComponent } from "@shared/components/search-bar/search-bar.com
 import { CatSubcatService } from '@shared/services/catsubcat.service';
 import { InputTextModule } from 'primeng/inputtext';
 import { RadioButton } from 'primeng/radiobutton';
+import { TextareaModule } from 'primeng/textarea';
 import { TreeSelect } from 'primeng/treeselect';
 
 @Component({
   selector: 'app-create-ad',
-  imports: [SearchBarComponent, TranslocoPipe, TreeSelect, FormsModule, RadioButton, InputTextModule],
+  imports: [SearchBarComponent, TranslocoPipe, TreeSelect, FormsModule, RadioButton, InputTextModule, TextareaModule, CommonModule],
   templateUrl: './create-ad.component.html',
   styleUrl: './create-ad.component.css'
 })
 export class CreateAdComponent implements OnInit {
 
   formTitle: string = '';
+  formDescription: string = '';
 
   exibitionType: string = 'sell';
 
