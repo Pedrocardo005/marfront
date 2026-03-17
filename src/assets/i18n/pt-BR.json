@@ -314,6 +314,13 @@
         },
         "CREATE-AD": {
           "TITLE": "Informações gerais sobre seu anúncio",
+          "WIZARD": {
+            "SELECT-CATEGORY": "Selecione a Categoria",
+            "CATEGORY": "Categoria",
+            "SUBCATEGORY": "Subcategoria",
+            "NEXT": "Próximo",
+            "BACK-TO-CATEGORIES": "Voltar para categorias"
+          },
           "FIRST-SUBTITLE": "Selecione a categoria e o tipo de exibição",
           "CATEGORY-LABEL": "Categoria*",
           "EXIBITION-TYPE-LABEL": "Tipo de exibição*",

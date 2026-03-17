@@ -59,7 +59,11 @@ export class CreateAdComponent implements OnInit {
     children: TreeSelectNode[];
   }[] = [];
 
-  selectedNodes: TreeSelectNode = { key: '', label: '' };
+  step: number = 1;
+  selectedCategory: any = null;
+  selectedSubcategory: any = null;
+
+  selectedNodes: TreeSelectNode | TreeSelectNode[] | null = null;
 
   constructor(private readonly catsubcatService: CatSubcatService) { }
 
@@ -137,5 +141,38 @@ export class CreateAdComponent implements OnInit {
       this.uploadedImages.splice(index, 0, draggedItem);
     }
     this.draggedImageIndex = null;
+  }
+
+  selectCategory(category: any) {
+    if (this.selectedCategory !== category) {
+      this.selectedCategory = category;
+      this.selectedSubcategory = null;
+    }
+  }
+
+  selectSubcategory(subcategory: any) {
+    this.selectedSubcategory = subcategory;
+  }
+
+  nextStep() {
+    if (this.selectedCategory && (this.selectedCategory.children.length === 0 || this.selectedSubcategory)) {
+      // Sync the selected item to the form's p-treeselect
+      const foundItem = this.items.find(i => i.key === this.selectedCategory.key);
+      if (foundItem) {
+        if (this.selectedCategory.children.length === 0) {
+          this.selectedNodes = foundItem;
+        } else {
+          const foundSubItem = foundItem.children.find(c => c.key === this.selectedSubcategory.key);
+          if (foundSubItem) {
+            this.selectedNodes = foundSubItem;
+          }
+        }
+      }
+      this.step = 2;
+    }
+  }
+
+  previousStep() {
+    this.step = 1;
   }
 }
