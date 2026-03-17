@@ -96,4 +96,46 @@ export class CreateAdComponent implements OnInit {
       }
     ];
   }
+
+  uploadedImages: { file: File, url: string }[] = [];
+  draggedImageIndex: number | null = null;
+
+  onFilesSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      Array.from(input.files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          this.uploadedImages.push({
+            file: file,
+            url: e.target.result
+          });
+        };
+        reader.readAsDataURL(file);
+      });
+      input.value = '';
+    }
+  }
+
+  removeImage(index: number) {
+    this.uploadedImages.splice(index, 1);
+  }
+
+  onDragStart(index: number) {
+    this.draggedImageIndex = index;
+  }
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDrop(event: DragEvent, index: number) {
+    event.preventDefault();
+    if (this.draggedImageIndex !== null && this.draggedImageIndex !== index) {
+      const draggedItem = this.uploadedImages[this.draggedImageIndex];
+      this.uploadedImages.splice(this.draggedImageIndex, 1);
+      this.uploadedImages.splice(index, 0, draggedItem);
+    }
+    this.draggedImageIndex = null;
+  }
 }

@@ -329,7 +329,10 @@
             "SD": "Sob demanda",
             "PRESENT": "Para dar de presente"
           },
-          "PRICE-LABEL": "Preço*"
+          "PRICE-LABEL": "Preço*",
+          "PHOTOS-LABEL": "Fotos",
+          "ADD-PHOTOS": "Adicionar Fotos",
+          "MOVE-ORDER": "Mover para alterar a ordem"
         }
       }
     }
