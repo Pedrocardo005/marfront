@@ -16,6 +16,33 @@
                 "ANUNCIO-USER": {
                     "DELETE-BUTTON": "Eliminar"
                 }
+            },
+            "PAGES": {
+                "CREATE-AD": {
+                    "CONDITION": {
+                        "LABEL": "Condición del artículo",
+                        "SH": "De segunda mano",
+                        "N": "Nuevo",
+                        "RB": "Reacondicionado"
+                    },
+                    "SHIPPING": {
+                        "LABEL": "Envío",
+                        "DHL": "DHL",
+                        "HERMES": "Envío Hermes",
+                        "DPD": "DPD",
+                        "GLS": "GLS",
+                        "UPS": "UPS",
+                        "OUTRO": "Otro"
+                    },
+                    "PAYPAL": {
+                        "LABEL": "Pago a través de PayPal",
+                        "YES": "Sí",
+                        "NO": "No"
+                    },
+                    "THIRD-SUBTITLE": "Características del producto:",
+                    "THIRD-SUBTITLE-TEXT": "Añada características adicionales al producto para hacer su oferta más atractiva.",
+                    "PLEASE-SELECT": "Por favor, seleccione"
+                }
             }
         }
     }

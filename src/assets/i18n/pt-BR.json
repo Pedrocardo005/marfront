@@ -336,6 +336,30 @@
             "SD": "Sob demanda",
             "PRESENT": "Para dar de presente"
           },
+          "CONDITION": {
+            "LABEL": "Condição do item",
+            "SH": "Segunda mão",
+            "N": "Novo",
+            "RB": "Recondicionado"
+          },
+          "SHIPPING": {
+            "LABEL": "Envio",
+            "DHL": "DHL",
+            "HERMES": "Hermes envio",
+            "DPD": "DPD",
+            "GLS": "GLS",
+            "UPS": "UPS",
+            "TNT": "TNT",
+            "OUTRO": "Outro"
+          },
+          "PAYPAL": {
+            "LABEL": "Pagamento via PayPal",
+            "YES": "Sim",
+            "NO": "Não"
+          },
+          "THIRD-SUBTITLE": "Funcionalidades do produto:",
+          "THIRD-SUBTITLE-TEXT": "Adicione funcionalidades adicionais ao produto para tornar sua oferta mais atraente.",
+          "PLEASE-SELECT": "Por favor, selecione",
           "PRICE-LABEL": "Preço*",
           "PHOTOS-LABEL": "Fotos",
           "ADD-PHOTOS": "Adicionar Fotos",

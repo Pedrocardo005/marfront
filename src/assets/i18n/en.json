@@ -41,6 +41,33 @@
                 "ANUNCIO-USER": {
                     "DELETE-BUTTON": "Delete"
                 }
+            },
+            "PAGES": {
+                "CREATE-AD": {
+                    "CONDITION": {
+                        "LABEL": "Item condition",
+                        "SH": "Second hand",
+                        "N": "New",
+                        "RB": "Refurbished"
+                    },
+                    "SHIPPING": {
+                        "LABEL": "Shipping",
+                        "DHL": "DHL",
+                        "HERMES": "Hermes shipping",
+                        "DPD": "DPD",
+                        "GLS": "GLS",
+                        "UPS": "UPS",
+                        "OUTRO": "Other"
+                    },
+                    "PAYPAL": {
+                        "LABEL": "Payment via PayPal",
+                        "YES": "Yes",
+                        "NO": "No"
+                    },
+                    "THIRD-SUBTITLE": "Product features:",
+                    "THIRD-SUBTITLE-TEXT": "Add additional features to the product to make your offer more attractive.",
+                    "PLEASE-SELECT": "Please select"
+                }
             }
         }
     }

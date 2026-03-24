@@ -16,6 +16,33 @@
                 "ANUNCIO-USER": {
                     "DELETE-BUTTON": "Löschen"
                 }
+            },
+            "PAGES": {
+                "CREATE-AD": {
+                    "CONDITION": {
+                        "LABEL": "Artikelzustand",
+                        "SH": "Gebraucht",
+                        "N": "Neu",
+                        "RB": "Generalüberholt"
+                    },
+                    "SHIPPING": {
+                        "LABEL": "Versand",
+                        "DHL": "DHL",
+                        "HERMES": "Hermes Versand",
+                        "DPD": "DPD",
+                        "GLS": "GLS",
+                        "UPS": "UPS",
+                        "OUTRO": "Andere"
+                    },
+                    "PAYPAL": {
+                        "LABEL": "Zahlung per PayPal",
+                        "YES": "Ja",
+                        "NO": "Nein"
+                    },
+                    "THIRD-SUBTITLE": "Produkteigenschaften:",
+                    "THIRD-SUBTITLE-TEXT": "Fügen Sie dem Produkt weitere Eigenschaften hinzu, um Ihr Angebot attraktiver zu machen.",
+                    "PLEASE-SELECT": "Bitte auswählen"
+                }
             }
         }
     }

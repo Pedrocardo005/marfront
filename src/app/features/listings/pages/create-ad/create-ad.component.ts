@@ -52,6 +52,15 @@ export class CreateAdComponent implements OnInit {
   typeOffer?: SelectItem[];
   typeOfferSelected?: SelectItem;
 
+  conditionOptions?: SelectItem[];
+  selectedCondition?: SelectItem;
+
+  shippingOptions?: SelectItem[];
+  selectedShipping?: SelectItem;
+
+  paypalOptions?: SelectItem[];
+  selectedPaypal?: SelectItem;
+
   items: {
     key: string;
     label: string;
@@ -98,6 +107,27 @@ export class CreateAdComponent implements OnInit {
         code: '4',
         name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.OFFER-TYPE.PRESENT',
       }
+    ];
+
+    this.conditionOptions = [
+      { code: 'SH', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.CONDITION.SH' },
+      { code: 'N', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.CONDITION.N' },
+      { code: 'RB', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.CONDITION.RB' }
+    ];
+
+    this.shippingOptions = [
+      { code: '1', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.DHL' },
+      { code: '2', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.HERMES' },
+      { code: '3', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.DPD' },
+      { code: '4', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.GLS' },
+      { code: '5', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.UPS' },
+      { code: '6', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.TNT' },
+      { code: '7', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.OUTRO' }
+    ];
+
+    this.paypalOptions = [
+      { code: 'true', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.PAYPAL.YES' },
+      { code: 'false', name: 'FEATURES.LISTINGS.PAGES.CREATE-AD.PAYPAL.NO' }
     ];
   }
 
