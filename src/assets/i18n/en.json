@@ -64,6 +64,12 @@
                         "YES": "Yes",
                         "NO": "No"
                     },
+                    "LOCATION": {
+                        "TITLE": "Location",
+                        "ZIP-CITY": "ZIP/City:*",
+                        "STREET-NUMBER": "Street, No.:",
+                        "INVALID-CEP": "Invalid ZIP code"
+                    },
                     "THIRD-SUBTITLE": "Product features:",
                     "THIRD-SUBTITLE-TEXT": "Add additional features to the product to make your offer more attractive.",
                     "PLEASE-SELECT": "Please select"

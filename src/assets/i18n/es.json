@@ -39,6 +39,12 @@
                         "YES": "Sí",
                         "NO": "No"
                     },
+                    "LOCATION": {
+                        "TITLE": "Ubicación",
+                        "ZIP-CITY": "CP/Ciudad:*",
+                        "STREET-NUMBER": "Calle, N.º:",
+                        "INVALID-CEP": "Código postal inválido"
+                    },
                     "THIRD-SUBTITLE": "Características del producto:",
                     "THIRD-SUBTITLE-TEXT": "Añada características adicionales al producto para hacer su oferta más atractiva.",
                     "PLEASE-SELECT": "Por favor, seleccione"

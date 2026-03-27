@@ -357,6 +357,12 @@
             "YES": "Sim",
             "NO": "Não"
           },
+          "LOCATION": {
+            "TITLE": "Localização",
+            "ZIP-CITY": "CEP/Cidade:*",
+            "STREET-NUMBER": "Rua, nº:",
+            "INVALID-CEP": "CEP inválido"
+          },
           "THIRD-SUBTITLE": "Funcionalidades do produto:",
           "THIRD-SUBTITLE-TEXT": "Adicione funcionalidades adicionais ao produto para tornar sua oferta mais atraente.",
           "PLEASE-SELECT": "Por favor, selecione",

@@ -47,6 +47,24 @@ export class CreateAdComponent implements OnInit {
   formDescription: string = '';
   formPrice?: number;
 
+  formPostalCode: string = '';
+  formCity: string = '';
+  formStreet: string = '';
+  formNumber: string = '';
+
+  onCepChange(value: string) {
+    if (!value) {
+      this.formPostalCode = '';
+      return;
+    }
+    let numericValue = value.replace(/\D/g, '');
+    if (numericValue.length > 5) {
+      numericValue = numericValue.substring(0, 5) + '-' + numericValue.substring(5, 8);
+    }
+    this.formPostalCode = numericValue;
+  }
+
+
   exibitionType: string = 'sell';
 
   typeOffer?: SelectItem[];

@@ -266,6 +266,38 @@
                                 </p-select>
                             </div>
                         </div>
+
+                        <p class="pb-5 mb-5 mt-10 border-b border-gray-100">
+                            {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.LOCATION.TITLE'|transloco }}</p>
+
+                        <div class="flex flex-col mt-2">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <span class="text-sm font-semibold pb-2 block w-52">
+                                    {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.LOCATION.ZIP-CITY'|transloco }}
+                                </span>
+                                <div class="p-5 w-full flex items-start gap-4">
+                                    <div class="w-1/3 flex flex-col">
+                                        <input pInputText name="postalCode" [ngModel]="formPostalCode" (ngModelChange)="onCepChange($event)" #postalCodeInput="ngModel" pattern="^[0-9]{5}-[0-9]{3}$" maxlength="9" [ngClass]="{'ng-invalid ng-dirty': postalCodeInput.invalid && (postalCodeInput.dirty || postalCodeInput.touched)}" />
+                                        @if (postalCodeInput.invalid && (postalCodeInput.dirty || postalCodeInput.touched)) {
+                                            <small class="text-red-500 mt-1">{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.LOCATION.INVALID-CEP'|transloco }}</small>
+                                        }
+                                    </div>
+                                    <div class="w-2/3 flex flex-col">
+                                        <input pInputText class="w-full" [(ngModel)]="formCity" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row items-center mt-2">
+                                <span class="text-sm font-semibold pb-2 block w-52">
+                                    {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.LOCATION.STREET-NUMBER'|transloco }}
+                                </span>
+                                <div class="p-5 w-full flex gap-4">
+                                    <input pInputText class="w-3/4" [(ngModel)]="formStreet" />
+                                    <input pInputText class="w-1/4" [(ngModel)]="formNumber" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="right-content w-80 bg-gray-100">
