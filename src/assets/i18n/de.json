@@ -40,6 +40,10 @@
                         "PHONE": "Telefonnummer",
                         "INVALID-PHONE": "Ungültige Telefonnummer"
                     },
+                    "PUBLISH": {
+                        "TERMS": "Ich habe die Nutzungsbedingungen und Datenschutzrichtlinien gelesen und stimme ihnen zu.",
+                        "BUTTON": "Anzeige veröffentlichen"
+                    },
                     "PAYPAL": {
                         "LABEL": "Zahlung per PayPal",
                         "YES": "Ja",

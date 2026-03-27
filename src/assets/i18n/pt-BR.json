@@ -371,6 +371,10 @@
             "PHONE": "Número de telefone",
             "INVALID-PHONE": "Telefone inválido"
           },
+          "PUBLISH": {
+            "TERMS": "Li e concordo com os Termos de Uso e Política de Privacidade.",
+            "BUTTON": "Publicar anúncio"
+          },
           "PLEASE-SELECT": "Por favor, selecione",
           "PRICE-LABEL": "Preço*",
           "PHOTOS-LABEL": "Fotos",

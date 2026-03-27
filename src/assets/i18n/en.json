@@ -78,6 +78,10 @@
                         "PHONE": "Phone number",
                         "INVALID-PHONE": "Invalid phone number"
                     },
+                    "PUBLISH": {
+                        "TERMS": "I have read and agree to the Terms of Use and Privacy Policy.",
+                        "BUTTON": "Publish ad"
+                    },
                     "PLEASE-SELECT": "Please select"
                 }
             }

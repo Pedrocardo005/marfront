@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RadioButton } from 'primeng/radiobutton';
 import { Select } from "primeng/select";
 import { TextareaModule } from 'primeng/textarea';
+import { CheckboxModule } from 'primeng/checkbox';
 import { TreeSelect } from 'primeng/treeselect';
 
 interface TreeSelectNode {
@@ -36,7 +37,8 @@ interface SelectItem {
     CommonModule,
     Select,
     InputNumber,
-    Fluid
+    Fluid,
+    CheckboxModule
   ],
   templateUrl: './create-ad.component.html',
   styleUrl: './create-ad.component.css'
@@ -54,6 +56,8 @@ export class CreateAdComponent implements OnInit {
 
   formProviderName: string = '';
   formProviderPhone: string = '';
+  
+  termsAccepted: boolean = false;
 
   onCepChange(value: string) {
     if (!value) {

@@ -201,7 +201,7 @@
                         <p class="pb-5 mb-5 border-b border-gray-100 text-sm text-gray-500">
                             {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.THIRD-SUBTITLE-TEXT'|transloco }}</p>
 
-                        <div class="flex flex-col items-center md:flex-row mt-5">
+                        <div class="flex flex-col items-start md:flex-row md:items-center mt-5">
                             <span class="text-sm font-semibold pb-2 block w-52">{{
                                 'FEATURES.LISTINGS.PAGES.CREATE-AD.CONDITION.LABEL'|transloco }}</span>
                             <div class="p-5 w-full">
@@ -223,7 +223,7 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col items-center md:flex-row mt-5">
+                        <div class="flex flex-col items-start md:flex-row md:items-center mt-5">
                             <span class="text-sm font-semibold pb-2 block w-52">{{
                                 'FEATURES.LISTINGS.PAGES.CREATE-AD.SHIPPING.LABEL'|transloco }}</span>
                             <div class="p-5 w-full">
@@ -245,7 +245,7 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col items-center md:flex-row mt-5">
+                        <div class="flex flex-col items-start md:flex-row md:items-center mt-5">
                             <span class="text-sm font-semibold pb-2 block w-52">{{
                                 'FEATURES.LISTINGS.PAGES.CREATE-AD.PAYPAL.LABEL'|transloco }}</span>
                             <div class="p-5 w-full">
@@ -271,7 +271,7 @@
                             {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.LOCATION.TITLE'|transloco }}</p>
 
                         <div class="flex flex-col mt-2">
-                            <div class="flex flex-col md:flex-row items-center">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
                                 <span class="text-sm font-semibold pb-2 block w-52">
                                     {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.LOCATION.ZIP-CITY'|transloco }}
                                 </span>
@@ -288,7 +288,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex flex-col md:flex-row items-center mt-2">
+                            <div class="flex flex-col md:flex-row items-start md:items-center mt-2">
                                 <span class="text-sm font-semibold pb-2 block w-52">
                                     {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.LOCATION.STREET-NUMBER'|transloco }}
                                 </span>
@@ -303,7 +303,7 @@
                             {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.TITLE'|transloco }}</p>
 
                         <div class="flex flex-col mt-2">
-                            <div class="flex flex-col md:flex-row items-center">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
                                 <span class="text-sm font-semibold pb-2 block w-52">
                                     {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.NAME'|transloco }}
                                 </span>
@@ -312,7 +312,7 @@
                                 </div>
                             </div>
                             
-                            <div class="flex flex-col md:flex-row items-center mt-2">
+                            <div class="flex flex-col md:flex-row items-start md:items-center mt-2">
                                 <span class="text-sm font-semibold pb-2 block w-52">
                                     {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.PHONE'|transloco }}
                                 </span>
@@ -322,6 +322,22 @@
                                         <small class="text-red-500">{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.INVALID-PHONE'|transloco }}</small>
                                     }
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex flex-col md:flex-row items-start">
+                            <span class="text-sm font-semibold pb-2 block w-52"></span>
+                            <div class="p-5 w-full flex flex-col gap-6 items-start">
+                                <div class="flex items-start gap-3">
+                                    <p-checkbox [(ngModel)]="termsAccepted" [binary]="true" inputId="terms"></p-checkbox>
+                                    <label for="terms" class="text-sm text-gray-700 cursor-pointer pt-1">
+                                        {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PUBLISH.TERMS'|transloco }}
+                                    </label>
+                                </div>
+                                
+                                <button type="button" [disabled]="!termsAccepted" class="bg-lime-500 hover:bg-lime-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3 px-8 rounded-full transition-colors cursor-pointer border-none text-lg">
+                                    {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PUBLISH.BUTTON'|transloco }}
+                                </button>
                             </div>
                         </div>
 

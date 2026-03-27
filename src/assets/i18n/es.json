@@ -53,6 +53,10 @@
                         "PHONE": "Número de teléfono",
                         "INVALID-PHONE": "Número de teléfono inválido"
                     },
+                    "PUBLISH": {
+                        "TERMS": "He leído y acepto los Términos de Uso y la Política de Privacidad.",
+                        "BUTTON": "Publicar anuncio"
+                    },
                     "PLEASE-SELECT": "Por favor, seleccione"
                 }
             }
