@@ -47,6 +47,12 @@
                     },
                     "THIRD-SUBTITLE": "Características del producto:",
                     "THIRD-SUBTITLE-TEXT": "Añada características adicionales al producto para hacer su oferta más atractiva.",
+                    "PROVIDER": {
+                        "TITLE": "Detalles del proveedor",
+                        "NAME": "Nombre*",
+                        "PHONE": "Número de teléfono",
+                        "INVALID-PHONE": "Número de teléfono inválido"
+                    },
                     "PLEASE-SELECT": "Por favor, seleccione"
                 }
             }

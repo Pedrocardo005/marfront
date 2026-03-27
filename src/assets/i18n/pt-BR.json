@@ -365,6 +365,12 @@
           },
           "THIRD-SUBTITLE": "Funcionalidades do produto:",
           "THIRD-SUBTITLE-TEXT": "Adicione funcionalidades adicionais ao produto para tornar sua oferta mais atraente.",
+          "PROVIDER": {
+            "TITLE": "Detalhes do fornecedor",
+            "NAME": "Nome*",
+            "PHONE": "Número de telefone",
+            "INVALID-PHONE": "Telefone inválido"
+          },
           "PLEASE-SELECT": "Por favor, selecione",
           "PRICE-LABEL": "Preço*",
           "PHOTOS-LABEL": "Fotos",

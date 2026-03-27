@@ -298,6 +298,33 @@
                                 </div>
                             </div>
                         </div>
+
+                        <p class="pb-5 mb-5 mt-10 border-b border-gray-100">
+                            {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.TITLE'|transloco }}</p>
+
+                        <div class="flex flex-col mt-2">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <span class="text-sm font-semibold pb-2 block w-52">
+                                    {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.NAME'|transloco }}
+                                </span>
+                                <div class="p-5 w-full">
+                                    <input pInputText class="w-full" [(ngModel)]="formProviderName" />
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row items-center mt-2">
+                                <span class="text-sm font-semibold pb-2 block w-52">
+                                    {{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.PHONE'|transloco }}
+                                </span>
+                                <div class="p-5 w-full flex flex-col gap-1 items-start">
+                                    <input pInputText class="w-1/2" name="providerPhone" [ngModel]="formProviderPhone" (ngModelChange)="onPhoneChange($event)" #providerPhoneInput="ngModel" pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$" maxlength="15" [ngClass]="{'ng-invalid ng-dirty': providerPhoneInput.invalid && (providerPhoneInput.dirty || providerPhoneInput.touched)}" />
+                                    @if (providerPhoneInput.invalid && (providerPhoneInput.dirty || providerPhoneInput.touched)) {
+                                        <small class="text-red-500">{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PROVIDER.INVALID-PHONE'|transloco }}</small>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="right-content w-80 bg-gray-100">

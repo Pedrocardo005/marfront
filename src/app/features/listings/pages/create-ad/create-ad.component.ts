@@ -52,6 +52,9 @@ export class CreateAdComponent implements OnInit {
   formStreet: string = '';
   formNumber: string = '';
 
+  formProviderName: string = '';
+  formProviderPhone: string = '';
+
   onCepChange(value: string) {
     if (!value) {
       this.formPostalCode = '';
@@ -62,6 +65,27 @@ export class CreateAdComponent implements OnInit {
       numericValue = numericValue.substring(0, 5) + '-' + numericValue.substring(5, 8);
     }
     this.formPostalCode = numericValue;
+  }
+
+  onPhoneChange(value: string) {
+    if (!value) {
+      this.formProviderPhone = '';
+      return;
+    }
+    let numericValue = value.replace(/\D/g, '');
+    if (numericValue.length > 11) {
+      numericValue = numericValue.substring(0, 11);
+    }
+    
+    if (numericValue.length <= 2) {
+      this.formProviderPhone = numericValue.length > 0 ? `(${numericValue}` : '';
+    } else if (numericValue.length <= 6) {
+      this.formProviderPhone = `(${numericValue.substring(0, 2)}) ${numericValue.substring(2)}`;
+    } else if (numericValue.length <= 10) {
+      this.formProviderPhone = `(${numericValue.substring(0, 2)}) ${numericValue.substring(2, 6)}-${numericValue.substring(6)}`;
+    } else {
+      this.formProviderPhone = `(${numericValue.substring(0, 2)}) ${numericValue.substring(2, 7)}-${numericValue.substring(7)}`;
+    }
   }
 
 

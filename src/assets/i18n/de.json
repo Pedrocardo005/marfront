@@ -34,6 +34,12 @@
                         "UPS": "UPS",
                         "OUTRO": "Andere"
                     },
+                    "PROVIDER": {
+                        "TITLE": "Anbieterdetails",
+                        "NAME": "Name*",
+                        "PHONE": "Telefonnummer",
+                        "INVALID-PHONE": "Ungültige Telefonnummer"
+                    },
                     "PAYPAL": {
                         "LABEL": "Zahlung per PayPal",
                         "YES": "Ja",

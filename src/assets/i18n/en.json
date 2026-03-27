@@ -72,6 +72,12 @@
                     },
                     "THIRD-SUBTITLE": "Product features:",
                     "THIRD-SUBTITLE-TEXT": "Add additional features to the product to make your offer more attractive.",
+                    "PROVIDER": {
+                        "TITLE": "Provider details",
+                        "NAME": "Name*",
+                        "PHONE": "Phone number",
+                        "INVALID-PHONE": "Invalid phone number"
+                    },
                     "PLEASE-SELECT": "Please select"
                 }
             }
