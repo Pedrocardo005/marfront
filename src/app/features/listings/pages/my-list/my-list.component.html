@@ -1,14 +1,60 @@
-<main class="bg-gray-100">
+<main class="bg-gray-100 min-h-screen">
   <app-search-bar></app-search-bar>
-  <div class="ads-list mx-auto lg:max-w-5xl">
+  <div class="ads-list mx-auto lg:max-w-5xl py-8">
     <h3 class="text-2xl p-4 lg:p-0">
       {{ "FEATURES.LISTINGS.PAGES.MY-LIST.HEADER"|transloco }}
     </h3>
     <div class="ads mt-3 flex flex-col gap-5 pb-5">
       @for (anuncio of anuncios; track $index) {
       <app-anuncio-user [anuncio]="anuncio" (anuncioDeleted)="onAnuncioDeleted($event)"></app-anuncio-user>
-
+      }
+      @if (anuncios.length === 0) {
+      <p class="text-gray-500 text-center py-10">{{ "FEATURES.LISTINGS.PAGES.MY-LIST.EMPTY" | transloco }}</p>
       }
     </div>
+
+    @if (totalCount > 0) {
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pb-8">
+      <div class="flex items-center gap-2 text-sm text-gray-600">
+        <span>{{ "FEATURES.LISTINGS.PAGES.MY-LIST.PER-PAGE" | transloco }}</span>
+        <select
+          class="border border-gray-300 rounded px-2 py-1 bg-white text-gray-700 cursor-pointer"
+          (change)="onPageSizeChange(+$any($event.target).value)">
+          @for (opt of pageSizeOptions; track opt) {
+          <option [value]="opt" [selected]="opt === pageSize">{{ opt }}</option>
+          }
+        </select>
+        <span class="text-gray-400">/ {{ totalCount }}</span>
+      </div>
+
+      @if (totalPages > 1) {
+      <div class="flex items-center gap-1">
+        <button
+          class="px-3 py-2 rounded border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+          [disabled]="currentPage === 1"
+          (click)="loadPage(currentPage - 1)">
+          <i class="pi pi-chevron-left text-xs"></i>
+        </button>
+
+        @for (page of pages; track page) {
+        <button
+          (click)="loadPage(page)"
+          [class]="page === currentPage
+            ? 'px-3 py-2 rounded border font-semibold bg-lime-500 border-lime-500 text-white cursor-pointer transition-colors'
+            : 'px-3 py-2 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors'">
+          {{ page }}
+        </button>
+        }
+
+        <button
+          class="px-3 py-2 rounded border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+          [disabled]="currentPage === totalPages"
+          (click)="loadPage(currentPage + 1)">
+          <i class="pi pi-chevron-right text-xs"></i>
+        </button>
+      </div>
+      }
+    </div>
+    }
   </div>
 </main>

@@ -310,7 +310,9 @@
       },
       "PAGES": {
         "MY-LIST": {
-          "HEADER": "Meus Anúncios"
+          "HEADER": "Meus Anúncios",
+          "EMPTY": "Você não possui anúncios cadastrados.",
+          "PER-PAGE": "Itens por página:"
         },
         "CREATE-AD": {
           "TITLE": "Informações gerais sobre seu anúncio",
