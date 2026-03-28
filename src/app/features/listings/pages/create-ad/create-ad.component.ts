@@ -1,20 +1,20 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AnunciosUserService } from "@features/listings/services/anuncios-user.service";
 import { TranslocoPipe } from '@jsverse/transloco';
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
-import { Router } from '@angular/router';
 import { CatSubcatService } from '@shared/services/catsubcat.service';
-import { AnunciosService } from '../../services/anuncios.service';
+import { MessageService } from "primeng/api";
+import { CheckboxModule } from 'primeng/checkbox';
 import { InputNumber } from "primeng/inputnumber";
 import { InputTextModule } from 'primeng/inputtext';
 import { RadioButton } from 'primeng/radiobutton';
 import { Select } from "primeng/select";
 import { TextareaModule } from 'primeng/textarea';
-import { CheckboxModule } from 'primeng/checkbox';
-import { TreeSelect } from 'primeng/treeselect';
-import { MessageService } from "primeng/api";
 import { Toast } from "primeng/toast";
+import { TreeSelect } from 'primeng/treeselect';
 
 interface TreeSelectNode {
   key: string;
@@ -60,7 +60,7 @@ export class CreateAdComponent implements OnInit {
 
   formProviderName: string = '';
   formProviderPhone: string = '';
-  
+
   termsAccepted: boolean = false;
 
   onCepChange(value: string) {
@@ -84,7 +84,7 @@ export class CreateAdComponent implements OnInit {
     if (numericValue.length > 11) {
       numericValue = numericValue.substring(0, 11);
     }
-    
+
     if (numericValue.length <= 2) {
       this.formProviderPhone = numericValue.length > 0 ? `(${numericValue}` : '';
     } else if (numericValue.length <= 6) {
@@ -126,7 +126,7 @@ export class CreateAdComponent implements OnInit {
 
   constructor(
     private readonly catsubcatService: CatSubcatService,
-    private readonly anunciosService: AnunciosService,
+    private readonly anunciosUserService: AnunciosUserService,
     private readonly router: Router,
     private readonly messageService: MessageService
   ) { }
@@ -265,7 +265,7 @@ export class CreateAdComponent implements OnInit {
     if (!this.termsAccepted) return;
 
     const formData = new FormData();
-    
+
     let subCategoriaId: number | undefined;
     if (this.selectedNodes) {
       if (Array.isArray(this.selectedNodes)) {
@@ -284,27 +284,27 @@ export class CreateAdComponent implements OnInit {
     formData.append('vendendo', this.exibitionType === 'sell' ? 'true' : 'false');
     formData.append('titulo', this.formTitle);
     formData.append('descricao', this.formDescription);
-    
+
     if (this.formPrice !== undefined) {
       formData.append('preco', this.formPrice.toString());
     }
-    
+
     if (this.typeOfferSelected?.code) {
       formData.append('tipo_oferta', this.typeOfferSelected.code);
     }
-    
+
     if (this.selectedCondition?.code) {
       formData.append('condicao', this.selectedCondition.code);
     }
-    
+
     if (this.selectedShipping?.code) {
       formData.append('envio', this.selectedShipping.code);
     }
-    
+
     if (this.selectedPaypal?.code !== undefined) {
       formData.append('pagamento_paypal', this.selectedPaypal.code);
     }
-    
+
     formData.append('codigo_postal', this.formPostalCode);
     formData.append('cidade', this.formCity);
     formData.append('rua', this.formStreet);
@@ -317,7 +317,7 @@ export class CreateAdComponent implements OnInit {
       formData.append(`fotos[${index}].ordem`, (index + 1).toString());
     });
 
-    this.anunciosService.createAnuncio(formData).subscribe({
+    this.anunciosUserService.createAnuncio(formData).subscribe({
       next: () => {
         this.messageService.add({
           severity: "success",

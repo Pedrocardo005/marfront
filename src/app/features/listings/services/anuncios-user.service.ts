@@ -7,13 +7,13 @@ import { PaginateAnuncioUsuarioModel } from "../models/paginate-anuncio-usuario.
   providedIn: "root",
 })
 export class AnunciosUserService {
-  private apiUrl = environment.apiUrl;
+  private readonly apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) { }
 
-  getAnunciosByUser() {
+  getAnunciosByUser(page: number = 1, pageSize: number = 10) {
     return this.http.get<PaginateAnuncioUsuarioModel>(
-      `${this.apiUrl}/anuncios/usuario`,
+      `${this.apiUrl}/anuncios/usuario?page=${page}&page_size=${pageSize}`,
     );
   }
 
@@ -23,5 +23,9 @@ export class AnunciosUserService {
 
   toggleStatus(id: number) {
     return this.http.patch(`${this.apiUrl}/anuncios/toggle-status/${id}`, {});
+  }
+
+  createAnuncio(data: FormData) {
+    return this.http.post<any>(`${this.apiUrl}/anuncios/`, data);
   }
 }
