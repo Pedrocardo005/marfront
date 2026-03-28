@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { AnuncioUsuario } from "@features/listings/models/anuncio-usuario.model";
 import { AnunciosUserService } from "@features/listings/services/anuncios-user.service";
 import { TranslocoPipe } from "@jsverse/transloco";
+import { environment } from "@environments/environment.development";
 import { Button } from "primeng/button";
 import { InputSwitchModule } from "primeng/inputswitch";
 
@@ -49,5 +50,13 @@ export class AnuncioUserComponent implements OnInit {
       : null;
 
     return dateObject;
+  }
+
+  get fotoUrl(): string | null {
+    if (!this.anuncio?.url_foto) return null;
+    const url = this.anuncio.url_foto;
+    if (url.startsWith('http')) return url;
+    const baseUrl = environment.apiUrl.replace('/api', '');
+    return `${baseUrl}${url}`;
   }
 }
