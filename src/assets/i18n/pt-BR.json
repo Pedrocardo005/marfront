@@ -381,7 +381,14 @@
           "PRICE-LABEL": "Preço*",
           "PHOTOS-LABEL": "Fotos",
           "ADD-PHOTOS": "Adicionar Fotos",
-          "MOVE-ORDER": "Mover para alterar a ordem"
+          "MOVE-ORDER": "Mover para alterar a ordem",
+          "PREVIEW": {
+            "TITLE": "pré-visualização",
+            "NO-IMAGE": "Sem imagem",
+            "NO-TITLE": "Título do anúncio",
+            "BOOST-TITLE": "Aumente suas oportunidades de vendas",
+            "BOOST-TEXT": "promovendo seu anúncio."
+          }
         }
       }
     }

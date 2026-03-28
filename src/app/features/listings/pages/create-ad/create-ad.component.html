@@ -344,8 +344,36 @@
 
                     </div>
                 </div>
-                <div class="right-content w-80 bg-gray-100">
+                <div class="right-content w-80 shrink-0 bg-gray-100 rounded-lg p-4">
+                    <p class="text-sm text-gray-500 mb-2">{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PREVIEW.TITLE' | transloco }}</p>
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                        <div class="relative bg-gray-100 h-48 flex items-center justify-center">
+                            @if (uploadedImages.length > 0) {
+                                <img [src]="uploadedImages[0].url" class="w-full h-full object-cover" alt="preview" />
+                            } @else {
+                                <div class="flex flex-col items-center gap-2 text-gray-400">
+                                    <i class="pi pi-camera text-5xl"></i>
+                                    <span class="text-sm">{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PREVIEW.NO-IMAGE' | transloco }}</span>
+                                </div>
+                            }
+                            @if (formPrice !== undefined && formPrice !== null) {
+                                <span class="absolute bottom-2 right-2 bg-lime-500 text-white text-sm font-bold px-2 py-1 rounded">
+                                    {{ formPrice | number:'1.2-2' }}
+                                </span>
+                            }
+                        </div>
+                        <div class="p-3">
+                            <p class="font-medium text-sm truncate text-gray-800">{{ formTitle || ('FEATURES.LISTINGS.PAGES.CREATE-AD.PREVIEW.NO-TITLE' | transloco) }}</p>
+                            @if (formPostalCode || formCity) {
+                                <p class="text-xs text-gray-500 mt-1">{{ formPostalCode }} {{ formCity }}</p>
+                            }
+                        </div>
+                    </div>
 
+                    <div class="mt-5 bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <p class="font-semibold text-sm text-gray-800">{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PREVIEW.BOOST-TITLE' | transloco }}</p>
+                        <p class="text-xs text-gray-500 mt-1">{{ 'FEATURES.LISTINGS.PAGES.CREATE-AD.PREVIEW.BOOST-TEXT' | transloco }}</p>
+                    </div>
                 </div>
             </div>
             }
