@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { SearchBarComponent } from "@shared/components/search-bar/search-bar.component";
+import { Router } from '@angular/router';
 import { CatSubcatService } from '@shared/services/catsubcat.service';
-import { Fluid } from "primeng/fluid";
+import { AnunciosService } from '../../services/anuncios.service';
 import { InputNumber } from "primeng/inputnumber";
 import { InputTextModule } from 'primeng/inputtext';
 import { RadioButton } from 'primeng/radiobutton';
@@ -12,6 +13,8 @@ import { Select } from "primeng/select";
 import { TextareaModule } from 'primeng/textarea';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TreeSelect } from 'primeng/treeselect';
+import { MessageService } from "primeng/api";
+import { Toast } from "primeng/toast";
 
 interface TreeSelectNode {
   key: string;
@@ -37,9 +40,10 @@ interface SelectItem {
     CommonModule,
     Select,
     InputNumber,
-    Fluid,
-    CheckboxModule
+    CheckboxModule,
+    Toast
   ],
+  providers: [MessageService],
   templateUrl: './create-ad.component.html',
   styleUrl: './create-ad.component.css'
 })
@@ -120,7 +124,12 @@ export class CreateAdComponent implements OnInit {
 
   selectedNodes: TreeSelectNode | TreeSelectNode[] | null = null;
 
-  constructor(private readonly catsubcatService: CatSubcatService) { }
+  constructor(
+    private readonly catsubcatService: CatSubcatService,
+    private readonly anunciosService: AnunciosService,
+    private readonly router: Router,
+    private readonly messageService: MessageService
+  ) { }
 
   ngOnInit() {
     this.catsubcatService.getCatSubcat().subscribe((response) => {
@@ -250,5 +259,84 @@ export class CreateAdComponent implements OnInit {
 
   previousStep() {
     this.step = 1;
+  }
+
+  onSubmit() {
+    if (!this.termsAccepted) return;
+
+    const formData = new FormData();
+    
+    let subCategoriaId: number | undefined;
+    if (this.selectedNodes) {
+      if (Array.isArray(this.selectedNodes)) {
+        subCategoriaId = this.selectedNodes[0]?.data;
+      } else {
+        subCategoriaId = this.selectedNodes.data;
+      }
+    }
+
+    if (subCategoriaId !== undefined) {
+      formData.append('sub_categoria_id', subCategoriaId.toString());
+    }
+
+    formData.append('data_expirar', '24/10/2100');
+    formData.append('ativo', 'true');
+    formData.append('vendendo', this.exibitionType === 'sell' ? 'true' : 'false');
+    formData.append('titulo', this.formTitle);
+    formData.append('descricao', this.formDescription);
+    
+    if (this.formPrice !== undefined) {
+      formData.append('preco', this.formPrice.toString());
+    }
+    
+    if (this.typeOfferSelected?.code) {
+      formData.append('tipo_oferta', this.typeOfferSelected.code);
+    }
+    
+    if (this.selectedCondition?.code) {
+      formData.append('condicao', this.selectedCondition.code);
+    }
+    
+    if (this.selectedShipping?.code) {
+      formData.append('envio', this.selectedShipping.code);
+    }
+    
+    if (this.selectedPaypal?.code !== undefined) {
+      formData.append('pagamento_paypal', this.selectedPaypal.code);
+    }
+    
+    formData.append('codigo_postal', this.formPostalCode);
+    formData.append('cidade', this.formCity);
+    formData.append('rua', this.formStreet);
+    formData.append('numero', this.formNumber);
+    formData.append('provedor', this.formProviderName);
+    formData.append('telefone', this.formProviderPhone);
+
+    this.uploadedImages.forEach((img, index) => {
+      formData.append(`fotos[${index}].imagem`, img.file);
+      formData.append(`fotos[${index}].ordem`, (index + 1).toString());
+    });
+
+    this.anunciosService.createAnuncio(formData).subscribe({
+      next: () => {
+        this.messageService.add({
+          severity: "success",
+          summary: "Sucesso",
+          detail: "Anúncio criado com sucesso",
+        });
+
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 4000);
+      },
+      error: (err: any) => {
+        this.messageService.add({
+          severity: "error",
+          summary: "Erro",
+          detail: "Erro ao criar anúncio!",
+        });
+        console.error('Error creating ad', err);
+      }
+    });
   }
 }
