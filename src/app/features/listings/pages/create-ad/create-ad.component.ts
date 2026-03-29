@@ -62,6 +62,26 @@ export class CreateAdComponent implements OnInit {
   formProviderPhone: string = '';
 
   termsAccepted: boolean = false;
+  submitting: boolean = false;
+
+  private readonly phoneRegex = /^\(\d{2}\)\s\d{4,5}-\d{4}$/;
+
+  get isFormValid(): boolean {
+    return !!(
+      this.formTitle?.trim() &&
+      this.formDescription?.trim() &&
+      this.formPrice !== undefined && this.formPrice !== null &&
+      this.selectedCondition &&
+      this.selectedShipping &&
+      this.typeOfferSelected &&
+      this.formPostalCode?.trim() &&
+      this.formCity?.trim() &&
+      this.formProviderName?.trim() &&
+      this.formProviderPhone?.trim() && this.phoneRegex.test(this.formProviderPhone) &&
+      this.selectedNodes &&
+      this.termsAccepted
+    );
+  }
 
   onCepChange(value: string) {
     if (!value) {
@@ -262,8 +282,8 @@ export class CreateAdComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.termsAccepted) return;
-
+    if (!this.isFormValid || this.submitting) return;
+    this.submitting = true;
     const formData = new FormData();
 
     let subCategoriaId: number | undefined;
@@ -330,6 +350,7 @@ export class CreateAdComponent implements OnInit {
         }, 4000);
       },
       error: (err: any) => {
+        this.submitting = false;
         this.messageService.add({
           severity: "error",
           summary: "Erro",
